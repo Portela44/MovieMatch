@@ -23,15 +23,19 @@ router.get('/login', async (req, res, next) => {
 // @route   POST /auth/signup
 // @access  Public
 router.post('/signup', async (req, res, next) => {
-  const { email, password, username } = req.body;
+  const { email, password, password2, username } = req.body;
   // ⚠️ Add validations!
-  if (!email || !password || !username) {
+  if (!email || !password || !password2 || !username) {
     res.render('auth/signup', { error: 'All fields are mandatory, please fill them before submiting' })
     return;
   }
   const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
   if (!regex.test(password)) {
-    res.render('auth/signup', { error: 'Password must have lowercase letters, uppercase letters and at least one number.' })
+    res.render('auth/signup', { error: 'Password must be at least 6 characters long and have lowercase letters, uppercase letters and at least one number.' })
+    return;
+  }
+  if (password !== password2) {
+    res.render('auth/signup', { error: 'The passwords entered are different, please try again' })
     return;
   }
   try {
@@ -51,6 +55,10 @@ router.post('/signup', async (req, res, next) => {
 router.post('/login', async (req, res, next) => {
   const { email, password } = req.body;
   // ⚠️ Add more validations!
+  if (!email || !password) {
+    res.render('auth/login', { error: 'All fields are mandatory, please fill them before submiting' })
+    return;
+  }
   try {
     // Remember to assign user to session cookie:
     const user = await User.findOne({ email: email });
