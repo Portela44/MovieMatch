@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
- 
+
 const userSchema = new Schema(
   // Add whichever fields you need for your app
   {
@@ -12,7 +12,6 @@ const userSchema = new Schema(
     email: {
       type: String,
       required: [true, 'Email is required.'],
-      unique: true,
       lowercase: true,
       trim: true
     },
@@ -25,7 +24,7 @@ const userSchema = new Schema(
     timestamps: true
   }
 );
- 
+
 const User = model('User', userSchema);
 
 module.exports = User;
