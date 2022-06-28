@@ -1,4 +1,5 @@
 require('dotenv').config();
+const { Movie } = require('imdb-api');
 const mongoose = require('mongoose');
 
 const movies = [
@@ -80,7 +81,7 @@ const movies = [
 mongoose.connect(process.env.MONGO_URL)
   .then(x => console.log(`Connected to ${x.connection.name}`))
   .then(() => {
-    return // Code to create elements in the DB
+    return Movie.create(movies);
   })
   .then(() => {
     console.log('Seed done 🌱');
