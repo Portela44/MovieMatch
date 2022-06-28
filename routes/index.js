@@ -1,7 +1,6 @@
 const router = require('express').Router();
 // IMDB API test requirement
-const IMDb = require("name-to-imdb");
-const metafilm = require("metafilm");
+
 
 // @desc    App home page
 // @route   GET /
