@@ -1,5 +1,37 @@
 body {
   padding: 0;
   margin: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+/* movies.hsb view styles */
+
+.movie-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+
+}
+
+.movie-image-container {
+  height: 850px;
+  width: 100%;
+}
+
+.movie-page-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+
 }

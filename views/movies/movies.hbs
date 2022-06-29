@@ -1,6 +1,10 @@
-<div>
-    <img src="{{movieFromDB.0.translations.0.poster.og}}" alt="poster" width="400">
-    <p> <strong>Overview:</strong> {{movieFromDB.0.translations.0.overview}}</p>
-    <p> <strong>{{movieFromDB.0.year}}</strong></p>
-
+<div class="movie-page-container">
+    <div class="movie-image-container">
+        <img src="{{movieFromDB.0.translations.0.poster.og}}" alt="poster">
+    </div>
+    <div class="details-container">
+        <h4>Overview</h4>
+        <p> {{movieFromDB.0.translations.0.overview}}</p>
+        <p> <strong>{{movieFromDB.0.year}}</strong></p>
+    </div>
 </div>
