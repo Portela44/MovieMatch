@@ -1,6 +1,6 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
-const Movie = require('../models/Movie');
+const Movie = require("../models/Movie");
 
 const movies = [
   //movie 1
@@ -898,7 +898,7 @@ const movies = [
         }
       }
     ]
-  },
+  }
 ]
 
 mongoose.connect(process.env.MONGO_URL)
