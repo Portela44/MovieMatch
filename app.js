@@ -13,6 +13,7 @@ const IMDb = require("name-to-imdb");
 // Routers require
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
+const moviesRouter = require('./routes/movies');
 
 const app = express();
 
@@ -40,7 +41,7 @@ app.use(
     store: MongoStore.create({
       mongoUrl: process.env.MONGO_URL
     })
-  }) 
+  })
 )
 
 // view engine setup
@@ -50,14 +51,15 @@ app.set('view engine', 'hbs');
 // routes intro
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
+app.use('/movies', moviesRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
