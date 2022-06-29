@@ -3,11 +3,11 @@ const { Schema, model } = require('mongoose');
 const voteSchema = new Schema(
     {
         userId: {
-            type: [Schema.Types.ObjectId],
+            type: Schema.Types.ObjectId,
             ref: "User",
         },
         movieId: {
-            type: [Schema.Types.ObjectId],
+            type: Schema.Types.ObjectId,
             ref: "Movie",
         },
         vote: {
