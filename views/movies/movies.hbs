@@ -3,10 +3,10 @@
         <img src="{{movieFromDB.0.translations.0.poster.og}}" alt="poster">
     </div>
     <div id="voteButtons">
-        <form action="/votes/:{{movieFromDB.0._id}}/voteLike" method="POST">
+        <form action="/votes/{{movieFromDB.0._id}}/voteLike" method="POST">
             <button type="submit"><img src="https://www.pngkey.com/png/full/26-265943_like-it-success-png.png"/></button>
         </form>
-        <form action="/votes/:{{_id}}/voteDislike" method="POST">
+        <form action="/votes/{{_id}}/voteDislike" method="POST">
             <button type="submit"><img src="https://cdn0.iconfinder.com/data/icons/social-reaction-and-emoji/519/dislike-512.png"/></button>
         </form>
     </div>

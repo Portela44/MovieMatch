@@ -4,18 +4,29 @@ const mongoose = require("mongoose");
 const Movie = require("../models/Movie");
 const Vote = require("../models/Vote");
 
+// @desc    Gets movie-detail view again and loads a new random item
+// @route   GET /votes/:movieId/voteLike
+// @access  Public
+
+router.get("/:movieId/voteLike", (req, res, next) => {
+    res.redirect("/movies");
+});
+
 // @desc    Posts vote to our database
 // @route   POST /votes/:movieId/voteLike
 // @access  Public
 
 router.post("/:movieId/voteLike", async (req, res, next) => {
-    const voteNumber = 4;
+    const vote = true;
+    const {movieId} = req.params;
+    const userId = req.session.currentUser._id;
     try {
-        await Vote.create({})
+        await Vote.create({userId, movieId, vote});
+        res.redirect("/movies");
     } catch (error) {
-        
+        next(error);
     }
-})
+});
 
 
 
