@@ -14,6 +14,7 @@ const IMDb = require("name-to-imdb");
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
 const moviesRouter = require('./routes/movies');
+const votesRouter = require("./routes/votes");
 
 const app = express();
 
@@ -52,6 +53,7 @@ app.set('view engine', 'hbs');
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/movies', moviesRouter);
+app.use("votes", votesRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

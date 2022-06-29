@@ -10,6 +10,7 @@ const Movie = require("../models/Movie");
 router.get('/', async (req, res, next) => {
     try {
         const movieFromDB = await Movie.aggregate([{ $sample: { size: 1 } }])
+        console.log(movieFromDB);
         res.render('movies/movies', { movieFromDB })
     } catch (error) {
         next(error)
