@@ -3,15 +3,15 @@ const { Schema, model } = require('mongoose');
 const voteSchema = new Schema(
     {
         userId: {
-            type:String,
-            unique:true,
+            type: [Schema.Types.ObjectId],
+            ref: "User",
         },
-        imdb_id: {
-            type: String,
-            unique:true,
+        movieId: {
+            type: [Schema.Types.ObjectId],
+            ref: "Movie",
         },
         vote: {
-            type:Number
+            type: Boolean,
         }
     }
 );

@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
- 
+
 const userSchema = new Schema(
   {
     username: {
@@ -18,13 +18,14 @@ const userSchema = new Schema(
     hashedPassword: {
       type: String,
       required: [true, 'Password is required.']
-    }
+    },
+    isAdmin: Boolean,
   },
   {
     timestamps: true
   }
 );
- 
+
 const User = model('User', userSchema);
 
 module.exports = User;
