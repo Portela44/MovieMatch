@@ -4,6 +4,13 @@
     <button type="submit">Search for a movie</button>
 </form>
 <a href="/movies">Recommend-Me</a>
+
+{{!-- {{#if req.session.currentUser.isAdmin}} --}}
+<a href="/movies/create">Create a new movie</a>
+<a href="/movies/edit">Edit a new movie</a>
+<a href="/movies/delete">Delete a new movie</a>
+{{!-- {{/if}} --}}
+
 {{#if error}}
 <p style="color: red">{{error}}</p>
 {{/if}}
