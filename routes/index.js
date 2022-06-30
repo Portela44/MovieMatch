@@ -2,13 +2,19 @@ const router = require('express').Router();
 // IMDB API test requirement
 const IMDb = require("name-to-imdb");
 const metafilm = require("metafilm");
+const Movie = require("../models/Movie");
 
 // @desc    App home page
 // @route   GET /
 // @access  Public
-router.get("/", (req, res, next) => {
+router.get("/", async (req, res, next) => {
   const user = req.session.currentUser
-  res.render("index", { user })
+  try {
+    const movieFromDB = await Movie.aggregate([{ $sample: { size: 1 } }]);
+    res.render("index", { user , movieFromDB })
+  } catch (error) {
+    next(error);
+  }
 })
 
 // @desc    App search page (only meant to test apis)

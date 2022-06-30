@@ -1,5 +1,5 @@
 <h1>Home page</h1>
-<form action="/movie-search" method="GET">
+<form action="/movies/{{movieFromDB.0._id}}" method="GET">
     <input type="text" name="movie" />
     <button type="submit">Search for a movie</button>
 </form>
