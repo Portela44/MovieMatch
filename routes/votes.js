@@ -9,7 +9,7 @@ const Vote = require("../models/Vote");
 // @access  Public
 
 router.get("/:movieId/voteLike", (req, res, next) => {
-    res.redirect("/movies");
+    res.redirect("/");
 });
 
 // @desc    Posts vote to our database (like)
@@ -22,7 +22,7 @@ router.post("/:movieId/voteLike", async (req, res, next) => {
     const userId = req.session.currentUser._id;
     try {
         await Vote.create({userId, movieId, vote});
-        res.redirect("/movies");
+        res.redirect("/");
     } catch (error) {
         next(error);
     }
@@ -33,7 +33,7 @@ router.post("/:movieId/voteLike", async (req, res, next) => {
 // @access  Public
 
 router.get("/:movieId/voteDislike", (req, res, next) => {
-    res.redirect("/movies");
+    res.redirect("/");
 });
 
 // @desc    Posts vote to our database (dislike)
@@ -46,7 +46,7 @@ router.post("/:movieId/voteDislike", async (req, res, next) => {
     const userId = req.session.currentUser._id;
     try {
         await Vote.create({userId, movieId, vote});
-        res.redirect("/movies");
+        res.redirect("/");
     } catch (error) {
         next(error);
     }
