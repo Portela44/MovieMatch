@@ -4,10 +4,12 @@
     </div>
     <div id="voteButtons">
         <form action="/votes/{{movieFromDB._id}}/voteLike" method="POST">
-            <button type="submit"><img src="https://www.pngkey.com/png/full/26-265943_like-it-success-png.png"/></button>
+            <button type="submit"><img
+                    src="https://www.pngkey.com/png/full/26-265943_like-it-success-png.png" /></button>
         </form>
         <form action="/votes/{{movieFromDB._id}}/voteDislike" method="POST">
-            <button type="submit"><img src="https://cdn0.iconfinder.com/data/icons/social-reaction-and-emoji/519/dislike-512.png"/></button>
+            <button type="submit"><img
+                    src="https://cdn0.iconfinder.com/data/icons/social-reaction-and-emoji/519/dislike-512.png" /></button>
         </form>
     </div>
     <div class="details-container">
@@ -15,5 +17,10 @@
         <p> {{movieFromDB.translations.0.overview}}</p>
         <p> <strong>{{movieFromDB.year}}</strong></p>
     </div>
+    {{#if user.isAdmin}}
+    <form action="/movies/{{movieFromDB._id}}/delete" method="POST">
+        <button type="submit"> Delete</button>
+    </form>
+    {{/if}}
 
 </div>
