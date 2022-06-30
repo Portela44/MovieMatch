@@ -3,37 +3,17 @@
         <img src="{{movieFromDB.translations.0.poster.og}}" alt="poster">
     </div>
     <div id="voteButtons">
-<<<<<<< HEAD
         <form action="/votes/{{movieFromDB._id}}/voteLike" method="POST">
             <button type="submit"><img src="https://www.pngkey.com/png/full/26-265943_like-it-success-png.png"/></button>
         </form>
         <form action="/votes/{{movieFromDB._id}}/voteDislike" method="POST">
             <button type="submit"><img src="https://cdn0.iconfinder.com/data/icons/social-reaction-and-emoji/519/dislike-512.png"/></button>
-=======
-        <form action="/votes/{{movieFromDB.0._id}}/voteLike" method="POST">
-            <button type="submit"><img
-                    src="https://www.pngkey.com/png/full/26-265943_like-it-success-png.png" /></button>
-        </form>
-        <form action="/votes/{{movieFromDB.0._id}}/voteDislike" method="POST">
-            <button type="submit"><img
-                    src="https://cdn0.iconfinder.com/data/icons/social-reaction-and-emoji/519/dislike-512.png" /></button>
->>>>>>> deleteMovie
         </form>
     </div>
     <div class="details-container">
         <h4>Overview</h4>
-<<<<<<< HEAD
         <p> {{movieFromDB.translations.0.overview}}</p>
         <p> <strong>{{movieFromDB.year}}</strong></p>
-=======
-        <p> {{movieFromDB.0.translations.0.overview}}</p>
-        <p> <strong>{{movieFromDB.0.year}}</strong></p>
-        {{#if user.isAdmin}}
-        <form action="/movies/{{movieFromDB.0._id}}/delete" method="POST">
-            <button type="submit"> Delete</button>
-        </form>
-        {{/if}}
->>>>>>> deleteMovie
     </div>
 
 </div>
