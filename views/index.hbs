@@ -1,9 +1,9 @@
 <h1>Home page</h1>
-<form action="/movies/{{movieFromDB.0._id}}" method="GET">
-    <input type="text" name="movie" />
+<form action="/movies/searched-movie/" method="GET">
+    <input type="text" name="movieName" />
     <button type="submit">Search for a movie</button>
 </form>
-<a href="/movies">Recommend-Me</a>
+<a href="/movies/{{movieFromDB.0._id}}">Recommend-Me</a>
 
 
 {{#if user.isAdmin}}

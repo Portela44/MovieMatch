@@ -3,16 +3,31 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const Movie = require("../models/Movie");
 
-// @desc    Displays movies view with one movie to vote
-// @route   GET /movies
+// @desc    Displays a searched movie which can be consulted or voted.
+// @route   GET /:searched-movie
+// @access  Public
+
+router.get('/searched-movie/', async (req, res, next) => {
+    const { movieName } = req.query;
+    try {
+        const movieFromDB = await Movie.find({ name: movieName });
+        console.log(movieFromDB);
+        res.render('movies/searchResults',  movieFromDB[0] )
+    } catch (error) {
+        next(error)
+    }
+});
+
+// @desc    Displays a random movie which can be consulted or voted.
+// @route   GET /:movieId
 // @access  Public
 
 router.get('/:movieId', async (req, res, next) => {
-    const {movieId} = req.params;
+    const { movieId } = req.params;
     try {
         const movieFromDB = await Movie.findById(movieId)
         console.log(movieFromDB);
-        res.render('movies/movies', {movieFromDB})
+        res.render('movies/movies', { movieFromDB })
     } catch (error) {
         next(error)
     }
@@ -22,7 +37,7 @@ router.get('/:movieId', async (req, res, next) => {
 // @route   GET /movies/create
 // @access  Admin
 
-router.get('/create', async (req, res, next) => {
+router.get('/create', (req, res, next) => {
     try {
         res.render('movies/new-movie')
     } catch (error) {
@@ -38,7 +53,7 @@ router.get('/create', async (req, res, next) => {
     // const {Things go in here} = req.body
     try {
         await Movie.create();
-        
+
     } catch (error) {
         next(error)
     }
