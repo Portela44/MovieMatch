@@ -7,13 +7,12 @@ const Movie = require("../models/Movie");
 // @route   GET /:searched-movie
 // @access  Public
 
-<<<<<<< HEAD
 router.get('/searched-movie/', async (req, res, next) => {
     const { movieName } = req.query;
     try {
         const movieFromDB = await Movie.find({ name: movieName });
         console.log(movieFromDB);
-        res.render('movies/searchResults',  movieFromDB[0] )
+        res.render('movies/searchResults', movieFromDB[0])
     } catch (error) {
         next(error)
     }
@@ -29,13 +28,6 @@ router.get('/:movieId', async (req, res, next) => {
         const movieFromDB = await Movie.findById(movieId)
         console.log(movieFromDB);
         res.render('movies/movies', { movieFromDB })
-=======
-router.get('/', async (req, res, next) => {
-    const user = req.session.currentUser
-    try {
-        const movieFromDB = await Movie.aggregate([{ $sample: { size: 1 } }])
-        res.render('movies/movies', { movieFromDB, user })
->>>>>>> deleteMovie
     } catch (error) {
         next(error)
     }
