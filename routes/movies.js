@@ -49,15 +49,15 @@ router.get('/create', (req, res, next) => {
 // @route   POST /movies/create
 // @access  Admin
 
-router.get('/create', async (req, res, next) => {
-    // const {Things go in here} = req.body
-    try {
-        await Movie.create();
+// router.get('/create', async (req, res, next) => {
+//     // const {Things go in here} = req.body
+//     try {
+//         await Movie.create();
 
-    } catch (error) {
-        next(error)
-    }
-});
+//     } catch (error) {
+//         next(error)
+//     }
+// });
 
 // @desc    Deletes a movie.
 // @route   POST /movies/:movieId/delete
@@ -70,7 +70,7 @@ router.post('/:movieId/delete', async (req, res, next) => {
     } catch (error) {
         next(error)
     }
-})
+});
 
 
 
