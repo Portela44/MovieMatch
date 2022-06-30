@@ -17,7 +17,7 @@
         <p> {{movieFromDB.0.translations.0.overview}}</p>
         <p> <strong>{{movieFromDB.0.year}}</strong></p>
         {{#if user.isAdmin}}
-        <form action="" method="POST">
+        <form action="/movies/{{movieFromDB.0._id}}/delete" method="POST">
             <button type="submit"> Delete</button>
         </form>
         {{/if}}

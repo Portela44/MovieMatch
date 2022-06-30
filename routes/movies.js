@@ -43,7 +43,10 @@ router.get('/create', async (req, res, next) => {
     }
 });
 
-router.post('/:movieId', async (req, res, next) => {
+// @desc    Deletes a movie.
+// @route   POST /movies/:movieId/delete
+// @access  Admin
+router.post('/:movieId/delete', async (req, res, next) => {
     const { movieId } = req.params;
     try {
         await Movie.findByIdAndDelete(movieId);
