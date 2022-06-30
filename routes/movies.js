@@ -8,9 +8,10 @@ const Movie = require("../models/Movie");
 // @access  Public
 
 router.get('/', async (req, res, next) => {
+    const user = req.session.currentUser
     try {
         const movieFromDB = await Movie.aggregate([{ $sample: { size: 1 } }])
-        res.render('movies/movies', { movieFromDB })
+        res.render('movies/movies', { movieFromDB, user })
     } catch (error) {
         next(error)
     }
@@ -41,6 +42,16 @@ router.get('/create', async (req, res, next) => {
         next(error)
     }
 });
+
+router.post('/:movieId', async (req, res, next) => {
+    const { movieId } = req.params;
+    try {
+        await Movie.findByIdAndDelete(movieId);
+        res.redirect('/')
+    } catch (error) {
+        next(error)
+    }
+})
 
 
 
