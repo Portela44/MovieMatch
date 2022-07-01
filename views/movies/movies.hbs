@@ -21,6 +21,8 @@
     <form action="/movies/{{movieFromDB._id}}/delete" method="POST">
         <button type="submit"> Delete</button>
     </form>
+    <form action="/movies/{{movieFromDB._id}}/edit" method="GET">
+        <button>Edit</button>
+    </form>
     {{/if}}
-
 </div>
