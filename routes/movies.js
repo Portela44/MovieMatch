@@ -18,6 +18,14 @@ router.get('/searched-movie/', async (req, res, next) => {
     }
 });
 
+// @desc    Displays admin menu to create a movie.
+// @route   GET /movies/create
+// @access  Admin
+
+router.get('/create', (req, res, next) => {
+    res.render('movies/new-movie')
+});
+
 // @desc    Displays a random movie which can be consulted or voted.
 // @route   GET /:movieId
 // @access  Public
@@ -34,17 +42,7 @@ router.get('/:movieId', async (req, res, next) => {
     }
 });
 
-// @desc    Displays admin menu to create a movie.
-// @route   GET /movies/create
-// @access  Admin
 
-router.get('/create', (req, res, next) => {
-    try {
-        res.render('movies/new-movie')
-    } catch (error) {
-        next(error)
-    }
-});
 
 // @desc    Posts a new-movie information to the db.
 // @route   POST /movies/create
