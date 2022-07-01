@@ -1,1 +1,23 @@
-<h2>create!</h2>
+<h2>Add a new movie to the database:</h2>
+<form action="/movies/create" method="POST">
+    <input type="text" name="imdb_id" placeholder="IMDB id number">
+    <input type="text" name="name" placeholder="Movie title">
+    <input type="number" name="year" placeholder="Release year">
+    <input type="text" name="image" placeholder="Image url">
+    <input type="text" name="premiere" placeholder="Premiere date">
+    <div id="genres">
+        <input type="text" name="0">
+        <input type="text" name="1">
+        <input type="text" name="2">
+    </div>
+    <div id="people">
+        <input type="text" name="0">
+        <input type="text" name="1">
+        <input type="text" name="2">
+    </div>
+    <input type="number" name="imdb_rating" placeholder="IMDB rating">
+    <input type="number" name="imdb_vote" placeholder="IMDB number of votes">
+    <input type="text" name="poster" placeholder="Poster url">
+    <input type="hidden" name="handmade" value=true>
+    <button type="submit">Create a new movie</button>
+</form>

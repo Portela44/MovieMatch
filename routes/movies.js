@@ -26,6 +26,21 @@ router.get('/create', (req, res, next) => {
     res.render('movies/new-movie')
 });
 
+// @desc    Updates db with an entirely new movie.
+// @route   POST /movies/create
+// @access  Admin
+
+router.post('/create', async (req, res, next) => {
+    const {imdb_id, name, year, image, premiere, imdb_rating, imdb_vote, poster, handmade} = req.body;
+    try {
+        await Movie.create({imdb_id, name, year, image, premiere, imdb_rating, imdb_vote, poster, handmade});
+        res.redirect("/");
+    } catch (error) {
+        next(error);
+    }
+});
+
+
 // @desc    Displays a random movie which can be consulted or voted.
 // @route   GET /:movieId
 // @access  Public

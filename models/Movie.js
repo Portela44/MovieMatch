@@ -75,7 +75,8 @@ const movieSchema = new Schema(
                     og: String
                 }
             }
-        ]
+        ],
+        handmade: Boolean,
     }
 
 )
