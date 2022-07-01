@@ -1,10 +1,19 @@
 const express = require('express');
+const session = require('express-session');
 const router = express.Router();
 const isLoggedIn = require('../middlewares');
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
+
+// @desc    Displays a view where user can manage its profile
+// @route   GET /profile
+// @access  Public
+router.get('/profile', (req, res, next) => {
+  const user = req.session.currentUser
+  res.render('auth/profile', { user })
+})
 // @desc    Displays form view to sign up
 // @route   GET /auth/signup
 // @access  Public

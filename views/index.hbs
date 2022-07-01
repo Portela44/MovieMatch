@@ -1,17 +1,8 @@
-<h1>Home page</h1>
-<form action="/movies/searched-movie/" method="GET">
-    <input type="text" name="movieName" />
-    <button type="submit">Search for a movie</button>
-</form>
-<a href="/movies/{{movieFromDB.0._id}}">Recommend-Me</a>
-<a href="/user/edit">edit user</a>
+<div class="home-page-container">
 
+    <a href="/movies/{{movieFromDB.0._id}}" class="main-btn">Go</a>
 
-{{#if user.isAdmin}}
-<a href="/movies/create">Create a new movie</a>
-{{/if}}
-
-
-{{#if error}}
-<p style="color: red">{{error}}</p>
-{{/if}}
+    {{#if error}}
+    <p style="color: red">{{error}}</p>
+    {{/if}}
+</div>
