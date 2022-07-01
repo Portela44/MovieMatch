@@ -11,7 +11,7 @@ router.get("/", async (req, res, next) => {
   const user = req.session.currentUser
   try {
     const movieFromDB = await Movie.aggregate([{ $sample: { size: 1 } }]);
-    res.render("index", { user , movieFromDB })
+    res.render("index", { user, movieFromDB })
   } catch (error) {
     next(error);
   }
