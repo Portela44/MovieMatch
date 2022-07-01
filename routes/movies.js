@@ -3,6 +3,14 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const Movie = require("../models/Movie");
 
+
+// @desc    Displays a view where user can search for a specific movie
+// @route   GET /search-movie
+// @access  Public
+router.get('/search-movie', (req, res, next) => {
+    res.render('movies/search-movie')
+})
+
 // @desc    Displays a searched movie which can be consulted or voted.
 // @route   GET /:searched-movie
 // @access  Public
