@@ -1,19 +1,15 @@
-<h2>Login</h2>
-
-<div>
+<div class="login-form-container">
   <form action="/auth/login" method="POST">
- 
-    <label>Email</label>
-    <input type="email" name="email" placeholder="john@doe.com" />
-    
-    <label>Password</label>
-    <input type="password" name="password" placeholder="********" />
-     
+    <i class="fa-solid fa-envelope"></i>
+    <input type="email" name="email" placeholder="Email" class="login-form-inputs" />
+    <i class="fa-solid fa-lock"></i>
+    <input type="password" name="password" placeholder="Password" class="login-form-inputs" />
+
     {{#if error}}
     <p style="color:rgb(218, 90, 90)">{{ error }}</p>
     {{/if}}
-    
-    <button type="submit">Login</button>
+
+    <button type="submit" class="login-form-btn">Login</button>
 
   </form>
 </div>

@@ -49,6 +49,61 @@ body {
 
 }
 
+/* login.hbs styles */
+
+.login-form-container {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: radial-gradient(rgb(71, 76, 79), rgb(42, 45, 49));
+
+}
+
+.login-form-container form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+}
+
+.login-form-inputs {
+  width: 65%;
+  height: 45px;
+  padding-left: 40px;
+  background-image: radial-gradient(rgb(34, 35, 38), rgb(24, 27, 29));
+  border: none;
+  color: rgb(123, 124, 126);
+}
+
+.login-form-btn {
+  width: 76%;
+  height: 45px;
+  border-radius: 3px;
+  background-color: rgb(85, 172, 164);
+  border: none;
+  letter-spacing: 2px;
+}
+
+.fa-solid {
+  color: rgb(123, 124, 126);
+}
+
+.fa-envelope {
+  position: absolute;
+  top: 305px;
+  left: 60px;
+}
+
+.fa-lock {
+  position: absolute;
+  top: 370px;
+  left: 60px;
+}
 
 
 /* movies.hsb view styles */
