@@ -35,7 +35,7 @@ body {
 
 }
 
-.main-btn::before {}
+
 
 /* movies.hsb view styles */
 
@@ -67,25 +67,6 @@ body {
   margin-right: 10px;
 
 }
-
-<<<<<<< HEAD
-/* likeDislike buttons */
-
-#voteButtons {
-  display:flex;
-  position:absolute;
-  top:80%;
-}
-
-#voteButtons > form > button {
-  height: 7em;
-  border: none;
-  background: transparent;
-  margin: 0 3em;
-}
-
-
-=======
 
 /* profile.hbs view */
 
@@ -150,7 +131,6 @@ body {
   align-items: center;
   background-image: linear-gradient(#24d624, #c96614);
 }
->>>>>>> edit-profile
 
 /* footer */
 
@@ -170,4 +150,19 @@ body {
 
 .footer-logo {
   width: 30px;
+}
+
+
+/* likeDislike buttons */
+#voteButtons {
+  display: flex;
+  position: absolute;
+  top: 80%;
+}
+
+#voteButtons>form>button {
+  height: 7em;
+  border: none;
+  background: transparent;
+  margin: 0 3em;
 }
