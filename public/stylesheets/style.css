@@ -68,6 +68,23 @@ body {
 
 }
 
+/* likeDislike buttons */
+
+#voteButtons {
+  display:flex;
+  position:absolute;
+  top:80%;
+}
+
+#voteButtons > form > button {
+  height: 7em;
+  border: none;
+  background: transparent;
+  margin: 0 3em;
+}
+
+
+
 /* footer */
 
 .footer {
