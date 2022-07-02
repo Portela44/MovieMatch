@@ -1,10 +1,16 @@
-<h1>Welcome {{ user.username }}</h1>
-<a href="/user/edit">edit user</a>
+<div class="profile-container">
+    <div>
+        <h1>Welcome {{ user.username }}</h1>
+    </div>
+    <div class="btn-container">
+        <a href="/user/edit" class="profile-btn edit-user-btn">Edit user</a>
 
-<form action="/auth/logout" method="POST">
-    <button type="submit">Log out</button>
-</form>
+        <form action="/auth/logout" method="POST">
+            <button type="submit" class="profile-btn logout-btn">Log out</button>
+        </form>
 
-{{#if user.isAdmin}}
-<a href="/movies/create">Create a new movie</a>
-{{/if}}
+        {{#if user.isAdmin}}
+        <a href="/movies/create" class="profile-btn create-movie-btn">Create a new movie</a>
+        {{/if}}
+    </div>
+</div>
