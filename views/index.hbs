@@ -1,4 +1,7 @@
 <div class="home-page-container">
+    {{#unless user}}
+    <a href="/auth/login" class="login-btn">Login</a>
+    {{/unless}}
 
     <a href="/movies/{{movieFromDB.0._id}}" class="main-btn">Go</a>
 

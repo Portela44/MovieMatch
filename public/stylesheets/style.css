@@ -35,6 +35,20 @@ body {
 
 }
 
+.login-btn {
+  position: relative;
+  bottom: 300px;
+  left: 130px;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid rgba(97, 211, 184, 0.6);
+  background-color: rgba(97, 211, 184, 0.6);
+  padding: 10px 15px;
+  border-radius: 20px;
+
+
+}
+
 
 
 /* movies.hsb view styles */
