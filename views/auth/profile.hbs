@@ -1,6 +1,10 @@
 <h1>Welcome {{ user.username }}</h1>
 <a href="/user/edit">edit user</a>
 
+<form action="/auth/logout" method="POST">
+    <button type="submit">Log out</button>
+</form>
+
 {{#if user.isAdmin}}
 <a href="/movies/create">Create a new movie</a>
 {{/if}}
