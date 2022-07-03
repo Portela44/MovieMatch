@@ -1,24 +1,38 @@
-<h2>edit-movie: {{name}}</h2>
-<form action="/movies/{{_id}}/edit" method="POST">
+<h2 id="form-title">{{name}}</h2>
+<form id="edit-movie-form" action="/movies/{{_id}}/edit" method="POST">
+    <p>imdb_id:</p>
     <input type="text" name="imdb_id" value={{imdb_id}}>
-    <input type="text" name="name" value={{name}}>
-    <input type="number" name="year" value={{year}}>
-    <input type="text" name="image" value={{image.og}}>
+    <p>Movie name:</p>
+    <input type="text" name="name" value="{{name}}">
+    <p>Year:</p>
+    <input type="number" name="year" value="{{year}}">
+    <p>A movie frame:</p>
+    <input type="text" name="image1" value={{image.og}}>
+    <img id="form-image" src="{{image.og}}" alt="movie-frame-image">
+    <p>Premiere:</p>
     <input type="text" name="premiere" value={{premiere}}>
+    <p>Genres:</p>
     <div id="genres">
         <input type="number" name="genre1" value={{genres.[0]}}>
         <input type="number" name="genre2" value={{genres.[1]}}>
         <input type="number" name="genre3" value={{genres.[2]}}>
         <p>Genre number reference</p>
     </div>
+    <p>People:</p>
     <div id="people">
-        <input type="text" name="people1" value={{people.0.name}}>
-        <input type="text" name="people2" value={{people.1.name}}>
-        <input type="text" name="people3" value={{people.2.name}}>
+        <input type="text" name="people1" value="{{people.0.name}}">
+        <input type="text" name="people2" value="{{people.1.name}}">
+        <input type="text" name="people3" value="{{people.2.name}}">
     </div>
+    <p>IMDB rating:</p>
     <input type="number" name="imdb_rating" value={{imdb_rating}}>
+    <p>IMDB votes:</p>
     <input type="number" name="imdb_vote" value={{imdb_vote}}>
+    <p>Movie poster:</p>
     <input type="text" name="poster1" value={{translations.0.poster.og}}>
+    <img id="form-image" src="{{translations.0.poster.og}}" alt="movie-frame-image">
+    <p>Overview:</p>
+    <input type="text" name="overview" value="{{translations.0.overview}}">
     <input type="hidden" name="handmade" value=true>
     <button type="submit">Edit this movie</button>
 </form>

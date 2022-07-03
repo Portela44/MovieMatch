@@ -59,12 +59,12 @@ router.get('/:movieId/edit', async (req, res, next) => {
 
 router.post('/:movieId/edit', async (req, res, next) => {
     const {movieId} = req.params;
-    const {imdb_id, name, year, image1, premiere, genre1, genre2, genre3, people1, people2, people3, imdb_rating, imdb_vote, poster1} = req.body;
+    const {imdb_id, name, year, image1, premiere, genre1, genre2, genre3, people1, people2, people3, imdb_rating, imdb_vote, poster1, overview} = req.body;
     const image = {og: image1}
     const genres = [genre1, genre2, genre3];
     const people = [{name:people1}, {name:people2}, {name:people3}];
     const poster = {og: poster1};
-    const translations = [{poster}]
+    const translations = [{overview, poster}]
     try {
         await Movie.findByIdAndUpdate(movieId, {imdb_id, name, year, image, premiere, genres, people, imdb_rating, imdb_vote, translations}, {new:true});
         res.redirect(`/movies/${movieId}`);
