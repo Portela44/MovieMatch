@@ -25,11 +25,13 @@
         <p> <strong>{{movieFromDB.year}}</strong></p>
     </div>
     {{#if user.isAdmin}}
-    <form action="/movies/{{movieFromDB._id}}/delete" method="POST">
-        <button type="submit"> Delete</button>
-    </form>
-    <form action="/movies/{{movieFromDB._id}}/edit" method="GET">
-        <button>Edit</button>
-    </form>
+    <div id="footer-buttons">
+        <form action="/movies/{{movieFromDB._id}}/delete" method="POST">
+            <button class="movieButton" type="submit"> Delete</button>
+        </form>
+        <form action="/movies/{{movieFromDB._id}}/edit" method="GET">
+            <button class="movieButton">Edit</button>
+        </form>
+    </div> 
     {{/if}}
 </div>

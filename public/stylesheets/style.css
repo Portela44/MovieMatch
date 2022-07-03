@@ -148,7 +148,22 @@ body {
   align-items: center;
   margin-left: 10px;
   margin-right: 10px;
+}
 
+.movieButton {
+  text-decoration:none;
+  width: 110px;
+  color: #fff;
+  border: 1px solid rgba(97, 211, 184, 0.6);
+  background-color: rgba(97, 211, 184, 0.6);
+  padding: 10px 15px;
+  border-radius: 20px;
+  margin: 0px 30px 30px 30px;
+}
+
+#footer-buttons {
+  display:flex;
+  flex-direction: row;
 }
 
 /* profile.hbs view */
