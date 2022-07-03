@@ -105,6 +105,14 @@ body {
   left: 60px;
 }
 
+.signup-link {
+  text-decoration: none;
+  color: rgb(85, 172, 164);
+  position: absolute;
+  bottom: 350px;
+  left: 50px;
+
+}
 
 /* movies.hsb view styles */
 
