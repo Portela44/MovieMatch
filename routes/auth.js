@@ -3,6 +3,7 @@ const session = require('express-session');
 const router = express.Router();
 const isLoggedIn = require('../middlewares');
 const User = require('../models/User');
+const fileUploader = require('../config/cloudinary.config');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
@@ -28,16 +29,21 @@ router.get('/login', async (req, res, next) => {
   res.render('auth/login');
 })
 
+
 // @desc    Sends user auth data to database to create a new user
 // @route   POST /auth/signup
 // @access  Public
-router.post('/signup', async (req, res, next) => {
-  const { email, password, password2, username } = req.body;
+router.post('/signup', fileUploader.single('profileImage'), async (req, res, next) => {
+  const { email, password, password2, username, imageUrl } = req.body;
   // ⚠️ Add validations!
   if (!email || !password || !password2 || !username) {
     res.render('auth/signup', { error: 'All fields are mandatory, please fill them before submiting' })
     return;
   }
+  // if (!imageUrl) {
+  //   imageUrl = 'https://res.cloudinary.com/dajp8qi60/image/upload/v1656864753/movie-project/nq0bzcvunliqtbhdqhbk.png'
+  //   return;
+  // }
   const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
   if (!regex.test(password)) {
     res.render('auth/signup', { error: 'Password must be at least 6 characters long and have lowercase letters, uppercase letters and at least one number.' })
@@ -50,9 +56,8 @@ router.post('/signup', async (req, res, next) => {
   try {
     const salt = await bcrypt.genSalt(saltRounds);
     const hashedPassword = await bcrypt.hash(password, salt);
-    const user = await User.create({ username, email, hashedPassword });
+    const user = await User.create({ username, email, hashedPassword, imageUrl: req.file.path });
     res.render('auth/login');
-    //res.render('auth/profile', user)
   } catch (error) {
     next(error)
   }

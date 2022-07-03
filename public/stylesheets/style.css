@@ -155,12 +155,13 @@ body {
 /* profile.hbs view */
 
 .profile-container {
-  height: 90vh;
+  height: 95vh;
   background-image: radial-gradient(rgb(71, 76, 79), rgb(42, 45, 49));
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 20px;
 }
 
 .btn-container {
@@ -187,6 +188,23 @@ body {
   margin: 10px 0;
 }
 
+.profile-img {
+  border-radius: 50%;
+  width: 150px;
+}
+
+.title-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#user-name {
+  color: rgb(85, 172, 164);
+}
+
 /* footer */
 
 .footer {
@@ -205,6 +223,11 @@ body {
 
 .footer-logo {
   width: 30px;
+}
+
+.footer-logo-logedin {
+  width: 30px;
+  border-radius: 50%;
 }
 
 

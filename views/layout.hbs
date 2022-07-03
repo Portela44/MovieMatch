@@ -13,7 +13,19 @@
 <body>
   {{{ body }}}
   <footer class="footer">
-    <a href="/auth/profile"> <img src="/images/profile-icon.jpeg" alt="profile-logo" class="footer-logo"></a>
+
+    {{#if user}}
+    <a href="/auth/profile">
+      <img src="{{user.imageUrl}}" alt="profile-logo" class="footer-logo-logedin">
+    </a>
+    {{/if}}
+
+
+    {{#unless user}}
+    <a href="/auth/profile">
+      <img src="/images/profile-icon.jpeg" alt="profile-logo" class="footer-logo">
+    </a>
+    {{/unless}}
     <a href="/movies/search-movie"><img src="/images/magnifying.webp" alt="magnifying glass" class="footer-logo"></a>
     <a href="/"><img src="/images/start.png" alt="start logo" class="footer-logo"></a>
     <a href=""><img src="/images/filter.jpeg" alt="filer-icon" class="footer-logo"></a>

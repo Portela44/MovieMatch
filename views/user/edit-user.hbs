@@ -1,12 +1,15 @@
 <h1>Edit details </h1>
 
-<form action="/user/edit" method="POST">
+<form action="/user/edit" method="POST" enctype="multipart/form-data">
 
     <label for="">Username</label>
     <input type="text" name="username" value="{{username}}">
 
     <label for="">Email</label>
     <input type="email" name="email" value="{{email}}">
+
+    <label for="">Profile picture</label>
+    <input type="file" name="profileImage" value="{{imageUrl}}">
 
     <button type="submit">edit profile</button>
 </form>

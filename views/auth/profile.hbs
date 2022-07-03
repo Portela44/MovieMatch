@@ -1,6 +1,7 @@
 <div class="profile-container">
-    <div>
-        <h1>Welcome {{ user.username }}</h1>
+    <div class="title-profile">
+        <h1>Welcome <span id="user-name">{{ user.username }}</span></h1>
+        <img src="{{user.imageUrl}}" alt="profile picture" class="profile-img"></p>
     </div>
     <div class="btn-container">
         <form action="/user/edit" method="GET">

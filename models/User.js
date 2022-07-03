@@ -19,6 +19,9 @@ const userSchema = new Schema(
       type: String,
       required: [true, 'Password is required.']
     },
+    imageUrl: {
+      type: String,
+    },
     isAdmin: Boolean,
   },
   {
@@ -29,3 +32,4 @@ const userSchema = new Schema(
 const User = model('User', userSchema);
 
 module.exports = User;
+

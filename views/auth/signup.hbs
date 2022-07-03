@@ -1,7 +1,7 @@
 <h1>¡Create a new account!</h1>
 
 <div id="form">
-  <form action="/auth/signup" method="POST">
+  <form action="/auth/signup" method="POST" enctype="multipart/form-data">
 
     <label>Username</label>
     <input type="text" name="username" placeholder="JohnDoe88" />
@@ -15,6 +15,8 @@
     <label>Confirm password</label>
     <input type="password" name="password2" placeholder="********" />
 
+    <label>profile picture</label>
+    <input type="file" name="profileImage">
     {{#if error}}
     <p style="color: red;">{{error}}</p>
     {{/if}}
