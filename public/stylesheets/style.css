@@ -140,21 +140,21 @@ body {
 /* profile.hbs view */
 
 .profile-container {
-  background-color: #1f1c1c;
-  min-height: 95vh;
+  height: 90vh;
+  background-image: radial-gradient(rgb(71, 76, 79), rgb(42, 45, 49));
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
 }
 
 .btn-container {
-  width: 100%;
-  height: 80vh;
+  width: 76%;
+  height: 45px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-items: space-evenly;
   align-items: center;
-
 }
 
 .profile-container h1 {
@@ -163,42 +163,13 @@ body {
 
 .profile-btn {
   text-decoration: none;
-  font-size: 1.2rem;
-  text-decoration: none;
-  padding: 20px 50px;
-  color: #d3e2e3;
-  transition: 0.5s;
-  letter-spacing: 0.1em;
+  letter-spacing: normal;
+  width: 40vh;
+  height: 45px;
   border-radius: 3px;
-}
-
-.edit-user-btn {
-  width: 53vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-image: linear-gradient(rgb(97, 211, 184), rgb(47, 104, 205));
-}
-
-.logout-btn {
-  width: 80vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-image: linear-gradient(#c72222, #1f1c1c);
-  background-color: transparent;
-}
-
-.create-movie-btn {
-  width: 53vw;
-  font-size: 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-image: linear-gradient(#24d624, #c96614);
+  background-color: rgb(85, 172, 164);
+  letter-spacing: normal;
+  margin: 10px 0;
 }
 
 /* footer */
@@ -236,12 +207,3 @@ body {
   background: transparent;
   padding: 0 10px;
 }
-
-/* #voteIgnore {
-  position: absolute;
-  top:20px;
-  left:20px;
-  height: 4em;
-  border: none;
-  background: transparent;
-} */

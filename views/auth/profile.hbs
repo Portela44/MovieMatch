@@ -3,14 +3,18 @@
         <h1>Welcome {{ user.username }}</h1>
     </div>
     <div class="btn-container">
-        <a href="/user/edit" class="profile-btn edit-user-btn">Edit user</a>
+        <form action="/user/edit" method="GET">
+            <button class="profile-btn">Edit user</button>
+        </form>
 
         <form action="/auth/logout" method="POST">
-            <button type="submit" class="profile-btn logout-btn">Log out</button>
+            <button type="submit" class="profile-btn">Log out</button>
         </form>
 
         {{#if user.isAdmin}}
-        <a href="/movies/create" class="profile-btn create-movie-btn">Create a new movie</a>
+        <form action="/movies/create" method="GET">
+            <button class="profile-btn">Create a new movie</button>
+        </form>
         {{/if}}
     </div>
 </div>
