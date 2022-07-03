@@ -153,16 +153,26 @@ body {
 }
 
 
-/* likeDislike buttons */
+/* voting buttons */
 #voteButtons {
   display: flex;
   position: absolute;
   top: 80%;
+  justify-content: space-between;
 }
 
 #voteButtons>form>button {
   height: 7em;
   border: none;
   background: transparent;
-  margin: 0 3em;
+  padding: 0 10px;
 }
+
+/* #voteIgnore {
+  position: absolute;
+  top:20px;
+  left:20px;
+  height: 4em;
+  border: none;
+  background: transparent;
+} */

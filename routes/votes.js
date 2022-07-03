@@ -53,6 +53,26 @@ router.post("/:movieId/voteDislike", isLoggedIn, async (req, res, next) => {
     }
 });
 
+router.get("/:movieId/voteIgnore", isLoggedIn, (req, res, next) => {
+    res.redirect("/");
+});
+
+// @desc    Posts vote to our database (like)
+// @route   POST /votes/:movieId/voteLike
+// @access  Public
+
+router.post("/:movieId/voteIgnore", isLoggedIn, async (req, res, next) => {
+    const ignore = true;
+    const {movieId} = req.params;
+    const userId = req.session.currentUser._id;
+    try {
+        await Vote.create({userId, movieId, ignore});
+        res.redirect("/");
+    } catch (error) {
+        next(error);
+    }
+});
+
 
 
 module.exports = router;

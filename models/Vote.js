@@ -12,6 +12,9 @@ const voteSchema = new Schema(
         },
         vote: {
             type: Boolean,
+        },
+        ignore: {
+            type: Boolean,
         }
     }
 );
