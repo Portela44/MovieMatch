@@ -188,8 +188,8 @@ body {
 }
 
 .profile-img {
-  border-radius: 50%;
   width: 150px;
+  border-radius: 50%;
 }
 
 .title-profile {
@@ -269,8 +269,8 @@ body {
 }
 
 .footer-logo-logedin {
-  width: 30px;
-  border-radius: 50%;
+  width: 40px;
+  clip-path: circle();
 }
 
 
