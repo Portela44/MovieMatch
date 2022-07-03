@@ -5,11 +5,18 @@
     <div id="voteButtons">
         <form action="/votes/{{movieFromDB._id}}/voteLike" method="POST">
             <button type="submit"><img
-                    src="https://www.pngkey.com/png/full/26-265943_like-it-success-png.png" /></button>
+                    src="https://www.pngkey.com/png/full/26-265943_like-it-success-png.png"/>
+            </button>
+        </form>
+        <form action="/votes/{{movieFromDB._id}}/voteIgnore" method="POST">
+            <button id="voteIgnore" type="submit"><img
+                src="https://cdn-icons-png.flaticon.com/512/210/210112.png"/>
+            </button>
         </form>
         <form action="/votes/{{movieFromDB._id}}/voteDislike" method="POST">
             <button type="submit"><img
-                    src="https://cdn0.iconfinder.com/data/icons/social-reaction-and-emoji/519/dislike-512.png" /></button>
+                    src="https://cdn0.iconfinder.com/data/icons/social-reaction-and-emoji/519/dislike-512.png"/>
+            </button>
         </form>
     </div>
     <div class="details-container">
