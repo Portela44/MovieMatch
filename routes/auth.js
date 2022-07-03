@@ -10,7 +10,7 @@ const saltRounds = 10;
 // @desc    Displays a view where user can manage its profile
 // @route   GET /profile
 // @access  Public
-router.get('/profile', (req, res, next) => {
+router.get('/profile', isLoggedIn, (req, res, next) => {
   const user = req.session.currentUser
   res.render('auth/profile', { user })
 })

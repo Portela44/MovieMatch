@@ -6,11 +6,9 @@
         <form action="/user/edit" method="GET">
             <button class="profile-btn">Edit user</button>
         </form>
-
         <form action="/auth/logout" method="POST">
             <button type="submit" class="profile-btn">Log out</button>
         </form>
-
         {{#if user.isAdmin}}
         <form action="/movies/create" method="GET">
             <button class="profile-btn">Create a new movie</button>
