@@ -152,15 +152,15 @@ body {
   margin: 5px 20px;
 }
 
-.details-container > h4 {
+.details-container>h4 {
   margin: 2px 0px;
 }
 
-.details-container > p {
+.details-container>p {
   margin: 2px 0px 10px 0px;
 }
 
-.details-container > .border {
+.details-container>.border {
   border: 1px solid darkgray;
   border-radius: 5px;
   padding: 4px;
@@ -169,7 +169,7 @@ body {
 /* IMDB data section in movieDetails */
 #imdbSection {
   display: flex;
-  text-align:center;
+  text-align: center;
   align-items: center;
   justify-content: space-evenly;
   margin: 0px 20px;
@@ -177,29 +177,29 @@ body {
   border-radius: 5px;
 }
 
-#imdbSection > div > p {
+#imdbSection>div>p {
   margin: 0px;
 }
 
-#imdbSection > img {
+#imdbSection>img {
   width: 35%;
 }
 
 #imdbVotes {
   color: rgba(225, 217, 51, 0.834);
   font-weight: 700;
-  font-size:1.2em;
+  font-size: 1.2em;
   margin: 0px;
 }
 
 #imdbScore {
   color: rgba(225, 217, 51, 0.834);
   font-weight: 700;
-  font-size:1.8em;
+  font-size: 1.8em;
   margin: 0px;
 }
 
-#imdbScore > p {
+#imdbScore>p {
   font-size: 0.7em;
 }
 
@@ -255,6 +255,7 @@ body {
   background-color: rgb(85, 172, 164);
   letter-spacing: normal;
   margin: 10px 0;
+  border: none;
 }
 
 .profile-img {
