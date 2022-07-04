@@ -8,7 +8,8 @@ const Movie = require("../models/Movie");
 // @route   GET /search-movie
 // @access  Public
 router.get('/search-movie', (req, res, next) => {
-    res.render('movies/search-movie')
+    const user = req.session.currentUser
+    res.render('movies/search-movie', { user })
 })
 
 // @desc    Displays a searched movie which can be consulted or voted.
@@ -44,7 +45,7 @@ router.post('/:movieId/delete', async (req, res, next) => {
 // @access  Admin
 
 router.get('/:movieId/edit', async (req, res, next) => {
-    const {movieId} = req.params;
+    const { movieId } = req.params;
     try {
         const movie = await Movie.findById(movieId);
         res.render("movies/edit-movie", movie);
@@ -58,15 +59,15 @@ router.get('/:movieId/edit', async (req, res, next) => {
 // @access  Admin
 
 router.post('/:movieId/edit', async (req, res, next) => {
-    const {movieId} = req.params;
-    const {imdb_id, name, year, image1, premiere, genre1, genre2, genre3, people1, people2, people3, imdb_rating, imdb_vote, poster1, overview} = req.body;
-    const image = {og: image1}
+    const { movieId } = req.params;
+    const { imdb_id, name, year, image1, premiere, genre1, genre2, genre3, people1, people2, people3, imdb_rating, imdb_vote, poster1, overview } = req.body;
+    const image = { og: image1 }
     const genres = [genre1, genre2, genre3];
-    const people = [{name:people1}, {name:people2}, {name:people3}];
-    const poster = {og: poster1};
-    const translations = [{overview, poster}]
+    const people = [{ name: people1 }, { name: people2 }, { name: people3 }];
+    const poster = { og: poster1 };
+    const translations = [{ overview, poster }]
     try {
-        await Movie.findByIdAndUpdate(movieId, {imdb_id, name, year, image, premiere, genres, people, imdb_rating, imdb_vote, translations}, {new:true});
+        await Movie.findByIdAndUpdate(movieId, { imdb_id, name, year, image, premiere, genres, people, imdb_rating, imdb_vote, translations }, { new: true });
         res.redirect(`/movies/${movieId}`);
     } catch (error) {
         next(error);
@@ -86,14 +87,14 @@ router.get('/create', (req, res, next) => {
 // @access  Admin
 
 router.post('/create', async (req, res, next) => {
-    const {imdb_id, name, year, image1, premiere, genre1, genre2, genre3, people1, people2, people3, imdb_rating, imdb_vote, poster1, overview} = req.body;
-    const image = {og: image1}
+    const { imdb_id, name, year, image1, premiere, genre1, genre2, genre3, people1, people2, people3, imdb_rating, imdb_vote, poster1, overview } = req.body;
+    const image = { og: image1 }
     const genres = [genre1, genre2, genre3];
-    const people = [{name:people1}, {name:people2}, {name:people3}];
-    const poster = {og: poster1};
-    const translations = [{overview, poster}]
+    const people = [{ name: people1 }, { name: people2 }, { name: people3 }];
+    const poster = { og: poster1 };
+    const translations = [{ overview, poster }]
     try {
-        await Movie.create({imdb_id, name, year, image, premiere, genres, people, imdb_rating, imdb_vote, translations});
+        await Movie.create({ imdb_id, name, year, image, premiere, genres, people, imdb_rating, imdb_vote, translations });
         res.redirect("/");
     } catch (error) {
         next(error);

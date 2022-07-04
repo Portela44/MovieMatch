@@ -13,7 +13,7 @@ router.get('/edit', async (req, res, next) => {
     const user = req.session.currentUser
     try {
         const userFromDB = await User.findById(user._id)
-        res.render('user/edit-user', userFromDB)
+        res.render('user/edit-user', { userFromDB, user })
     } catch (error) {
         next(error)
     }
