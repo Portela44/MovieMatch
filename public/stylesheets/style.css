@@ -24,6 +24,9 @@ body {
 .main-btn {
   background-image: radial-gradient(rgb(97, 211, 184), rgb(47, 104, 205));
   color: #fff;
+  background-image: url("https://www.creativefabrica.com/wp-content/uploads/2021/09/13/MM-Logo-design-vector-Graphics-17229711-1-1-580x386.jpg");
+  background-size: 250px;
+  background-position: -60px;
   width: 130px;
   height: 130px;
   line-height: 130px;
@@ -32,7 +35,7 @@ body {
   text-align: center;
   text-decoration: none;
   border: 4px solid #fff;
-  box-shadow: 0px 0px 0px 3px rgb(47, 104, 205);
+  box-shadow: 0px 0px 0px 3px rgb(66, 165, 106);
   font-size: 2rem;
 }
 
@@ -120,7 +123,7 @@ body {
   width: 80%;
 }
 
-/* movies.hsb view styles */
+/****** movies.hbs view styles ******/
 
 .movie-page-container {
   display: flex;
@@ -145,10 +148,62 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  margin-left: 10px;
-  margin-right: 10px;
+  align-items: left;
+  margin: 5px 20px;
 }
+
+.details-container > h4 {
+  margin: 2px 0px;
+}
+
+.details-container > p {
+  margin: 2px 0px 10px 0px;
+}
+
+.details-container > .border {
+  border: 1px solid darkgray;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+/* IMDB data section in movieDetails */
+#imdbSection {
+  display: flex;
+  text-align:center;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0px 20px;
+  border: 3px solid rgba(225, 217, 51, 0.834);
+  border-radius: 5px;
+}
+
+#imdbSection > div > p {
+  margin: 0px;
+}
+
+#imdbSection > img {
+  width: 35%;
+}
+
+#imdbVotes {
+  color: rgba(225, 217, 51, 0.834);
+  font-weight: 700;
+  font-size:1.2em;
+  margin: 0px;
+}
+
+#imdbScore {
+  color: rgba(225, 217, 51, 0.834);
+  font-weight: 700;
+  font-size:1.8em;
+  margin: 0px;
+}
+
+#imdbScore > p {
+  font-size: 0.7em;
+}
+
+/* admin buttons at movieDetails */
 
 .movieButton {
   text-decoration: none;
