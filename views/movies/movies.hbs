@@ -22,7 +22,17 @@
     <div class="details-container">
         <h4>Overview</h4>
         <p> {{movieFromDB.translations.0.overview}}</p>
-        <p> <strong>{{movieFromDB.year}}</strong></p>
+        <h4>{{movieFromDB.people.0.job}}</h4>
+        <p class="border"> {{movieFromDB.people.0.name}}</p>
+        <h4>{{movieFromDB.people.1.department}}</h4>
+        <p class="border"> {{movieFromDB.people.1.name}}, {{movieFromDB.people.2.name}}</p>
+        <h4>Release</h4>
+        <p>{{movieFromDB.premiere}}</p>
+    </div>
+    <div id="imdbSection">
+        <img src="https://1000marcas.net/wp-content/uploads/2021/05/Imdb-Logo-2012.png" alt="imdb logo">
+        <div><p>Vote nº</p><p id="imdbVotes">{{movieFromDB.imdb_vote}}</p></div>
+        <div><p>Score</p><p id="imdbScore">{{movieFromDB.imdb_rating}}</p></div>
     </div>
     {{#if user.isAdmin}}
     <div id="footer-buttons">
