@@ -1,6 +1,6 @@
 <div class="movie-page-container">
     <div class="movie-image-container">
-        <img src="{{movieFromDB.translations.0.poster.og}}" alt="poster">
+        <img id="posterImage" src="{{movieFromDB.translations.0.poster.og}}" alt="poster">
     </div>
     <div id="voteButtons">
         <form action="/votes/{{movieFromDB._id}}/voteLike" method="POST">
