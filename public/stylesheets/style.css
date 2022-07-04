@@ -234,7 +234,10 @@ body {
 }
 
 #edit-movie-form > div > input {
-  width: 40%;
+  display:flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 10px 40px;
 }
 
 #form-title {
