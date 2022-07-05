@@ -1,4 +1,4 @@
-const express = require ("express");
+const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const Movie = require("../models/Movie");
@@ -19,11 +19,13 @@ router.get("/:movieId/voteLike", isLoggedIn, (req, res, next) => {
 
 router.post("/:movieId/voteLike", isLoggedIn, async (req, res, next) => {
     const vote = true;
-    const {movieId} = req.params;
+    const { movieId } = req.params;
     const userId = req.session.currentUser._id;
     try {
-        await Vote.create({userId, movieId, vote});
-        res.redirect("/");
+        await Vote.create({ userId, movieId, vote });
+        const nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
+        const nextMovie0 = nextMovie[0]
+        res.redirect(`/movies/${nextMovie0._id}`)
     } catch (error) {
         next(error);
     }
@@ -43,11 +45,15 @@ router.get("/:movieId/voteDislike", isLoggedIn, (req, res, next) => {
 
 router.post("/:movieId/voteDislike", isLoggedIn, async (req, res, next) => {
     const vote = false;
-    const {movieId} = req.params;
+    const { movieId } = req.params;
     const userId = req.session.currentUser._id;
     try {
-        await Vote.create({userId, movieId, vote});
-        res.redirect("/");
+        await Vote.create({ userId, movieId, vote });
+        const nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
+        const nextMovie0 = nextMovie[0]
+        //console.log(nextMovie[0])
+
+        res.redirect(`/movies/${nextMovie0._id}`)
     } catch (error) {
         next(error);
     }
@@ -63,10 +69,10 @@ router.get("/:movieId/voteIgnore", isLoggedIn, (req, res, next) => {
 
 router.post("/:movieId/voteIgnore", isLoggedIn, async (req, res, next) => {
     const ignore = true;
-    const {movieId} = req.params;
+    const { movieId } = req.params;
     const userId = req.session.currentUser._id;
     try {
-        await Vote.create({userId, movieId, ignore});
+        await Vote.create({ userId, movieId, ignore });
         res.redirect("/");
     } catch (error) {
         next(error);

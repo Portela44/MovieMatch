@@ -26,7 +26,7 @@ router.get('/edit', async (req, res, next) => {
 
 router.post('/edit', fileUploader.single('profileImage'), async (req, res, next) => {
     const user = req.session.currentUser
-    const { username, email, imageUrl } = req.body
+    const { username, email, profileImage } = req.body
     try {
         const userFound = await User.findByIdAndUpdate(user._id, { username, email, imageUrl: req.file.path }, { new: true })
         req.session.currentUser = userFound

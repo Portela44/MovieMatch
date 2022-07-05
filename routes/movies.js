@@ -103,9 +103,9 @@ router.post('/create', async (req, res, next) => {
     }
 });
 
-// @desc    Updates db with an entirely new movie. Some items pending to fill in edit page.
-// @route   POST /movies/create
-// @access  Admin
+// @desc    Shows user its voted list
+// @route   GET /movies/myList
+// @access  User
 
 
 router.get('/myList', isLoggedIn, async (req, res, next) => {
