@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const Movie = require("../models/Movie");
+const Vote = require("../models/Vote");
+const isLoggedIn = require("../middlewares")
 
 
 // @desc    Displays a view where user can search for a specific movie
@@ -101,6 +103,21 @@ router.post('/create', async (req, res, next) => {
     }
 });
 
+// @desc    Updates db with an entirely new movie. Some items pending to fill in edit page.
+// @route   POST /movies/create
+// @access  Admin
+
+
+router.get('/myList', isLoggedIn, async (req, res, next) => {
+    const user = req.session.currentUser
+
+    try {
+        const votes = await Vote.find({ userId: user._id }).populate('movieId')
+        res.render('movies/myList', { votes });
+    } catch (error) {
+        next(error)
+    }
+})
 
 // @desc    Displays a random movie which can be consulted or voted.
 // @route   GET /:movieId
@@ -116,6 +133,7 @@ router.get('/:movieId', async (req, res, next) => {
         next(error)
     }
 });
+
 
 
 
