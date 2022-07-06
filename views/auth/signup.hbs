@@ -16,7 +16,8 @@
     <input type="password" name="password2" placeholder="********" />
 
     <label>profile picture</label>
-    <input type="file" name="profileImage">
+    <input type="file" name="imageUrl">
+    <input type="text" name="existingImageSign" hidden value="/images/profile-icon-png-898.png">
     {{#if error}}
     <p style="color: red;">{{error}}</p>
     {{/if}}

@@ -10,6 +10,7 @@
     <input type="email" name="email" value="{{userFromDB.email}}" class="edit-input">
 
     <label for="profile-inpt" id="profile-picture-btn"> <i class="fa-solid fa-upload"></i>Choose a Photo</label>
-    <input type="file" name="profileImage" id="profile-inpt" value="{{userFromDB.imageUrl}}" class="edit-input-file">
+    <input type="file" name="imageUrl" id="profile-inpt" class="edit-input-file">
+    <input type="text" name="existingImage" hidden value="{{userFromDB.imageUrl}}">
     <button type="submit" id="edit-submit-btn">Edit</button>
 </form>
