@@ -24,11 +24,19 @@ router.get('/edit', async (req, res, next) => {
 // @route   POST /edit
 // @access  User
 
-router.post('/edit', fileUploader.single('profileImage'), async (req, res, next) => {
+router.post('/edit', fileUploader.single('imageUrl'), async (req, res, next) => {
     const user = req.session.currentUser
-    const { username, email, profileImage } = req.body
+    const { username, email, existingImage } = req.body
+
+    let imageUrl;
+    if (req.file) {
+        imageUrl = req.file.path;
+    } else {
+        imageUrl = existingImage
+    }
+
     try {
-        const userFound = await User.findByIdAndUpdate(user._id, { username, email, imageUrl: req.file.path }, { new: true })
+        const userFound = await User.findByIdAndUpdate(user._id, { username, email, imageUrl }, { new: true })
         req.session.currentUser = userFound
         res.redirect('/')
     } catch (error) {
