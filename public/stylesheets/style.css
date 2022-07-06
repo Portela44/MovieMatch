@@ -468,24 +468,36 @@ body {
 /* My movie list */
 
 #movieList {
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-#movieList > a > img {
+#movieList>a>img {
   width: 110px;
   height: 170px;
-  border: 2px solid white;
-  border-radius: 7px;
+
   margin: 7px;
 }
 
-#sortList > form > select {
+.posterList-like {
   width: 30%;
   font-size: 0.45em;
   background-color: rgba(176, 216, 207, 0.6);
+  border: 2px solid green;
+  border-radius: 7px;
 }
+
+.posterList-dislike {
+  width: 30%;
+  font-size: 0.45em;
+  background-color: rgba(176, 216, 207, 0.6);
+  border: 2px solid rgba(217, 13, 13, 0.817);
+  border-radius: 7px;
+}
+
+
+
 
 .sort-btn {
   text-decoration: none;

@@ -1,4 +1,4 @@
-<h1>My <span class="strong-green">Movie</span> list   
+<h1>My <span class="strong-green">Movie</span> list
     <span id="sortList">
         <form id="sortOptions" target="_blank">
             <select class="sortOptions" id="sortRule">
@@ -9,9 +9,16 @@
             <button type="submit" class="sort-btn"><span> SORT </span></button>
         </form>
     </span>
-</h1> 
+</h1>
 <div id="movieList">
     {{#each votes}}
-    <a href="/movies/{{_id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"> </a>
+
+    {{#if vote}}
+    <a href="/movies/{{_id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster" class="posterList-like"> </a>
+    {{/if}}
+    {{#unless vote}}
+    <a href="/movies/{{_id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster" class="posterList-dislike">
+    </a>
+    {{/unless}}
     {{/each}}
 </div>
