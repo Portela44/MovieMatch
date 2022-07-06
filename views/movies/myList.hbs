@@ -1,4 +1,6 @@
-<h1>hey</h1>
-{{#each votes}}
-<img src="{{movieId.translations.0.poster.og}}" alt="poster">
-{{/each}}
+<h1>My <span class="strong-green">Movie</span> list</h1>
+<div id="movieList">
+    {{#each votes}}
+    <a href="/movies/{{_id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"> </a>
+    {{/each}}
+</div>

@@ -298,7 +298,7 @@ body {
   color: white
 }
 
-#user-name {
+.strong-green {
   color: rgb(85, 172, 164);
 }
 
@@ -463,6 +463,21 @@ body {
   top: 362px;
   left: 50px;
 
+}
+
+/* My movie list */
+
+#movieList {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#movieList > a > img {
+  width: 110px;
+  border: 2px solid white;
+  border-radius: 7px;
+  margin: 7px;
 }
 
 /* footer */

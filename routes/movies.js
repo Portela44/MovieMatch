@@ -113,7 +113,7 @@ router.get('/myList', isLoggedIn, async (req, res, next) => {
 
     try {
         const votes = await Vote.find({ userId: user._id }).populate('movieId')
-        res.render('movies/myList', { votes });
+        res.render('movies/myList', { votes , user });
     } catch (error) {
         next(error)
     }

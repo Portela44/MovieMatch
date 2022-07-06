@@ -49,8 +49,10 @@ router.post("/:movieId/voteDislike", isLoggedIn, async (req, res, next) => {
     const userId = req.session.currentUser._id;
     try {
         await Vote.create({ userId, movieId, vote });
+        //RECOMMENDATION BLOCK
         const nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
         const nextMovie0 = nextMovie[0]
+        
         //console.log(nextMovie[0])
 
         res.redirect(`/movies/${nextMovie0._id}`)
