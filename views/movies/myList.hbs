@@ -1,4 +1,15 @@
-<h1>My <span class="strong-green">Movie</span> list</h1>
+<h1>My <span class="strong-green">Movie</span> list   
+    <span id="sortList">
+        <form id="sortOptions" target="_blank">
+            <select class="sortOptions" id="sortRule">
+                <option value="/movies/myList/byDate">by date</option>
+                <option value="/movies/myList/byPopularity">by popularity</option>
+                <option value="/movies/myList/byRanking">by ranking</option>
+            </select>
+            <button type="submit" class="sort-btn"><span> SORT </span></button>
+        </form>
+    </span>
+</h1> 
 <div id="movieList">
     {{#each votes}}
     <a href="/movies/{{_id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"> </a>
