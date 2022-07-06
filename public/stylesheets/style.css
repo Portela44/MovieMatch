@@ -475,9 +475,25 @@ body {
 
 #movieList > a > img {
   width: 110px;
+  height: 170px;
   border: 2px solid white;
   border-radius: 7px;
   margin: 7px;
+}
+
+#sortList > form > select {
+  width: 30%;
+  font-size: 0.45em;
+  background-color: rgba(176, 216, 207, 0.6);
+}
+
+.sort-btn {
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid rgba(97, 211, 184, 0.6);
+  background-color: rgba(97, 211, 184, 0.6);
+  padding: 4px 15px;
+  border-radius: 20px;
 }
 
 /* footer */

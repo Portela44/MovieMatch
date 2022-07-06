@@ -8,6 +8,13 @@
   <script src="https://kit.fontawesome.com/897a9967dd.js" crossorigin="anonymous"></script>
   <link href='/stylesheets/style.css' rel="stylesheet" />
   <title>Project module 2</title>
+  <script>
+    window.addEventListener("load", function() {
+      document.getElementById("sortOptions").addEventListener("submit", function(e) {
+        this.action = document.getElementById("sortRule").value;
+      })
+    })
+  </script>
 </head>
 
 <body>
