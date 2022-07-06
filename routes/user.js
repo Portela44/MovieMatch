@@ -45,6 +45,30 @@ router.post('/edit', fileUploader.single('imageUrl'), async (req, res, next) => 
 })
 
 
+router.get('/delete', (req, res, next) => {
+    const user = req.session.currentUser
+    res.render('user/deleteConfirmation', { user })
+})
+// @desc    Deletes user account
+// @route   POST /edit
+// @access  User
+
+router.post('/delete', async (req, res, next) => {
+    const userId = req.session.currentUser._id
+    try {
+        await User.findByIdAndDelete(userId);
+        req.session.destroy((err) => {
+            if (err) {
+                next(err)
+            } else {
+                res.redirect('/');
+            }
+        });
+    } catch (error) {
+        next(error)
+    }
+});
+
 
 
 module.exports = router;
