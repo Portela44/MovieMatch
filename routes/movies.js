@@ -117,7 +117,43 @@ router.get('/myList', isLoggedIn, async (req, res, next) => {
     } catch (error) {
         next(error)
     }
-})
+});
+
+router.get('/myList/byDate', isLoggedIn, async (req, res, next) => {
+    const user = req.session.currentUser
+
+    try {
+        const votes = await Vote.find({ userId: user._id }).populate({path: 'movieId', options: {sort: {"premiere": -1}}});
+        console.log(votes);
+        res.render('movies/myList', { votes , user });
+    } catch (error) {
+        next(error)
+    }
+});
+
+router.get('/myList/byPopularity', isLoggedIn, async (req, res, next) => {
+    const user = req.session.currentUser
+
+    try {
+        const votes = await Vote.find({ userId: user._id }).populate({path: 'movieId', options: [{sort: {"movieId": -1}}]});
+        console.log(votes);
+        res.render('movies/myList', { votes , user });
+    } catch (error) {
+        next(error)
+    }
+});
+
+router.get('/myList/byRating', isLoggedIn, async (req, res, next) => {
+    const user = req.session.currentUser
+
+    try {
+        const votes = await Vote.find({ userId: user._id }).populate({path: 'movieId', options: {sort: {"imdb_rating": -1}}});
+        console.log(votes);
+        res.render('movies/myList', { votes , user });
+    } catch (error) {
+        next(error)
+    }
+});
 
 // @desc    Displays a random movie which can be consulted or voted.
 // @route   GET /:movieId
@@ -133,9 +169,6 @@ router.get('/:movieId', async (req, res, next) => {
         next(error)
     }
 });
-
-
-
 
 
 module.exports = router;
