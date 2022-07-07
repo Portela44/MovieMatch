@@ -120,6 +120,59 @@ router.get('/myList', isLoggedIn, async (req, res, next) => {
     }
 });
 
+// @desc    Displays a new window, with movies sorted by release date
+// @route   GET /myList/byDate
+// @access  Public
+
+router.get('/myList/byDate', isLoggedIn, async (req, res, next) => {
+    const user = req.session.currentUser
+
+    try {
+        const votes = await Vote.find({ userId: user._id }).populate('movieId');
+        votes.sort((a,b) => {
+            return b.movieId.premiere - a.movieId.premiere;
+        });
+        res.render('movies/myList', { votes , user });
+    } catch (error) {
+        next(error)
+    }
+});
+
+// @desc    Displays a new window, with movies sorted by number of votes
+// @route   GET /myList/byPopularity
+// @access  Public
+
+router.get('/myList/byPopularity', isLoggedIn, async (req, res, next) => {
+    const user = req.session.currentUser
+
+    try {
+        const votes = await Vote.find({ userId: user._id }).populate('movieId');
+        votes.sort((a,b) => {
+            return b.movieId.imdb_vote - a.movieId.imdb_vote;
+        });
+        res.render('movies/myList', { votes , user });
+    } catch (error) {
+        next(error)
+    }
+});
+
+// @desc    Displays a new window, with movies sorted by imdb rating
+// @route   GET /myList/byRating
+// @access  Public
+
+router.get('/myList/byRating', isLoggedIn, async (req, res, next) => {
+    const user = req.session.currentUser
+    try {
+        const votes = await Vote.find({ userId: user._id }).populate('movieId');
+        votes.sort((a,b) => {
+            return b.movieId.premiere - a.movieId.premiere;
+        });
+        res.render('movies/myList', { votes , user });
+    } catch (error) {
+        next(error)
+    }
+});
+
 // @desc    Displays a random movie which can be consulted or voted.
 // @route   GET /:movieId
 // @access  Public
