@@ -1,28 +1,37 @@
-<h1>¡Create a new account!</h1>
+<h1 class="signup-heading">Create Account.</h1>
 
-<div id="form">
-  <form action="/auth/signup" method="POST" enctype="multipart/form-data">
 
-    <label>Username</label>
-    <input type="text" name="username" placeholder="JohnDoe88" />
+<form action="/auth/signup" method="POST" enctype="multipart/form-data" class="sign-up-form">
+  <div class="form-inp">
+    <label for="username">Username</label>
+    <input type="text" name="username" placeholder="JohnDoe88" id="username" />
+  </div>
 
-    <label>Email</label>
-    <input type="email" name="email" placeholder="john@doe.com" />
+  <div class="form-inp">
+    <label for="email">Email</label>
+    <input type="email" name="email" placeholder="john@doe.com" id="email" />
+  </div>
 
-    <label>Password</label>
-    <input type="password" name="password" placeholder="********" />
+  <div class="form-inp">
+    <label for="password" l>Password</label>
+    <input type="password" name="password" placeholder="********" id="password" />
+  </div>
 
-    <label>Confirm password</label>
-    <input type="password" name="password2" placeholder="********" />
+  <div class="form-inp">
+    <label for="confirm">Confirm password</label>
+    <input type="password" name="password2" placeholder="********" id="confirm" />
+  </div>
 
-    <label>profile picture</label>
-    <input type="file" name="imageUrl">
+  <div class="form-inp">
+    <label for="profile-photo-signup" id="profile-photo-signup-btn">Choose a Photo</label>
+    <input type="file" name="imageUrl" id="profile-photo-signup">
     <input type="text" name="existingImageSign" hidden value="/images/profile-icon-png-898.png">
-    {{#if error}}
-    <p style="color: red;">{{error}}</p>
-    {{/if}}
+  </div>
 
-    <button type="submit">Create account</button>
+  {{#if error}}
+  <p style="color: red;">{{error}}</p>
+  {{/if}}
 
-  </form>
-</div>
+  <button type="submit" class="signup-btn">Create account</button>
+
+</form>

@@ -123,6 +123,64 @@ body {
   width: 80%;
 }
 
+/****** Sign up styles  *****/
+
+.sign-up-form {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.form-inp {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-inp input {
+  width: 65%;
+  height: 35px;
+  padding-left: 40px;
+  background-image: radial-gradient(rgb(34, 35, 38), rgb(24, 27, 29));
+  border: none;
+  color: rgb(123, 124, 126);
+}
+
+#profile-photo-signup {
+  display: none;
+}
+
+#profile-photo-signup-btn {
+  width: 60%;
+  color: black;
+  background-color: rgb(85, 172, 164);
+  padding: 15px 2px;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.signup-btn {
+  width: 76%;
+  height: 45px;
+  border-radius: 3px;
+  background-color: rgb(85, 172, 164);
+  border: none;
+  letter-spacing: 2px;
+  position: relative;
+  right: 28px;
+  bottom: 35px;
+}
+
+.signup-heading {
+  text-align: center;
+}
+
+
 /****** movies.hbs view styles ******/
 
 .movie-page-container {
