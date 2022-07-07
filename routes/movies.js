@@ -112,13 +112,13 @@ router.get('/myList', isLoggedIn, async (req, res, next) => {
     const user = req.session.currentUser
 
     try {
-        const votes = await Vote.find({ userId: user._id }).populate('movieId')
+        const votes = await Vote.find({ userId: user._id }).populate('movieId');
         console.log(votes)
         res.render('movies/myList', { votes, user });
     } catch (error) {
         next(error)
     }
-})
+});
 
 // @desc    Displays a random movie which can be consulted or voted.
 // @route   GET /:movieId
