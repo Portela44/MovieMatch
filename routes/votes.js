@@ -28,6 +28,7 @@ router.post("/:movieId/voteLike", isLoggedIn, async (req, res, next) => {
 
         let votedMovieIdArr = []
         let votes = await Vote.find({ userId: user._id })
+
         votes.forEach(el => {
             votedMovieIdArr.push(String(el.movieId))
         })
@@ -36,14 +37,11 @@ router.post("/:movieId/voteLike", isLoggedIn, async (req, res, next) => {
         let nextMovie0 = nextMovie[0]
 
         while (votedMovieIdArr.includes(String(nextMovie0._id))) {
-            // let testMovie = await Movie.find({})
-            // console.log(testMovie.length)
-            // console.log(votes.length)
 
-            // if (await Movie.find({}) === votes.length) {
-            //     res.redirect("/")
-            //     break;
-            // }
+            if (await Movie.count() === votes.length) {
+                res.redirect("/movies/congratulations")
+                break;
+            }
             nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
             nextMovie0 = nextMovie[0]
 

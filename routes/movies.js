@@ -6,6 +6,11 @@ const Vote = require("../models/Vote");
 const isLoggedIn = require("../middlewares")
 
 
+
+router.get('/congratulations', (req, res, next) => {
+    const user = req.session.currentUser
+    res.render('movies/congratulations', { user })
+})
 // @desc    Displays a view where user can search for a specific movie
 // @route   GET /search-movie
 // @access  Public
@@ -112,12 +117,7 @@ router.get('/myList', isLoggedIn, async (req, res, next) => {
     const user = req.session.currentUser
 
     try {
-<<<<<<< HEAD
-        const votes = await Vote.find({ userId: user._id }).populate('movieId');
-        console.log(votes)
-=======
         const votes = await Vote.find({ userId: user._id }).populate('movieId')
->>>>>>> nonRepeat
         res.render('movies/myList', { votes, user });
     } catch (error) {
         next(error)
@@ -133,10 +133,10 @@ router.get('/myList/byDate', isLoggedIn, async (req, res, next) => {
 
     try {
         const votes = await Vote.find({ userId: user._id }).populate('movieId');
-        votes.sort((a,b) => {
+        votes.sort((a, b) => {
             return b.movieId.premiere - a.movieId.premiere;
         });
-        res.render('movies/myList', { votes , user });
+        res.render('movies/myList', { votes, user });
     } catch (error) {
         next(error)
     }
@@ -151,10 +151,10 @@ router.get('/myList/byPopularity', isLoggedIn, async (req, res, next) => {
 
     try {
         const votes = await Vote.find({ userId: user._id }).populate('movieId');
-        votes.sort((a,b) => {
+        votes.sort((a, b) => {
             return b.movieId.imdb_vote - a.movieId.imdb_vote;
         });
-        res.render('movies/myList', { votes , user });
+        res.render('movies/myList', { votes, user });
     } catch (error) {
         next(error)
     }
@@ -168,10 +168,10 @@ router.get('/myList/byRating', isLoggedIn, async (req, res, next) => {
     const user = req.session.currentUser
     try {
         const votes = await Vote.find({ userId: user._id }).populate('movieId');
-        votes.sort((a,b) => {
+        votes.sort((a, b) => {
             return b.movieId.premiere - a.movieId.premiere;
         });
-        res.render('movies/myList', { votes , user });
+        res.render('movies/myList', { votes, user });
     } catch (error) {
         next(error)
     }
