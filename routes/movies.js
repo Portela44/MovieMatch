@@ -113,7 +113,6 @@ router.get('/myList', isLoggedIn, async (req, res, next) => {
 
     try {
         const votes = await Vote.find({ userId: user._id }).populate('movieId')
-        console.log(votes)
         res.render('movies/myList', { votes, user });
     } catch (error) {
         next(error)
@@ -124,11 +123,16 @@ router.get('/myList', isLoggedIn, async (req, res, next) => {
 // @route   GET /:movieId
 // @access  Public
 
-router.get('/:movieId', async (req, res, next) => {
+router.get('/:movieId', isLoggedIn, async (req, res, next) => {
     const { movieId } = req.params;
     const user = req.session.currentUser
     try {
-        const movieFromDB = await Movie.findById(movieId);
+        let movieFromDB = await Movie.findById(movieId);
+
+
+        //console.log(movieIdArr.includes(String(movieFromDB._id)))
+
+
         res.render('movies/movies', { movieFromDB, user })
     } catch (error) {
         next(error)
