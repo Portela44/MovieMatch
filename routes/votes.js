@@ -24,31 +24,26 @@ router.post("/:movieId/voteLike", isLoggedIn, async (req, res, next) => {
     const user = req.session.currentUser
     try {
         await Vote.create({ userId, movieId, vote });
-
-
-        let votedMovieIdArr = []
-        let votes = await Vote.find({ userId: user._id })
+        let votedMovieIdArr = [];
+        let votes = await Vote.find({ userId: user._id });
 
         votes.forEach(el => {
-            votedMovieIdArr.push(String(el.movieId))
+            votedMovieIdArr.push(String(el.movieId));
         })
 
         let nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
-        let nextMovie0 = nextMovie[0]
+        let nextMovie0 = nextMovie[0];
 
         while (votedMovieIdArr.includes(String(nextMovie0._id))) {
 
             if (await Movie.count() === votes.length) {
-                res.redirect("/movies/congratulations")
+                res.redirect("/movies/congratulations");
                 break;
             }
             nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
-            nextMovie0 = nextMovie[0]
-
-
+            nextMovie0 = nextMovie[0];
         }
-
-        res.redirect(`/movies/${nextMovie0._id}`)
+        res.redirect(`/movies/${nextMovie0._id}`);
     } catch (error) {
         next(error);
     }
@@ -70,15 +65,29 @@ router.post("/:movieId/voteDislike", isLoggedIn, async (req, res, next) => {
     const vote = false;
     const { movieId } = req.params;
     const userId = req.session.currentUser._id;
+    user = req.session.currentUser;
     try {
         await Vote.create({ userId, movieId, vote });
-        //RECOMMENDATION BLOCK
-        const nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
-        const nextMovie0 = nextMovie[0]
+        let votedMovieIdArr = [];
+        let votes = await Vote.find({ userId: user._id });
 
-        //console.log(nextMovie[0])
+        votes.forEach(el => {
+            votedMovieIdArr.push(String(el.movieId));
+        })
 
-        res.redirect(`/movies/${nextMovie0._id}`)
+        let nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
+        let nextMovie0 = nextMovie[0];
+
+        while (votedMovieIdArr.includes(String(nextMovie0._id))) {
+
+            if (await Movie.count() === votes.length) {
+                res.redirect("/movies/congratulations");
+                break;
+            }
+            nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
+            nextMovie0 = nextMovie[0];
+        }
+        res.redirect(`/movies/${nextMovie0._id}`);
     } catch (error) {
         next(error);
     }
@@ -96,14 +105,32 @@ router.post("/:movieId/voteIgnore", isLoggedIn, async (req, res, next) => {
     const ignore = true;
     const { movieId } = req.params;
     const userId = req.session.currentUser._id;
+    user = req.session.currentUser;
     try {
         await Vote.create({ userId, movieId, ignore });
-        res.redirect("/");
+        let votedMovieIdArr = [];
+        let votes = await Vote.find({ userId: user._id });
+
+        votes.forEach(el => {
+            votedMovieIdArr.push(String(el.movieId));
+        })
+
+        let nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
+        let nextMovie0 = nextMovie[0];
+
+        while (votedMovieIdArr.includes(String(nextMovie0._id))) {
+
+            if (await Movie.count() === votes.length) {
+                res.redirect("/movies/congratulations");
+                break;
+            }
+            nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
+            nextMovie0 = nextMovie[0];
+        }
+        res.redirect(`/movies/${nextMovie0._id}`);
     } catch (error) {
         next(error);
     }
 });
-
-
 
 module.exports = router;

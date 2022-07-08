@@ -17,8 +17,10 @@
     <a href="/movies/{{_id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster" class="posterList-like"> </a>
     {{/if}}
     {{#unless vote}}
+    {{#unless ignore}}
     <a href="/movies/{{_id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster" class="posterList-dislike">
     </a>
+    {{/unless}}
     {{/unless}}
     {{/each}}
 </div>
