@@ -180,6 +180,45 @@ body {
   text-align: center;
 }
 
+#user-icon-signup {
+  position: absolute;
+  top: 160px;
+  left: 32px;
+}
+
+#signup-password-lock {
+  position: absolute;
+  top: 380px;
+  left: 32px;
+}
+
+#signup-confirm-lock {
+  position: absolute;
+  top: 492px;
+  left: 32px;
+
+}
+
+#envelope-signup {
+  position: absolute;
+  top: 270px;
+  left: 32px;
+}
+
+.signup-error {
+  position: absolute;
+  bottom: 90px;
+  margin-left: 10px;
+}
+
+#upload-icon-signup {
+  position: relative;
+  left: -30px;
+  bottom: 2px;
+  color: rgb(34, 35, 38);
+
+}
+
 
 /****** movies.hbs view styles ******/
 
