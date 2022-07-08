@@ -169,7 +169,7 @@ router.get('/myList/byRating', isLoggedIn, async (req, res, next) => {
     try {
         const votes = await Vote.find({ userId: user._id }).populate('movieId');
         votes.sort((a, b) => {
-            return b.movieId.premiere - a.movieId.premiere;
+            return b.movieId.imdb_rating - a.movieId.imdb_rating;
         });
         res.render('movies/myList', { votes, user });
     } catch (error) {
