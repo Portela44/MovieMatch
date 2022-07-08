@@ -12,15 +12,14 @@
 </h1>
 <div id="movieList">
     {{#each votes}}
-
-    {{#if vote}}
-    <a href="/movies/{{_id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster" class="posterList-like"> </a>
-    {{/if}}
-    {{#unless vote}}
-    {{#unless ignore}}
-    <a href="/movies/{{_id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster" class="posterList-dislike">
-    </a>
-    {{/unless}}
-    {{/unless}}
+        {{#if vote}}
+        <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster" class="posterList-like"> </a>
+        {{/if}}
+        {{#unless vote}}
+            {{#unless ignore}}
+            <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster" class="posterList-dislike">
+            </a>
+            {{/unless}}
+        {{/unless}}
     {{/each}}
 </div>

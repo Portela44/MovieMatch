@@ -285,7 +285,7 @@ body {
   text-align: center;
   align-items: center;
   justify-content: space-evenly;
-  margin: 0px 20px;
+  margin: 0px 10px 30px 10px;
   border: 3px solid rgba(225, 217, 51, 0.834);
   border-radius: 5px;
 }
@@ -294,22 +294,26 @@ body {
   margin: 0px;
 }
 
-#imdbSection>img {
-  width: 35%;
+#imdbSection>div>p {
+  margin: 0px 20px;
+}
+
+#imdbSection>a {
+  height: 100px;
 }
 
 #imdbVotes {
   color: rgba(225, 217, 51, 0.834);
   font-weight: 700;
   font-size: 1.2em;
-  margin: 0px;
+  margin: 0px 20px;
 }
 
 #imdbScore {
   color: rgba(225, 217, 51, 0.834);
   font-weight: 700;
   font-size: 1.8em;
-  margin: 0px;
+  margin: 0px 30px;
 }
 
 #imdbScore>p {

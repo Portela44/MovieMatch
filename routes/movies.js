@@ -185,6 +185,7 @@ router.get('/:movieId', async (req, res, next) => {
     const { movieId } = req.params;
     const user = req.session.currentUser
     try {
+        console.log(movieId);
         const movieFromDB = await Movie.findById(movieId);
         res.render('movies/movies', { movieFromDB, user })
     } catch (error) {
