@@ -112,12 +112,7 @@ router.get('/myList', isLoggedIn, async (req, res, next) => {
     const user = req.session.currentUser
 
     try {
-<<<<<<< HEAD
-        const votes = await Vote.find({ userId: user._id }).populate('movieId');
-        console.log(votes)
-=======
         const votes = await Vote.find({ userId: user._id }).populate('movieId')
->>>>>>> nonRepeat
         res.render('movies/myList', { votes, user });
     } catch (error) {
         next(error)
