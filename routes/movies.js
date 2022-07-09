@@ -6,9 +6,15 @@ const Vote = require("../models/Vote");
 const isLoggedIn = require("../middlewares")
 
 
-// @desc    Displays a new window, with movies sorted by imdb rating
-// @route   GET /myList/byRating
-// @access  Public
+
+
+router.get('/filter', isLoggedIn, (req, res, next) => {
+    const user = req.session.currentUser
+    res.render('movies/filter', { user })
+})
+// @desc    Displays a view if the user has voted all movies
+// @route   GET /mcongratulations
+// @access  User
 router.get('/congratulations', (req, res, next) => {
     const user = req.session.currentUser
     res.render('movies/congratulations', { user })
@@ -178,6 +184,8 @@ router.get('/myList/byRating', isLoggedIn, async (req, res, next) => {
         next(error)
     }
 });
+
+
 
 // @desc    Displays a random movie which can be consulted or voted.
 // @route   GET /:movieId

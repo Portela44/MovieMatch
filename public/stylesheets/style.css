@@ -272,6 +272,170 @@ body {
   padding: 4px;
 }
 
+
+/***** filet page styles */
+.filter-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.filter-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 90%;
+
+
+}
+
+.filter-option {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  align-items: center;
+
+}
+
+.filter-option .checkbox-content {
+  width: 100px;
+  height: 100px;
+  /*background-color: rgb(85, 172, 164); */
+  border-radius: 5px;
+  text-align: center;
+  color: rgb(13, 224, 235);
+  font-weight: 700;
+  letter-spacing: 2px;
+  border: 4px solid transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.action {
+  background-image: url(/images/action.webp);
+}
+
+.drama {
+  background-image: url(/images/drama.jpeg);
+}
+
+.fantasy {
+  background-image: url(/images/fantasy.jpeg);
+}
+
+.comedy {
+  background-image: url(/images/comedy.jpeg);
+}
+
+.mystery {
+  background-image: url(/images/mystery.webp);
+}
+
+.adventure {
+  background-image: url(/images/adventure.webp);
+}
+
+.war {
+  background-image: url(/images/war.jpeg);
+}
+
+.sci-fi {
+  background-image: url(/images/scifi.jpeg);
+}
+
+.romance {
+  background-image: url(/images/romance.jpeg);
+}
+
+.history {
+  background-image: url(/images/history.jpeg);
+}
+
+.biography {
+  background-image: url(/images/biography.jpeg);
+}
+
+.crime {
+  background-image: url(/images/crime.jpeg);
+}
+
+.background-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.filter-option .checkbox {
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+
+}
+
+.checkbox:checked~.checkbox-content {
+  border-color: rgb(38, 113, 9);
+  text-align: center;
+}
+
+.filter-icon {
+  margin-bottom: 5px;
+}
+
+.filter-name {
+  user-select: none;
+}
+
+.tick-mark {
+  position: relative;
+  top: -28px;
+  right: 40px;
+  border: 10px solid;
+  border-color: rgb(38, 113, 9) transparent transparent rgb(38, 113, 9);
+  display: none;
+}
+
+.tick-mark:before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: -1px;
+  width: 4px;
+  height: 1px;
+  border: 2px solid;
+  border-color: transparent transparent rgb(44, 214, 197) rgb(44, 214, 197);
+  transform: rotate(-45deg);
+
+}
+
+.checkbox:checked~.checkbox-content .tick-mark {
+  display: block;
+}
+
+.filter-heading {
+  text-align: center;
+}
+
+.btn-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.submit-filter-btn {
+  width: 76%;
+  height: 45px;
+  border-radius: 3px;
+  background-color: rgb(85, 172, 164);
+  border: none;
+  letter-spacing: 2px;
+}
+
+
+
 /***** Delete user confirmation page */
 
 .delete-container {
