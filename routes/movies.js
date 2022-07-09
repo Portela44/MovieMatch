@@ -6,7 +6,9 @@ const Vote = require("../models/Vote");
 const isLoggedIn = require("../middlewares")
 
 
-
+// @desc    Displays a new window, with movies sorted by imdb rating
+// @route   GET /myList/byRating
+// @access  Public
 router.get('/congratulations', (req, res, next) => {
     const user = req.session.currentUser
     res.render('movies/congratulations', { user })

@@ -23,10 +23,9 @@ router.post("/:movieId/voteLike", isLoggedIn, async (req, res, next) => {
     const userId = req.session.currentUser._id;
     const user = req.session.currentUser
     try {
-        const existingVote = await Vote.find({userId: userId, movieId: movieId});
-        console.log(existingVote);
-        if(existingVote) {
-            await Vote.findOneAndDelete({userId: userId, movieId: movieId});
+        const existingVote = await Vote.find({ userId: userId, movieId: movieId });
+        if (existingVote) {
+            await Vote.findOneAndDelete({ userId: userId, movieId: movieId });
         }
         await Vote.create({ userId, movieId, vote });
         let votedMovieIdArr = [];
@@ -72,6 +71,10 @@ router.post("/:movieId/voteDislike", isLoggedIn, async (req, res, next) => {
     const userId = req.session.currentUser._id;
     user = req.session.currentUser;
     try {
+        const existingVote = await Vote.find({ userId: userId, movieId: movieId });
+        if (existingVote) {
+            await Vote.findOneAndDelete({ userId: userId, movieId: movieId });
+        }
         await Vote.create({ userId, movieId, vote });
         let votedMovieIdArr = [];
         let votes = await Vote.find({ userId: user._id });
