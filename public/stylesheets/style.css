@@ -10,6 +10,25 @@ body {
   color: #fff;
 }
 
+/*** nav styles ***/
+.nav {
+  position: absolute;
+  left: 9px;
+  top: 3px;
+
+}
+
+.back-btn {
+  background-color: transparent;
+
+  border: none;
+}
+
+#back-arrow {
+  color: rgb(85, 172, 164);
+  font-size: 15px;
+}
+
 /* index.hbs view styles,  home page */
 
 .home-page-container {
@@ -745,7 +764,8 @@ body {
 
 /*search-movie.hbs view styles */
 
-.search-movie-form, .search-api-form {
+.search-movie-form,
+.search-api-form {
   height: 40vh;
   display: flex;
   flex-direction: column;
@@ -753,6 +773,7 @@ body {
   align-items: center;
   gap: 15px;
 }
+
 .search-api-form {
   height: 15vh;
 }
@@ -775,13 +796,17 @@ body {
   letter-spacing: 2px;
 }
 
-.search-movie-form > .fa-magnifying-glass, .search-api-form > .fa-magnifying-glass {
+.search-movie-form>.fa-magnifying-glass,
+.search-api-form>.fa-magnifying-glass {
   position: relative;
   top: 5.5vh;
   left: -35vw;
 }
 
 /* My movie list // myList.hbs */
+
+
+
 
 #movieList {
   display: flex;
@@ -812,17 +837,57 @@ body {
   border-radius: 7px;
 }
 
-.sort-btn {
-  text-decoration: none;
-  color: #fff;
-  border: 1px solid rgba(97, 211, 184, 0.6);
-  background-color: rgba(97, 211, 184, 0.6);
-  padding: 4px 15px;
-  border-radius: 20px;
+.posterList-ignore {
+  width: 30%;
+  font-size: 0.45em;
+  background-color: rgba(176, 216, 207, 0.6);
+  border: 2px solid rgba(37, 6, 239, 0.817);
+  border-radius: 7px;
 }
 
-#sortOptions > label {
-  font-size:0.45em;
+.sort-btn {
+  font-size: 0.6rem;
+  font-weight: 300;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  width: 17%;
+  height: 20px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  background-color: rgb(85, 172, 164);
+  border: none;
+  letter-spacing: 2px;
+}
+
+#sortOptions>label {
+  font-size: 0.45em;
+}
+
+.see-ignore-btn {
+  font-size: 0.6rem;
+  font-weight: 300;
+  text-decoration: none;
+  color: black;
+  width: 76%;
+
+  padding: 5px 10px;
+  border-radius: 3px;
+  background-color: rgb(85, 172, 164);
+  border: none;
+  letter-spacing: 2px;
+  position: relative;
+  left: 90px;
+}
+
+
+/**** Ignored movies styles  ****/
+.ignored-h1 {
+  text-align: center;
+}
+
+.ignored-span {
+  color: rgb(85, 172, 164);
 }
 
 /* footer */

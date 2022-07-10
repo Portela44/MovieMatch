@@ -11,6 +11,17 @@ const metafilm = require("metafilm");
 const colage = require('colage');
 
 
+router.get('/ignored', isLoggedIn, async (req, res, next) => {
+    const user = req.session.currentUser
+
+    try {
+        const votes = await Vote.find({ userId: user._id }).populate('movieId')
+        res.render('movies/ignored', { votes, user });
+    } catch (error) {
+
+    }
+});
+
 router.get('/filter', isLoggedIn, (req, res, next) => {
     const user = req.session.currentUser
     res.render('movies/filter', { user })
@@ -57,7 +68,7 @@ router.get('/api-search-by-name', async (req, res, next) => {
     try {
         const movieImdbId = await imdbId(`${movieName}`);
         console.log(movieImdbId);
-        const movieInfo = await metafilm.id({imdb_id: `${movieImdbId}`});
+        const movieInfo = await metafilm.id({ imdb_id: `${movieImdbId}` });
         console.log(movieInfo);
         res.redirect("/movies/search-movie");
     } catch (error) {
@@ -72,7 +83,7 @@ router.get('/api-search-by-name', async (req, res, next) => {
 router.get('/api-search-by-imdbId', async (req, res, next) => {
     const { movieIMDBId } = req.query;
     try {
-        const movieInfo = await metafilm.id({imdb_id: `${movieIMDBId}`});
+        const movieInfo = await metafilm.id({ imdb_id: `${movieIMDBId}` });
         console.log(movieInfo);
         res.json(movieInfo);
     } catch (error) {
@@ -134,7 +145,7 @@ router.post('/:movieId/edit', async (req, res, next) => {
 
 router.get('/create', (req, res, next) => {
     user = req.session.currentUser;
-    res.render('movies/new-movie', {user});
+    res.render('movies/new-movie', { user });
 });
 
 // @desc    Updates db with an entirely new movie. Some items pending to fill in edit page.
@@ -256,7 +267,7 @@ router.get('/:movieId', isLoggedIn, async (req, res, next) => {
         } else {
             const movieFromDB = await Movie.findById(movieId);
             res.render('movies/movies', { movieFromDB, user })
-        }   
+        }
     } catch (error) {
         next(error)
     }
