@@ -780,7 +780,7 @@ body {
 
 }
 
-/* My movie list */
+/* My movie list // myList.hbs */
 
 #movieList {
   display: flex;
@@ -811,7 +811,6 @@ body {
   border-radius: 7px;
 }
 
-
 .sort-btn {
   text-decoration: none;
   color: #fff;
@@ -819,6 +818,10 @@ body {
   background-color: rgba(97, 211, 184, 0.6);
   padding: 4px 15px;
   border-radius: 20px;
+}
+
+#sortOptions > label {
+  font-size:0.45em;
 }
 
 /* footer */
