@@ -35,11 +35,13 @@ router.get('/search-movie', isLoggedIn, (req, res, next) => {
 // @route   GET /:searched-movie
 // @access  Public
 
-router.get('/searched-movie/', async (req, res, next) => {
+router.get('/searched-movie', async (req, res, next) => {
     const { movieName } = req.query;
+    const user = req.session.currentUser;
     try {
-        const movieFromDB = await Movie.find({ name: movieName });
-        res.render('movies/searchResults', movieFromDB[0])
+        const movieFromDB0 = await Movie.find({ name: movieName });
+        const movieFromDB = movieFromDB0[0];
+        res.render('movies/movies', { movieFromDB, user })
     } catch (error) {
         next(error)
     }
