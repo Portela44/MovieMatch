@@ -11,21 +11,23 @@ const isLoggedIn = require("../middlewares")
 router.get('/filter', isLoggedIn, (req, res, next) => {
     const user = req.session.currentUser
     res.render('movies/filter', { user })
-})
+});
+
 // @desc    Displays a view if the user has voted all movies
 // @route   GET /mcongratulations
 // @access  User
 router.get('/congratulations', (req, res, next) => {
     const user = req.session.currentUser
     res.render('movies/congratulations', { user })
-})
+});
+
 // @desc    Displays a view where user can search for a specific movie
 // @route   GET /search-movie
 // @access  Public
 router.get('/search-movie', (req, res, next) => {
     const user = req.session.currentUser
     res.render('movies/search-movie', { user })
-})
+});
 
 // @desc    Displays a searched movie which can be consulted or voted.
 // @route   GET /:searched-movie
