@@ -8,6 +8,7 @@ const isLoggedIn = require("../middlewares");
 // IMDB API test requirement
 const imdbId = require('imdb-id');
 const metafilm = require("metafilm");
+const colage = require('colage');
 
 
 router.get('/filter', isLoggedIn, (req, res, next) => {
@@ -224,7 +225,22 @@ router.get('/myList/byRating', isLoggedIn, async (req, res, next) => {
     }
 });
 
+// @desc    Displays a new window, with movies sorted by genre
+// @route   GET /myList/byGenre
+// @access  Public
 
+router.get('/myList/byGenre', isLoggedIn, async (req, res, next) => {
+    const user = req.session.currentUser
+    try {
+        const votes = await Vote.find({ userId: user._id }).populate('movieId');
+        votes.sort((a, b) => {
+            return b.movieId.imdb_rating - a.movieId.imdb_rating;
+        });
+        res.render('movies/myListByGenres', { votes, user });
+    } catch (error) {
+        next(error)
+    }
+});
 
 // @desc    Displays a random movie which can be consulted or voted.
 // @route   GET /:movieId
