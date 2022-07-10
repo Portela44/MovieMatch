@@ -745,13 +745,16 @@ body {
 
 /*search-movie.hbs view styles */
 
-.search-movie-form {
-  height: 95vh;
+.search-movie-form, .search-api-form {
+  height: 40vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 15px;
+}
+.search-api-form {
+  height: 15vh;
 }
 
 .search-movie-inp {
@@ -770,14 +773,12 @@ body {
   background-color: rgb(85, 172, 164);
   border: none;
   letter-spacing: 2px;
-
 }
 
-.fa-magnifying-glass {
-  position: absolute;
-  top: 362px;
-  left: 50px;
-
+.search-movie-form > .fa-magnifying-glass, .search-api-form > .fa-magnifying-glass {
+  position: relative;
+  top: 5.5vh;
+  left: -35vw;
 }
 
 /* My movie list // myList.hbs */

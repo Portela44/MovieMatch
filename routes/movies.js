@@ -3,7 +3,11 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const Movie = require("../models/Movie");
 const Vote = require("../models/Vote");
-const isLoggedIn = require("../middlewares")
+const isLoggedIn = require("../middlewares");
+
+// IMDB API test requirement
+const imdbId = require('imdb-id');
+const metafilm = require("metafilm");
 
 
 router.get('/filter', isLoggedIn, (req, res, next) => {
@@ -22,7 +26,7 @@ router.get('/congratulations', (req, res, next) => {
 // @desc    Displays a view where user can search for a specific movie
 // @route   GET /search-movie
 // @access  Public
-router.get('/search-movie', (req, res, next) => {
+router.get('/search-movie', isLoggedIn, (req, res, next) => {
     const user = req.session.currentUser
     res.render('movies/search-movie', { user })
 });
@@ -38,6 +42,38 @@ router.get('/searched-movie/', async (req, res, next) => {
         res.render('movies/searchResults', movieFromDB[0])
     } catch (error) {
         next(error)
+    }
+});
+
+// @desc    Shows in the console a movie's json information coming from api, so it can easily get pasted on seed (searching by name).
+// @route   GET /:api-search
+// @access  Admin
+
+router.get('/api-search-by-name', async (req, res, next) => {
+    const { movieName } = req.query;
+    try {
+        const movieImdbId = await imdbId(`${movieName}`);
+        console.log(movieImdbId);
+        const movieInfo = await metafilm.id({imdb_id: `${movieImdbId}`});
+        console.log(movieInfo);
+        res.redirect("/movies/search-movie");
+    } catch (error) {
+        next(error);
+    }
+});
+
+// @desc    Shows in the console a movie's json information coming from api, so it can easily get pasted on seed (searching by imdb_id).
+// @route   GET /:api-search
+// @access  Admin
+
+router.get('/api-search-by-imdbId', async (req, res, next) => {
+    const { movieIMDBId } = req.query;
+    try {
+        const movieInfo = await metafilm.id({imdb_id: `${movieIMDBId}`});
+        console.log(movieInfo);
+        res.json(movieInfo);
+    } catch (error) {
+        next(error);
     }
 });
 
@@ -191,7 +227,7 @@ router.get('/myList/byRating', isLoggedIn, async (req, res, next) => {
 // @route   GET /:movieId
 // @access  Public
 
-router.get('/:movieId', async (req, res, next) => {
+router.get('/:movieId', isLoggedIn, async (req, res, next) => {
     const { movieId } = req.params;
     const user = req.session.currentUser
     try {
