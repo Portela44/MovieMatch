@@ -130,7 +130,8 @@ router.post('/:movieId/edit', async (req, res, next) => {
 // @access  Admin
 
 router.get('/create', (req, res, next) => {
-    res.render('movies/new-movie')
+    user = req.session.currentUser;
+    res.render('movies/new-movie', {user});
 });
 
 // @desc    Updates db with an entirely new movie. Some items pending to fill in edit page.
