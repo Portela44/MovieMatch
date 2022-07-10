@@ -6,8 +6,6 @@ const Vote = require("../models/Vote");
 const isLoggedIn = require("../middlewares")
 
 
-
-
 router.get('/filter', isLoggedIn, (req, res, next) => {
     const user = req.session.currentUser
     res.render('movies/filter', { user })
@@ -197,13 +195,16 @@ router.get('/:movieId', async (req, res, next) => {
     const { movieId } = req.params;
     const user = req.session.currentUser
     try {
-        console.log(movieId);
-        const movieFromDB = await Movie.findById(movieId);
-        res.render('movies/movies', { movieFromDB, user })
+        let votes = await Vote.find({ userId: user._id });
+        if (await Movie.count() === votes.length) {
+            res.redirect("/movies/congratulations");
+        } else {
+            const movieFromDB = await Movie.findById(movieId);
+            res.render('movies/movies', { movieFromDB, user })
+        }   
     } catch (error) {
         next(error)
     }
 });
-
 
 module.exports = router;

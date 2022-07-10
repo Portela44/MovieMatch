@@ -81,7 +81,7 @@ router.post("/:movieId/voteDislike", isLoggedIn, async (req, res, next) => {
 
         votes.forEach(el => {
             votedMovieIdArr.push(String(el.movieId));
-        })
+        });
 
         let nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
         let nextMovie0 = nextMovie[0];
