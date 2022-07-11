@@ -421,8 +421,8 @@ body {
   background-image: url(/images/history.jpeg);
 }
 
-.documentary {
-  background-image: url(/images/documentary.jpeg);
+.biography {
+  background-image: url(/images/biography.jpeg);
 }
 
 .crime {
@@ -449,7 +449,7 @@ body {
 }
 
 .filter-icon {
-  margin-bottom: 25px;
+  margin-bottom: 5px;
 }
 
 .filter-name {
