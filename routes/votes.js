@@ -115,6 +115,10 @@ router.post("/:movieId/voteIgnore", isLoggedIn, async (req, res, next) => {
     const userId = req.session.currentUser._id;
     user = req.session.currentUser;
     try {
+        const existingVote = await Vote.find({ userId: userId, movieId: movieId });
+        if (existingVote) {
+            await Vote.findOneAndDelete({ userId: userId, movieId: movieId });
+        }
         await Vote.create({ userId, movieId, ignore });
         let votedMovieIdArr = [];
         let votes = await Vote.find({ userId: user._id });
