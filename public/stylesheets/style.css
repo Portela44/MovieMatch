@@ -247,22 +247,23 @@ body {
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
-
+  background-image: radial-gradient(rgba(53, 56, 58, 1),rgba(53, 56, 58, 1));
 }
 
 .movie-image-container {
   width: 100%;
-  height: 780px;
+  height: 680px;
+  margin-bottom: 100px;
 }
 
 .movie-image-container::before {
   content: '';
-  background-image: linear-gradient(to top, rgba(53, 56, 58, 255), rgba(239, 239, 239, 0));
+  background-image: linear-gradient(to top, rgba(53, 56, 58, 1), rgba(239, 239, 239, 0));
   position: absolute;
   right: 0;
-  bottom: 50px;
+  bottom: 150px;
   left: 0;
-  height: 170px;
+  height: 250px;
   width: 100%;
   margin-bottom: 1px;
 }
@@ -324,7 +325,7 @@ body {
   display: flex;
   justify-content: space-around;
   position: absolute;
-  bottom: 90px;
+  bottom: 110px;
 }
 
 #dislike-icon {
@@ -848,11 +849,23 @@ body {
   justify-content: center;
 }
 
-#movieList>a>img {
+#movieList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#genreList {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#movieList>a>img, .genreListItem>a>img {
   width: 110px;
   height: 170px;
-
-  margin: 7px;
+  margin: 6px;
 }
 
 .posterList-like {
@@ -875,7 +888,7 @@ body {
   width: 30%;
   font-size: 0.45em;
   background-color: rgba(176, 216, 207, 0.6);
-  border: 2px solid rgba(37, 6, 239, 0.817);
+  border: 2px solid rgba(212, 212, 90, 0.751);
   border-radius: 7px;
 }
 

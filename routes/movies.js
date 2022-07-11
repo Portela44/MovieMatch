@@ -4,12 +4,21 @@ const mongoose = require('mongoose');
 const Movie = require("../models/Movie");
 const Vote = require("../models/Vote");
 const isLoggedIn = require("../middlewares");
+const Handlebars = require("hbs");
 
 // IMDB API test requirement
 const imdbId = require('imdb-id');
 const metafilm = require("metafilm");
 const colage = require('colage');
 
+//Handlebar helpers
+Handlebars.registerHelper('contains', function (arr, genre) {
+    let contained = false;
+    if (arr.includes(genre)) {
+        contained = true;
+    }
+    return contained
+});
 
 router.get('/ignored', isLoggedIn, async (req, res, next) => {
     const user = req.session.currentUser
