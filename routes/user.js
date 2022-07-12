@@ -74,11 +74,11 @@ router.post('/delete', async (req, res, next) => {
 // @access  User
 
 router.post("/preferences", async (req, res, next) => {
-    const {preferences} = req.body;
-    const user = req.session.currentUser;
-    console.log(preferences);
+    const { preferences } = req.body;
     try {
-        await User.findByIdAndUpdate(user._id, {preferences}, {new:true});
+        const updatedUser = await User.findByIdAndUpdate(req.session.currentUser._id, { preferences }, { new: true });
+        req.session.currentUser = updatedUser;
+        console.log(updatedUser);
     } catch (error) {
         next(error)
     }

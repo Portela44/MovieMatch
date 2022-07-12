@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const Movie = require("../models/Movie");
 const Vote = require("../models/Vote");
+const User = require("../models/User")
 const isLoggedIn = require("../middlewares");
 
 // @desc    Gets movie-detail view again and loads a new random item
@@ -69,7 +70,7 @@ router.post("/:movieId/voteDislike", isLoggedIn, async (req, res, next) => {
     const vote = false;
     const { movieId } = req.params;
     const userId = req.session.currentUser._id;
-    user = req.session.currentUser;
+    const user = req.session.currentUser;
     try {
         const existingVote = await Vote.find({ userId: userId, movieId: movieId });
         if (existingVote) {
@@ -95,6 +96,15 @@ router.post("/:movieId/voteDislike", isLoggedIn, async (req, res, next) => {
             nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
             nextMovie0 = nextMovie[0];
         }
+
+        for (let i = 0; i < nextMovie0.genres.length; i++) {
+            console.log(nextMovie0.genres[i]);
+            while (!user.preferences.includes(nextMovie0.genres[i])) {
+                nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
+                nextMovie0 = nextMovie[0];
+            }
+        }
+
         res.redirect(`/movies/${nextMovie0._id}`);
     } catch (error) {
         next(error);
@@ -113,7 +123,7 @@ router.post("/:movieId/voteIgnore", isLoggedIn, async (req, res, next) => {
     const ignore = true;
     const { movieId } = req.params;
     const userId = req.session.currentUser._id;
-    user = req.session.currentUser;
+    const user = req.session.currentUser;
     try {
         const existingVote = await Vote.find({ userId: userId, movieId: movieId });
         if (existingVote) {
