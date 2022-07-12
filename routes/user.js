@@ -69,6 +69,19 @@ router.post('/delete', async (req, res, next) => {
     }
 });
 
+// @desc    Saves new preference settings for the user
+// @route   POST /preferences
+// @access  User
 
+router.post("/preferences", async (req, res, next) => {
+    const {preferences} = req.body;
+    const user = req.session.currentUser;
+    console.log(preferences);
+    try {
+        await User.findByIdAndUpdate(user._id, {preferences}, {new:true});
+    } catch (error) {
+        next(error)
+    }
+});
 
 module.exports = router;
