@@ -1,9 +1,9 @@
 <h1 class="filter-heading">Filter</h1>
 <div class="filter-box">
-    <form action="" class="filter-container">
+    <form action="/movies/filters" class="filter-container" method="POST">
         <label for="action" class="filter-option">
 
-            <input type="checkbox" class="checkbox" id="action">
+            <input type="checkbox" class="checkbox" id="action" name="action">
             <div class="checkbox-content action background-image">
                 <div class="tick-mark"></div>
                 <div class="filter-icon">
@@ -15,7 +15,7 @@
 
         <label for="drama" class="filter-option">
 
-            <input type="checkbox" class="checkbox" id="drama">
+            <input type="checkbox" class="checkbox" id="drama" name="drama">
             <div class="checkbox-content drama background-image">
                 <div class="tick-mark"></div>
                 <div class="filter-icon"></div>
@@ -26,7 +26,7 @@
 
         <label for="fantasy" class="filter-option">
 
-            <input type="checkbox" class="checkbox" id="fantasy">
+            <input type="checkbox" class="checkbox" id="fantasy" name="fantasy">
             <div class="checkbox-content fantasy background-image">
                 <div class="tick-mark"></div>
                 <div class="filter-icon"></div>
@@ -37,7 +37,7 @@
 
         <label for="comedy" class="filter-option">
 
-            <input type="checkbox" class="checkbox" id="comedy">
+            <input type="checkbox" class="checkbox" id="comedy" name="comedy">
             <div class="checkbox-content comedy background-image">
                 <div class="tick-mark"></div>
                 <div class="filter-icon"></div>
@@ -48,7 +48,7 @@
 
         <label for="mystery" class="filter-option">
 
-            <input type="checkbox" class="checkbox" id="mystery">
+            <input type="checkbox" class="checkbox" id="mystery" name="mystery">
             <div class="checkbox-content mystery background-image">
                 <div class="tick-mark"></div>
                 <div class="filter-icon"></div>
@@ -59,7 +59,7 @@
 
         <label for="adventure" class="filter-option">
 
-            <input type="checkbox" class="checkbox" id="adventure">
+            <input type="checkbox" class="checkbox" id="adventure" name="adventure">
             <div class="checkbox-content adventure background-image">
                 <div class="tick-mark"></div>
                 <div class="filter-icon"></div>
@@ -70,7 +70,7 @@
 
         <label for="war" class="filter-option">
 
-            <input type="checkbox" class="checkbox" id="war">
+            <input type="checkbox" class="checkbox" id="war" name="war">
             <div class="checkbox-content war background-image">
                 <div class="tick-mark"></div>
                 <div class="filter-icon"></div>
@@ -81,7 +81,7 @@
 
         <label for="Sci-Fi" class="filter-option">
 
-            <input type="checkbox" class="checkbox" id="Sci-Fi">
+            <input type="checkbox" class="checkbox" id="Sci-Fi" name="sci-fi">
             <div class="checkbox-content sci-fi background-image">
                 <div class="tick-mark"></div>
                 <div class="filter-icon"></div>
@@ -92,7 +92,7 @@
 
         <label for="romance" class="filter-option">
 
-            <input type="checkbox" class="checkbox" id="romance">
+            <input type="checkbox" class="checkbox" id="romance" name="romance">
             <div class="checkbox-content romance background-image">
                 <div class="tick-mark"></div>
                 <div class="filter-icon"></div>
@@ -102,7 +102,7 @@
         </label>
         <label for="history" class="filter-option">
 
-            <input type="checkbox" class="checkbox" id="history">
+            <input type="checkbox" class="checkbox" id="history" name="history">
             <div class="checkbox-content history background-image">
                 <div class="tick-mark"></div>
                 <div class="filter-icon"></div>
@@ -112,7 +112,7 @@
         </label>
         <label for="documentary" class="filter-option">
 
-            <input type="checkbox" class="checkbox" id="documentary">
+            <input type="checkbox" class="checkbox" id="documentary" name="documentary">
             <div class="checkbox-content documentary background-image">
                 <div class="tick-mark"></div>
                 <div class="filter-icon"></div>
@@ -122,7 +122,7 @@
         </label>
         <label for="crime" class="filter-option">
 
-            <input type="checkbox" class="checkbox" id="crime">
+            <input type="checkbox" class="checkbox" id="crime" name="crime">
             <div class="checkbox-content crime background-image">
                 <div class="tick-mark"></div>
                 <div class="filter-icon"></div>
@@ -131,9 +131,7 @@
 
         </label>
 
-
-    </form>
-    <form action="" class="btn-form">
         <button type="submit" class="submit-filter-btn">Submit</button>
     </form>
+
 </div>

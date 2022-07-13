@@ -282,4 +282,10 @@ router.get('/:movieId', isLoggedIn, async (req, res, next) => {
     }
 });
 
+router.post('/filters', async (req, res, next) => {
+    const { action, drama, fantasy, comedy, mystery, adventure, war, scifi, romance, history, documentary, crime } = req.body
+    console.log(req.body)
+    res.redirect('/')
+})
+
 module.exports = router;

@@ -247,7 +247,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
-  background-image: radial-gradient(rgba(53, 56, 58, 1),rgba(53, 56, 58, 1));
+  background-image: radial-gradient(rgba(53, 56, 58, 1), rgba(53, 56, 58, 1));
 }
 
 .movie-image-container {
@@ -862,7 +862,8 @@ body {
   justify-content: center;
 }
 
-#movieList>a>img, .genreListItem>a>img {
+#movieList>a>img,
+.genreListItem>a>img {
   width: 110px;
   height: 170px;
   margin: 6px;
