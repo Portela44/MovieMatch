@@ -87,6 +87,7 @@ router.post('/login', async (req, res, next) => {
     } else {
       const match = await bcrypt.compare(password, user.hashedPassword);
       if (match) {
+        req.session.currentUser = user;
         res.redirect('/');
       } else {
         res.render('auth/login', { error: "Unable to authenticate user" });

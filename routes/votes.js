@@ -98,15 +98,11 @@ router.post("/:movieId/voteDislike", isLoggedIn, async (req, res, next) => {
         }
 
         for (let i = 0; i < nextMovie0.genres.length; i++) {
-            console.log(nextMovie0.genres[i]);
-            console.log(user);
             while (!user.preferences.includes(nextMovie0.genres[i])) {
                 nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
                 nextMovie0 = nextMovie[0];
-                console.log(req.session.currentUser)
             }
         }
-
         res.redirect(`/movies/${nextMovie0._id}`);
     } catch (error) {
         next(error);
