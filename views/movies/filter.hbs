@@ -1,15 +1,15 @@
 <h1 class="filter-heading">Filter</h1>
 <div class="filter-box">
-    <form action="/user/preferences" class="filter-container" method="POST">
-        <select name="preferences" multiple>
+    <form action="/movies/filter" class="filter-container" method="POST">
+        {{!-- <select name="preferences" multiple>
             <option name="preferences" value="12">Drama</option>            
             <option name="preferences" value="1">Action</option>
             <option name="preferences" value="4">Animation</option>
-        </select>
+        </select> --}}
             
-        {{!-- <label for="action" class="filter-option" method="POST">
+        <label for="action" class="filter-option" method="POST">
 
-            <input type="checkbox" class="checkbox" id="action" value="">
+            <input type="checkbox" class="checkbox" id="action"  name="action" {{#if (contains user.preferences "1")}} checked {{/if}}>
             <div class="checkbox-content action background-image">
                 <div class="tick-mark"></div>
                 <div class="filter-icon">
@@ -21,7 +21,7 @@
 
         <label for="drama" class="filter-option">
 
-            <input type="checkbox" class="checkbox" id="drama">
+            <input type="checkbox" class="checkbox" id="drama" name="drama" {{#if (contains user.preferences "12")}} checked {{/if}}>
             <div class="checkbox-content drama background-image">
                 <div class="tick-mark"></div>
                 <div class="filter-icon"></div>
@@ -32,7 +32,7 @@
 
         <label for="fantasy" class="filter-option">
 
-            <input type="checkbox" class="checkbox" id="fantasy">
+            <input type="checkbox" class="checkbox" id="fantasy" name="fantasy" {{#if (contains user.preferences "14")}} checked {{/if}}>
             <div class="checkbox-content fantasy background-image">
                 <div class="tick-mark"></div>
                 <div class="filter-icon"></div>
@@ -43,7 +43,7 @@
 
         <label for="comedy" class="filter-option">
 
-            <input type="checkbox" class="checkbox" id="comedy">
+            <input type="checkbox" class="checkbox" id="comedy" name="comedy" {{#if (contains user.preferences "8")}} checked {{/if}}>
             <div class="checkbox-content comedy background-image">
                 <div class="tick-mark"></div>
                 <div class="filter-icon"></div>
@@ -54,7 +54,7 @@
 
         <label for="mystery" class="filter-option">
 
-            <input type="checkbox" class="checkbox" id="mystery">
+            <input type="checkbox" class="checkbox" id="mystery" name="mystery" {{#if (contains user.preferences "22")}} checked {{/if}}>
             <div class="checkbox-content mystery background-image">
                 <div class="tick-mark"></div>
                 <div class="filter-icon"></div>
@@ -65,7 +65,7 @@
 
         <label for="adventure" class="filter-option">
 
-            <input type="checkbox" class="checkbox" id="adventure">
+            <input type="checkbox" class="checkbox" id="adventure" name="adventure" {{#if (contains user.preferences "3")}} checked {{/if}}>
             <div class="checkbox-content adventure background-image">
                 <div class="tick-mark"></div>
                 <div class="filter-icon"></div>
@@ -76,7 +76,7 @@
 
         <label for="war" class="filter-option">
 
-            <input type="checkbox" class="checkbox" id="war">
+            <input type="checkbox" class="checkbox" id="war" name="war" {{#if (contains user.preferences "34")}} checked {{/if}}>
             <div class="checkbox-content war background-image">
                 <div class="tick-mark"></div>
                 <div class="filter-icon"></div>
@@ -87,7 +87,7 @@
 
         <label for="Sci-Fi" class="filter-option">
 
-            <input type="checkbox" class="checkbox" id="Sci-Fi">
+            <input type="checkbox" class="checkbox" id="Sci-Fi" name="scifi" {{#if (contains user.preferences "27")}} checked {{/if}}>
             <div class="checkbox-content sci-fi background-image">
                 <div class="tick-mark"></div>
                 <div class="filter-icon"></div>
@@ -98,7 +98,7 @@
 
         <label for="romance" class="filter-option">
 
-            <input type="checkbox" class="checkbox" id="romance">
+            <input type="checkbox" class="checkbox" id="romance" name="romance" {{#if (contains user.preferences "26")}} checked {{/if}}>
             <div class="checkbox-content romance background-image">
                 <div class="tick-mark"></div>
                 <div class="filter-icon"></div>
@@ -108,7 +108,7 @@
         </label>
         <label for="history" class="filter-option">
 
-            <input type="checkbox" class="checkbox" id="history">
+            <input type="checkbox" class="checkbox" id="history" name="history" {{#if (contains user.preferences "20")}} checked {{/if}}>
             <div class="checkbox-content history background-image">
                 <div class="tick-mark"></div>
                 <div class="filter-icon"></div>
@@ -118,7 +118,7 @@
         </label>
         <label for="documentary" class="filter-option">
 
-            <input type="checkbox" class="checkbox" id="documentary">
+            <input type="checkbox" class="checkbox" id="documentary" name="documentary" {{#if (contains user.preferences "11")}} checked {{/if}}>
             <div class="checkbox-content documentary background-image">
                 <div class="tick-mark"></div>
                 <div class="filter-icon"></div>
@@ -128,14 +128,14 @@
         </label>
         <label for="crime" class="filter-option">
 
-            <input type="checkbox" class="checkbox" id="crime">
+            <input type="checkbox" class="checkbox" id="crime" name="crime" {{#if (contains user.preferences "10")}} checked {{/if}}>
             <div class="checkbox-content crime background-image">
                 <div class="tick-mark"></div>
                 <div class="filter-icon"></div>
                 <div class="filetr-name"></div>
             </div>
 
-        </label> --}}
+        </label>
 
         <button type="submit" class="submit-filter-btn">Submit</button>
 

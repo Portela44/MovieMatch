@@ -22,7 +22,7 @@ router.post("/:movieId/voteLike", isLoggedIn, async (req, res, next) => {
     const vote = true;
     const { movieId } = req.params;
     const userId = req.session.currentUser._id;
-    const user = req.session.currentUser
+    const user = req.session.currentUser;
     try {
         const existingVote = await Vote.find({ userId: userId, movieId: movieId });
         if (existingVote) {
@@ -34,7 +34,7 @@ router.post("/:movieId/voteLike", isLoggedIn, async (req, res, next) => {
 
         votes.forEach(el => {
             votedMovieIdArr.push(String(el.movieId));
-        })
+        });
 
         let nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
         let nextMovie0 = nextMovie[0];
@@ -47,6 +47,13 @@ router.post("/:movieId/voteLike", isLoggedIn, async (req, res, next) => {
             }
             nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
             nextMovie0 = nextMovie[0];
+        }
+
+        for (let i = 0; i < nextMovie0.genres.length; i++) {
+            while (!user.preferences.includes(nextMovie0.genres[i])) {
+                nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
+                nextMovie0 = nextMovie[0];
+            }
         }
         res.redirect(`/movies/${nextMovie0._id}`);
     } catch (error) {
@@ -133,7 +140,7 @@ router.post("/:movieId/voteIgnore", isLoggedIn, async (req, res, next) => {
 
         votes.forEach(el => {
             votedMovieIdArr.push(String(el.movieId));
-        })
+        });
 
         let nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
         let nextMovie0 = nextMovie[0];
@@ -146,6 +153,13 @@ router.post("/:movieId/voteIgnore", isLoggedIn, async (req, res, next) => {
             }
             nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
             nextMovie0 = nextMovie[0];
+        }
+
+        for (let i = 0; i < nextMovie0.genres.length; i++) {
+            while (!user.preferences.includes(nextMovie0.genres[i])) {
+                nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
+                nextMovie0 = nextMovie[0];
+            }
         }
         res.redirect(`/movies/${nextMovie0._id}`);
     } catch (error) {
