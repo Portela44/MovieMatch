@@ -153,7 +153,7 @@ router.post('/:movieId/edit', async (req, res, next) => {
 // @access  Admin
 
 router.get('/create', (req, res, next) => {
-    user = req.session.currentUser;
+    const user = req.session.currentUser;
     res.render('movies/new-movie', { user });
 });
 

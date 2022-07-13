@@ -81,5 +81,15 @@ router.get('/userList', async (req, res, next) => {
 })
 
 
+router.post("/preferences", async (req, res, next) => {
+    const { preferences } = req.body;
+    try {
+        const updatedUser = await User.findByIdAndUpdate(req.session.currentUser._id, { preferences }, { new: true });
+        req.session.currentUser = updatedUser;
+        console.log(updatedUser);
+    } catch (error) {
+        next(error)
+    }
+});
 
 module.exports = router;
