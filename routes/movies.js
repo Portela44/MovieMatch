@@ -80,7 +80,7 @@ router.get('/api-search-by-name', async (req, res, next) => {
         console.log(movieImdbId);
         const movieInfo = await metafilm.id({ imdb_id: `${movieImdbId}` });
         console.log(movieInfo);
-        res.redirect("/movies/search-movie");
+        res.json(movieInfo);
     } catch (error) {
         next(error);
     }
