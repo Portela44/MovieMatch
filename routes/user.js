@@ -69,6 +69,17 @@ router.post('/delete', async (req, res, next) => {
     }
 });
 
+router.get('/userList', async (req, res, next) => {
+    const user = req.session.currentUser
+
+    try {
+        const users = await User.find({});
+        res.render('user/userList', { users, user })
+    } catch (error) {
+
+    }
+})
+
 
 
 module.exports = router;
