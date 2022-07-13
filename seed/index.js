@@ -5,176 +5,70 @@ const Movie = require("../models/Movie");
 const movies = [
   //movie 1
   {
-    imdb_id: "0848228",
-    name: "The Avengers",
-    year: 2012,
-    image: {
-      sm: "https://m.media-amazon.com/images/M/MV5BMTcwNTg1Nzg2MF5BMl5BanBnXkFtZTcwNDEwOTUwOA@@._V1_UX100_.jpg",
-      md: "https://m.media-amazon.com/images/M/MV5BMTcwNTg1Nzg2MF5BMl5BanBnXkFtZTcwNDEwOTUwOA@@._V1_UX200_.jpg",
-      lg: "https://m.media-amazon.com/images/M/MV5BMTcwNTg1Nzg2MF5BMl5BanBnXkFtZTcwNDEwOTUwOA@@._V1_UX400_.jpg",
-      og: "https://m.media-amazon.com/images/M/MV5BMTcwNTg1Nzg2MF5BMl5BanBnXkFtZTcwNDEwOTUwOA@@.jpg"
-    },
-    premiere: "2012-04-27",
-    genres: [
-      "1",
-      "3",
-      "27"
-    ],
-    people: [
-      {
-        imdb_id: "0923736",
-        name: "Joss Whedon",
-        department: "directing",
-        job: "director",
-        translations: [
-          {
-            country: "US",
-            language: "en",
-            name: "Joss Whedon"
-          }
-        ]
-      },
-      {
-        imdb_id: "0923736",
-        name: "Joss Whedon",
-        department: "writing",
-        translations: [
-          {
-            country: "US",
-            language: "en",
-            name: "Joss Whedon"
-          }
-        ]
-      },
-      {
-        imdb_id: "0672015",
-        name: "Zak Penn",
-        department: "writing",
-        translations: [
-          {
-            country: "US",
-            language: "en",
-            name: "Zak Penn"
-          }
-        ]
-      }
-    ],
-    imdb_rating: 80,
-    imdb_vote: 1361878,
-    translations: [
-      {
-        country: "US",
-        language: "en",
-        name: "The Avengers",
-        overview: "Earth&apos;s mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.",
-        poster: {
-          sm: "https://m.media-amazon.com/images/M/MV5BMzFjMzQ4OWItNGNlMi00ZGQ5LWFhNzUtNjllZmY1ZGMxNTBjXkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_.jpg",
-          md: "https://m.media-amazon.com/images/M/MV5BMzFjMzQ4OWItNGNlMi00ZGQ5LWFhNzUtNjllZmY1ZGMxNTBjXkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_.jpg",
-          lg: "https://m.media-amazon.com/images/M/MV5BMzFjMzQ4OWItNGNlMi00ZGQ5LWFhNzUtNjllZmY1ZGMxNTBjXkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_.jpg",
-          og: "https://m.media-amazon.com/images/M/MV5BMzFjMzQ4OWItNGNlMi00ZGQ5LWFhNzUtNjllZmY1ZGMxNTBjXkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_.jpg"
-        }
-      }
-    ]
-  },
-
-  //movie 2
-  {
-    "imdb_id": "0077869",
-    "name": "The Lord of the Rings",
-    "year": 1979,
-    "image": {
-      "sm": "https://m.media-amazon.com/images/M/MV5BOWY2MWRlMzMtY2NmYi00MjU4LWI1MjYtM2MyMGQ4Y2FkMTk5XkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_UX100_.jpg",
-      "md": "https://m.media-amazon.com/images/M/MV5BOWY2MWRlMzMtY2NmYi00MjU4LWI1MjYtM2MyMGQ4Y2FkMTk5XkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_UX200_.jpg",
-      "lg": "https://m.media-amazon.com/images/M/MV5BOWY2MWRlMzMtY2NmYi00MjU4LWI1MjYtM2MyMGQ4Y2FkMTk5XkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_UX400_.jpg",
-      "og": "https://m.media-amazon.com/images/M/MV5BOWY2MWRlMzMtY2NmYi00MjU4LWI1MjYtM2MyMGQ4Y2FkMTk5XkEyXkFqcGdeQXVyNzU1NzE3NTg@.jpg"
-    },
-    "premiere": "1979-07-31",
+    "imdb_id": "3582202",
+    "name": "1927",
+    "year": 2014,
+    "premiere": "2014-03-14",
     "genres": [
-      "4",
-      "3",
-      "14"
+      "11",
+      "28",
+      "12"
     ],
     "people": [
       {
-        "imdb_id": "0000835",
-        "name": "Ralph Bakshi",
+        "imdb_id": "4294108",
+        "name": "Laura Kaehr",
         "department": "directing",
         "job": "director",
         "translations": [
           {
             "country": "US",
             "language": "en",
-            "name": "Ralph Bakshi"
+            "name": "Laura Kaehr"
           }
         ]
       },
       {
-        "imdb_id": "0174723",
-        "name": "Chris Conkling",
+        "imdb_id": "4294108",
+        "name": "Laura Kaehr",
         "department": "writing",
         "translations": [
           {
             "country": "US",
             "language": "en",
-            "name": "Chris Conkling"
-          }
-        ]
-      },
-      {
-        "imdb_id": "0063566",
-        "name": "Peter S. Beagle",
-        "department": "writing",
-        "translations": [
-          {
-            "country": "US",
-            "language": "en",
-            "name": "Peter S. Beagle"
-          }
-        ]
-      },
-      {
-        "imdb_id": "0866058",
-        "name": "J.R.R. Tolkien",
-        "department": "writing",
-        "translations": [
-          {
-            "country": "US",
-            "language": "en",
-            "name": "J.R.R. Tolkien"
+            "name": "Laura Kaehr"
           }
         ]
       }
     ],
-    "imdb_rating": 62,
-    "imdb_vote": 33123,
+    "imdb_rating": 0,
+    "imdb_vote": 0,
     "translations": [
       {
         "country": "US",
         "language": "en",
-        "name": "The Lord of the Rings",
-        "overview": "The Fellowship of the Ring embark on a journey to destroy the One Ring and end Sauron&apos;s reign over Middle-earth.",
+        "name": "1927",
+        "overview": "An opera written shortly after signing of the Locarno Pact in 1925, never performed because of the conflict that soon engulfed Europe. Laura Kaehr found the libretto for this Friedens Oper written by her great-grandfather, who was...",
         "poster": {
-          "sm": "https://m.media-amazon.com/images/M/MV5BNjNiYmNkNDUtYzg1MC00YjdjLWJhODMtZDA4ODYwYTU2YjMzXkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_UX100_.jpg",
-          "md": "https://m.media-amazon.com/images/M/MV5BNjNiYmNkNDUtYzg1MC00YjdjLWJhODMtZDA4ODYwYTU2YjMzXkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_UX200_.jpg",
-          "lg": "https://m.media-amazon.com/images/M/MV5BNjNiYmNkNDUtYzg1MC00YjdjLWJhODMtZDA4ODYwYTU2YjMzXkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_UX400_.jpg",
-          "og": "https://m.media-amazon.com/images/M/MV5BNjNiYmNkNDUtYzg1MC00YjdjLWJhODMtZDA4ODYwYTU2YjMzXkEyXkFqcGdeQXVyODc0OTEyNDU@.jpg"
+          "sm": "https://m.media-amazon.com/images/M/MV5BMjE5NTIzNDk3NF5BMl5BanBnXkFtZTgwMDcxMTk1NzE@._V1_UX100_.jpg",
+          "md": "https://m.media-amazon.com/images/M/MV5BMjE5NTIzNDk3NF5BMl5BanBnXkFtZTgwMDcxMTk1NzE@._V1_UX200_.jpg",
+          "lg": "https://m.media-amazon.com/images/M/MV5BMjE5NTIzNDk3NF5BMl5BanBnXkFtZTgwMDcxMTk1NzE@._V1_UX400_.jpg",
+          "og": "https://m.media-amazon.com/images/M/MV5BMjE5NTIzNDk3NF5BMl5BanBnXkFtZTgwMDcxMTk1NzE@.jpg"
         }
       }
     ]
   },
-
-  //movie 3
   {
-    "imdb_id": "0172495",
-    "name": "Gladiator",
-    "year": 2000,
+    "imdb_id": "1037705",
+    "name": "The Book of Eli",
+    "year": 2010,
     "image": {
-      "sm": "https://m.media-amazon.com/images/M/MV5BMTU1NTQ0OTkyNF5BMl5BanBnXkFtZTgwMTQzMjIwMDI@._V1_UX100_.jpg",
-      "md": "https://m.media-amazon.com/images/M/MV5BMTU1NTQ0OTkyNF5BMl5BanBnXkFtZTgwMTQzMjIwMDI@._V1_UX200_.jpg",
-      "lg": "https://m.media-amazon.com/images/M/MV5BMTU1NTQ0OTkyNF5BMl5BanBnXkFtZTgwMTQzMjIwMDI@._V1_UX400_.jpg",
-      "og": "https://m.media-amazon.com/images/M/MV5BMTU1NTQ0OTkyNF5BMl5BanBnXkFtZTgwMTQzMjIwMDI@.jpg"
+      "sm": "https://m.media-amazon.com/images/M/MV5BMTgyNzc4NjE1OF5BMl5BanBnXkFtZTcwNzQ3ODY4Mg@@._V1_UX100_.jpg",
+      "md": "https://m.media-amazon.com/images/M/MV5BMTgyNzc4NjE1OF5BMl5BanBnXkFtZTcwNzQ3ODY4Mg@@._V1_UX200_.jpg",
+      "lg": "https://m.media-amazon.com/images/M/MV5BMTgyNzc4NjE1OF5BMl5BanBnXkFtZTcwNzQ3ODY4Mg@@._V1_UX400_.jpg",
+      "og": "https://m.media-amazon.com/images/M/MV5BMTgyNzc4NjE1OF5BMl5BanBnXkFtZTcwNzQ3ODY4Mg@@.jpg"
     },
-    "premiere": "2000-05-17",
+    "premiere": "2010-03-18",
     "genres": [
       "1",
       "3",
@@ -182,503 +76,146 @@ const movies = [
     ],
     "people": [
       {
-        "imdb_id": "0000631",
-        "name": "Ridley Scott",
+        "imdb_id": "0400436",
+        "name": "Albert Hughes",
         "department": "directing",
         "job": "director",
         "translations": [
           {
             "country": "US",
             "language": "en",
-            "name": "Ridley Scott"
+            "name": "Albert Hughes"
           }
         ]
       },
       {
-        "imdb_id": "0291905",
-        "name": "David Franzoni",
-        "department": "writing",
-        "translations": [
-          {
-            "country": "US",
-            "language": "en",
-            "name": "David Franzoni"
-          }
-        ]
-      },
-      {
-        "imdb_id": "0517589",
-        "name": "John Logan",
-        "department": "writing",
-        "translations": [
-          {
-            "country": "US",
-            "language": "en",
-            "name": "John Logan"
-          }
-        ]
-      },
-      {
-        "imdb_id": "0629933",
-        "name": "William Nicholson",
-        "department": "writing",
-        "translations": [
-          {
-            "country": "US",
-            "language": "en",
-            "name": "William Nicholson"
-          }
-        ]
-      }
-    ],
-    "imdb_rating": 85,
-    "imdb_vote": 1462531,
-    "translations": [
-      {
-        "country": "US",
-        "language": "en",
-        "name": "Gladiator",
-        "overview": "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.",
-        "poster": {
-          "sm": "https://m.media-amazon.com/images/M/MV5BYTllNmQ3MWYtNzE5Ny00N2UwLTg1MDgtMWIyY2FjNTNlMDEzXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_UX100_.jpg",
-          "md": "https://m.media-amazon.com/images/M/MV5BYTllNmQ3MWYtNzE5Ny00N2UwLTg1MDgtMWIyY2FjNTNlMDEzXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_UX200_.jpg",
-          "lg": "https://m.media-amazon.com/images/M/MV5BYTllNmQ3MWYtNzE5Ny00N2UwLTg1MDgtMWIyY2FjNTNlMDEzXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_UX400_.jpg",
-          "og": "https://m.media-amazon.com/images/M/MV5BYTllNmQ3MWYtNzE5Ny00N2UwLTg1MDgtMWIyY2FjNTNlMDEzXkEyXkFqcGdeQXVyMTYzMDM0NTU@.jpg"
-        }
-      }
-    ]
-  },
-
-  //movie 4
-  {
-    "imdb_id": "0295297",
-    "name": "Harry Potter and the Chamber of Secrets",
-    "year": 2002,
-    "image": {
-      "sm": "https://m.media-amazon.com/images/M/MV5BNmI3ZjNhNjYtODhjOC00NjlkLWE4MTItMDhiOGVmZmIwOWMxXkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_UX100_.jpg",
-      "md": "https://m.media-amazon.com/images/M/MV5BNmI3ZjNhNjYtODhjOC00NjlkLWE4MTItMDhiOGVmZmIwOWMxXkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_UX200_.jpg",
-      "lg": "https://m.media-amazon.com/images/M/MV5BNmI3ZjNhNjYtODhjOC00NjlkLWE4MTItMDhiOGVmZmIwOWMxXkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_UX400_.jpg",
-      "og": "https://m.media-amazon.com/images/M/MV5BNmI3ZjNhNjYtODhjOC00NjlkLWE4MTItMDhiOGVmZmIwOWMxXkEyXkFqcGdeQXVyNzU1NzE3NTg@.jpg"
-    },
-    "premiere": "2002-11-29",
-    "genres": [
-      "3",
-      "13",
-      "14"
-    ],
-    "people": [
-      {
-        "imdb_id": "0001060",
-        "name": "Chris Columbus",
+        "imdb_id": "0400441",
+        "name": "Allen Hughes",
         "department": "directing",
         "job": "director",
         "translations": [
           {
             "country": "US",
             "language": "en",
-            "name": "Chris Columbus"
+            "name": "Allen Hughes"
           }
         ]
       },
       {
-        "imdb_id": "0746830",
-        "name": "J.K. Rowling",
+        "imdb_id": "1729428",
+        "name": "Gary Whitta",
         "department": "writing",
         "translations": [
           {
             "country": "US",
             "language": "en",
-            "name": "J.K. Rowling"
-          }
-        ]
-      },
-      {
-        "imdb_id": "0460141",
-        "name": "Steve Kloves",
-        "department": "writing",
-        "translations": [
-          {
-            "country": "US",
-            "language": "en",
-            "name": "Steve Kloves"
+            "name": "Gary Whitta"
           }
         ]
       }
     ],
-    "imdb_rating": 74,
-    "imdb_vote": 619160,
+    "imdb_rating": 68,
+    "imdb_vote": 314960,
     "translations": [
       {
         "country": "US",
         "language": "en",
-        "name": "Harry Potter and the Chamber of Secrets",
-        "overview": "An ancient prophecy seems to be coming true when a mysterious presence begins stalking the corridors of a school of magic and leaving its victims paralyzed.",
+        "name": "The Book of Eli",
+        "overview": "A post-apocalyptic tale, in which a lone man fights his way across America in order to protect a sacred book that holds the secrets to saving humankind.",
         "poster": {
-          "sm": "https://m.media-amazon.com/images/M/MV5BNGE0ODQ0YjAtMzQ0Ny00NDdlLWJkYzQtODUxMWFlMWZmZjgwXkEyXkFqcGdeQXVyMTgxOTIzNzk@._V1_UX100_.jpg",
-          "md": "https://m.media-amazon.com/images/M/MV5BNGE0ODQ0YjAtMzQ0Ny00NDdlLWJkYzQtODUxMWFlMWZmZjgwXkEyXkFqcGdeQXVyMTgxOTIzNzk@._V1_UX200_.jpg",
-          "lg": "https://m.media-amazon.com/images/M/MV5BNGE0ODQ0YjAtMzQ0Ny00NDdlLWJkYzQtODUxMWFlMWZmZjgwXkEyXkFqcGdeQXVyMTgxOTIzNzk@._V1_UX400_.jpg",
-          "og": "https://m.media-amazon.com/images/M/MV5BNGE0ODQ0YjAtMzQ0Ny00NDdlLWJkYzQtODUxMWFlMWZmZjgwXkEyXkFqcGdeQXVyMTgxOTIzNzk@.jpg"
+          "sm": "https://m.media-amazon.com/images/M/MV5BMjYzMWYxYzItMjkzMC00N2E4LTg3MGEtODY4MDYyZGRkMjI0XkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_UX100_.jpg",
+          "md": "https://m.media-amazon.com/images/M/MV5BMjYzMWYxYzItMjkzMC00N2E4LTg3MGEtODY4MDYyZGRkMjI0XkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_UX200_.jpg",
+          "lg": "https://m.media-amazon.com/images/M/MV5BMjYzMWYxYzItMjkzMC00N2E4LTg3MGEtODY4MDYyZGRkMjI0XkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_UX400_.jpg",
+          "og": "https://m.media-amazon.com/images/M/MV5BMjYzMWYxYzItMjkzMC00N2E4LTg3MGEtODY4MDYyZGRkMjI0XkEyXkFqcGdeQXVyODc0OTEyNDU@.jpg"
         }
       }
     ]
   },
 
-  //movie 5
   {
-    "imdb_id": "0803096",
-    "name": "Warcraft",
-    "year": 2016,
+    "imdb_id": "2084970",
+    "name": "The Imitation Game",
+    "year": 2015,
     "image": {
-      "sm": "https://m.media-amazon.com/images/M/MV5BMjA2NzYyOTAzNF5BMl5BanBnXkFtZTgwNzUzMjc2ODE@._V1_UX100_.jpg",
-      "md": "https://m.media-amazon.com/images/M/MV5BMjA2NzYyOTAzNF5BMl5BanBnXkFtZTgwNzUzMjc2ODE@._V1_UX200_.jpg",
-      "lg": "https://m.media-amazon.com/images/M/MV5BMjA2NzYyOTAzNF5BMl5BanBnXkFtZTgwNzUzMjc2ODE@._V1_UX400_.jpg",
-      "og": "https://m.media-amazon.com/images/M/MV5BMjA2NzYyOTAzNF5BMl5BanBnXkFtZTgwNzUzMjc2ODE@.jpg"
+      "sm": "https://m.media-amazon.com/images/M/MV5BMjMzODk5OTY5OF5BMl5BanBnXkFtZTgwMTU1NjUyMzE@._V1_UX100_.jpg",
+      "md": "https://m.media-amazon.com/images/M/MV5BMjMzODk5OTY5OF5BMl5BanBnXkFtZTgwMTU1NjUyMzE@._V1_UX200_.jpg",
+      "lg": "https://m.media-amazon.com/images/M/MV5BMjMzODk5OTY5OF5BMl5BanBnXkFtZTgwMTU1NjUyMzE@._V1_UX400_.jpg",
+      "og": "https://m.media-amazon.com/images/M/MV5BMjMzODk5OTY5OF5BMl5BanBnXkFtZTgwMTU1NjUyMzE@.jpg"
     },
-    "premiere": "2016-06-03",
-    "genres": [
-      "1",
-      "3",
-      "14"
-    ],
-    "people": [
-      {
-        "imdb_id": "1512910",
-        "name": "Duncan Jones",
-        "department": "directing",
-        "job": "director",
-        "translations": [
-          {
-            "country": "US",
-            "language": "en",
-            "name": "Duncan Jones"
-          }
-        ]
-      },
-      {
-        "imdb_id": "0495378",
-        "name": "Charles Leavitt",
-        "department": "writing",
-        "translations": [
-          {
-            "country": "US",
-            "language": "en",
-            "name": "Charles Leavitt"
-          }
-        ]
-      },
-      {
-        "imdb_id": "1512910",
-        "name": "Duncan Jones",
-        "department": "writing",
-        "translations": [
-          {
-            "country": "US",
-            "language": "en",
-            "name": "Duncan Jones"
-          }
-        ]
-      }
-    ],
-    "imdb_rating": 67,
-    "imdb_vote": 260921,
-    "translations": [
-      {
-        "country": "US",
-        "language": "en",
-        "name": "Warcraft",
-        "overview": "As an Orc horde invades the planet Azeroth using a magic portal, a few human heroes and dissenting Orcs must attempt to stop the true evil behind this war.",
-        "poster": {
-          "sm": "https://m.media-amazon.com/images/M/MV5BNzZmZjMwMDMtNGRiMS00Mjg0LThmMTYtNjM4MmU0Y2I2ZGM0XkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_.jpg",
-          "md": "https://m.media-amazon.com/images/M/MV5BNzZmZjMwMDMtNGRiMS00Mjg0LThmMTYtNjM4MmU0Y2I2ZGM0XkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_.jpg",
-          "lg": "https://m.media-amazon.com/images/M/MV5BNzZmZjMwMDMtNGRiMS00Mjg0LThmMTYtNjM4MmU0Y2I2ZGM0XkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_.jpg",
-          "og": "https://m.media-amazon.com/images/M/MV5BNzZmZjMwMDMtNGRiMS00Mjg0LThmMTYtNjM4MmU0Y2I2ZGM0XkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_.jpg"
-        }
-      }
-    ]
-  },
-
-  //movie 6
-  {
-    "imdb_id": "6966692",
-    "name": "Green Book",
-    "year": 2019,
-    "image": {
-      "sm": "https://m.media-amazon.com/images/M/MV5BZDY3Y2FlZjUtOTE0Yi00NmM4LTg2ZDMtMGE5YWI4NjY1ZWNlXkEyXkFqcGdeQW1yb3NzZXI@._V1_UX100_.jpg",
-      "md": "https://m.media-amazon.com/images/M/MV5BZDY3Y2FlZjUtOTE0Yi00NmM4LTg2ZDMtMGE5YWI4NjY1ZWNlXkEyXkFqcGdeQW1yb3NzZXI@._V1_UX200_.jpg",
-      "lg": "https://m.media-amazon.com/images/M/MV5BZDY3Y2FlZjUtOTE0Yi00NmM4LTg2ZDMtMGE5YWI4NjY1ZWNlXkEyXkFqcGdeQW1yb3NzZXI@._V1_UX400_.jpg",
-      "og": "https://m.media-amazon.com/images/M/MV5BZDY3Y2FlZjUtOTE0Yi00NmM4LTg2ZDMtMGE5YWI4NjY1ZWNlXkEyXkFqcGdeQW1yb3NzZXI@.jpg"
-    },
-    "premiere": "2019-02-01",
+    "premiere": "2015-01-01",
     "genres": [
       "6",
-      "8",
-      "12"
+      "12",
+      "32"
     ],
     "people": [
       {
-        "imdb_id": "0268380",
-        "name": "Peter Farrelly",
+        "imdb_id": "0878763",
+        "name": "Morten Tyldum",
         "department": "directing",
         "job": "director",
         "translations": [
           {
             "country": "US",
             "language": "en",
-            "name": "Peter Farrelly"
+            "name": "Morten Tyldum"
           }
         ]
       },
       {
-        "imdb_id": "0885014",
-        "name": "Nick Vallelonga",
+        "imdb_id": "2441699",
+        "name": "Graham Moore",
         "department": "writing",
         "translations": [
           {
             "country": "US",
             "language": "en",
-            "name": "Nick Vallelonga"
+            "name": "Graham Moore"
           }
         ]
       },
       {
-        "imdb_id": "0192942",
-        "name": "Brian Hayes Currie",
+        "imdb_id": "0388132",
+        "name": "Andrew Hodges",
         "department": "writing",
         "translations": [
           {
             "country": "US",
             "language": "en",
-            "name": "Brian Hayes Currie"
-          }
-        ]
-      },
-      {
-        "imdb_id": "0268380",
-        "name": "Peter Farrelly",
-        "department": "writing",
-        "translations": [
-          {
-            "country": "US",
-            "language": "en",
-            "name": "Peter Farrelly"
+            "name": "Andrew Hodges"
           }
         ]
       }
     ],
-    "imdb_rating": 82,
-    "imdb_vote": 469165,
+    "imdb_rating": 80,
+    "imdb_vote": 755081,
     "translations": [
       {
         "country": "US",
         "language": "en",
-        "name": "Green Book",
-        "overview": "A working-class Italian-American bouncer becomes the driver for an African-American classical pianist on a tour of venues through the 1960s American South.",
+        "name": "The Imitation Game",
+        "overview": "During World War II, the English mathematical genius Alan Turing tries to crack the German Enigma code with help from fellow mathematicians while attempting to come to terms with his troubled private life.",
         "poster": {
-          "sm": "https://m.media-amazon.com/images/M/MV5BOTE4Y2I5YjktNGMzNi00ZGNmLWI5NzItYWE0YWQzNDIzODE0XkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_UX100_.jpg",
-          "md": "https://m.media-amazon.com/images/M/MV5BOTE4Y2I5YjktNGMzNi00ZGNmLWI5NzItYWE0YWQzNDIzODE0XkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_UX200_.jpg",
-          "lg": "https://m.media-amazon.com/images/M/MV5BOTE4Y2I5YjktNGMzNi00ZGNmLWI5NzItYWE0YWQzNDIzODE0XkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_UX400_.jpg",
-          "og": "https://m.media-amazon.com/images/M/MV5BOTE4Y2I5YjktNGMzNi00ZGNmLWI5NzItYWE0YWQzNDIzODE0XkEyXkFqcGdeQXVyMTYzMDM0NTU@.jpg"
+          "sm": "https://m.media-amazon.com/images/M/MV5BYzhlNzZiNjEtODE4MC00ODIxLWE4YzAtMzFkMWQ1M2ViYmQ0XkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_UX100_.jpg",
+          "md": "https://m.media-amazon.com/images/M/MV5BYzhlNzZiNjEtODE4MC00ODIxLWE4YzAtMzFkMWQ1M2ViYmQ0XkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_UX200_.jpg",
+          "lg": "https://m.media-amazon.com/images/M/MV5BYzhlNzZiNjEtODE4MC00ODIxLWE4YzAtMzFkMWQ1M2ViYmQ0XkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_UX400_.jpg",
+          "og": "https://m.media-amazon.com/images/M/MV5BYzhlNzZiNjEtODE4MC00ODIxLWE4YzAtMzFkMWQ1M2ViYmQ0XkEyXkFqcGdeQXVyMTYzMDM0NTU@.jpg"
         }
       }
     ]
   },
 
-  //movie 7
   {
-    "imdb_id": "0266543",
-    "name": "Finding Nemo",
-    "year": 2003,
+    "imdb_id": "0120737",
+    "name": "The Lord of the Rings: The Fellowship of the Ring",
+    "year": 2001,
     "image": {
-      "sm": "https://m.media-amazon.com/images/M/MV5BMjMwMDYxNTUyMl5BMl5BanBnXkFtZTcwNTIwMjQ4Nw@@._V1_UX100_.jpg",
-      "md": "https://m.media-amazon.com/images/M/MV5BMjMwMDYxNTUyMl5BMl5BanBnXkFtZTcwNTIwMjQ4Nw@@._V1_UX200_.jpg",
-      "lg": "https://m.media-amazon.com/images/M/MV5BMjMwMDYxNTUyMl5BMl5BanBnXkFtZTcwNTIwMjQ4Nw@@._V1_UX400_.jpg",
-      "og": "https://m.media-amazon.com/images/M/MV5BMjMwMDYxNTUyMl5BMl5BanBnXkFtZTcwNTIwMjQ4Nw@@.jpg"
+      "sm": "https://m.media-amazon.com/images/M/MV5BMzQ2YjI2YzgtZmNmMy00ZjUyLWE0NGItY2Y3NjUzZWM4NmM3XkEyXkFqcGdeQWxiaWFtb250._V1_.jpg",
+      "md": "https://m.media-amazon.com/images/M/MV5BMzQ2YjI2YzgtZmNmMy00ZjUyLWE0NGItY2Y3NjUzZWM4NmM3XkEyXkFqcGdeQWxiaWFtb250._V1_.jpg",
+      "lg": "https://m.media-amazon.com/images/M/MV5BMzQ2YjI2YzgtZmNmMy00ZjUyLWE0NGItY2Y3NjUzZWM4NmM3XkEyXkFqcGdeQWxiaWFtb250._V1_.jpg",
+      "og": "https://m.media-amazon.com/images/M/MV5BMzQ2YjI2YzgtZmNmMy00ZjUyLWE0NGItY2Y3NjUzZWM4NmM3XkEyXkFqcGdeQWxiaWFtb250._V1_.jpg"
     },
-    "premiere": "2003-11-28",
-    "genres": [
-      "4",
-      "3",
-      "8"
-    ],
-    "people": [
-      {
-        "imdb_id": "0004056",
-        "name": "Andrew Stanton",
-        "department": "directing",
-        "job": "director",
-        "translations": [
-          {
-            "country": "US",
-            "language": "en",
-            "name": "Andrew Stanton"
-          }
-        ]
-      },
-      {
-        "imdb_id": "0881279",
-        "name": "Lee Unkrich",
-        "department": "directing",
-        "job": "director",
-        "translations": [
-          {
-            "country": "US",
-            "language": "en",
-            "name": "Lee Unkrich"
-          }
-        ]
-      },
-      {
-        "imdb_id": "0004056",
-        "name": "Andrew Stanton",
-        "department": "writing",
-        "translations": [
-          {
-            "country": "US",
-            "language": "en",
-            "name": "Andrew Stanton"
-          }
-        ]
-      },
-      {
-        "imdb_id": "0677037",
-        "name": "Bob Peterson",
-        "department": "writing",
-        "translations": [
-          {
-            "country": "US",
-            "language": "en",
-            "name": "Bob Peterson"
-          }
-        ]
-      },
-      {
-        "imdb_id": "0721675",
-        "name": "David Reynolds",
-        "department": "writing",
-        "translations": [
-          {
-            "country": "US",
-            "language": "en",
-            "name": "David Reynolds"
-          }
-        ]
-      }
-    ],
-    "imdb_rating": 82,
-    "imdb_vote": 1022835,
-    "translations": [
-      {
-        "country": "US",
-        "language": "en",
-        "name": "Finding Nemo",
-        "overview": "After his son is captured in the Great Barrier Reef and taken to Sydney, a timid clownfish sets out on a journey to bring him home.",
-        "poster": {
-          "sm": "https://m.media-amazon.com/images/M/MV5BN2MxMGRkZmMtYzFhMS00YTdmLTgwMjYtZWNlMjZhZjJmNmVmXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_UX100_.jpg",
-          "md": "https://m.media-amazon.com/images/M/MV5BN2MxMGRkZmMtYzFhMS00YTdmLTgwMjYtZWNlMjZhZjJmNmVmXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_UX200_.jpg",
-          "lg": "https://m.media-amazon.com/images/M/MV5BN2MxMGRkZmMtYzFhMS00YTdmLTgwMjYtZWNlMjZhZjJmNmVmXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_UX400_.jpg",
-          "og": "https://m.media-amazon.com/images/M/MV5BN2MxMGRkZmMtYzFhMS00YTdmLTgwMjYtZWNlMjZhZjJmNmVmXkEyXkFqcGdeQXVyMTYzMDM0NTU@.jpg"
-        }
-      }
-    ]
-  },
-
-  //movie 8
-  {
-    "imdb_id": "0092099",
-    "name": "Top Gun",
-    "year": 1986,
-    "image": {
-      "sm": "https://m.media-amazon.com/images/M/MV5BMjExNzExNjIzM15BMl5BanBnXkFtZTcwMjA5NzAwOQ@@._V1_UX100_.jpg",
-      "md": "https://m.media-amazon.com/images/M/MV5BMjExNzExNjIzM15BMl5BanBnXkFtZTcwMjA5NzAwOQ@@._V1_UX200_.jpg",
-      "lg": "https://m.media-amazon.com/images/M/MV5BMjExNzExNjIzM15BMl5BanBnXkFtZTcwMjA5NzAwOQ@@._V1_UX400_.jpg",
-      "og": "https://m.media-amazon.com/images/M/MV5BMjExNzExNjIzM15BMl5BanBnXkFtZTcwMjA5NzAwOQ@@.jpg"
-    },
-    "premiere": "1986-08-21",
-    "genres": [
-      "1",
-      "12"
-    ],
-    "people": [
-      {
-        "imdb_id": "0001716",
-        "name": "Tony Scott",
-        "department": "directing",
-        "job": "director",
-        "translations": [
-          {
-            "country": "US",
-            "language": "en",
-            "name": "Tony Scott"
-          }
-        ]
-      },
-      {
-        "imdb_id": "0143596",
-        "name": "Jim Cash",
-        "department": "writing",
-        "translations": [
-          {
-            "country": "US",
-            "language": "en",
-            "name": "Jim Cash"
-          }
-        ]
-      },
-      {
-        "imdb_id": "0258390",
-        "name": "Jack Epps Jr.",
-        "department": "writing",
-        "translations": [
-          {
-            "country": "US",
-            "language": "en",
-            "name": "Jack Epps Jr."
-          }
-        ]
-      },
-      {
-        "imdb_id": "1274594",
-        "name": "Ehud Yonay",
-        "department": "writing",
-        "translations": [
-          {
-            "country": "US",
-            "language": "en",
-            "name": "Ehud Yonay"
-          }
-        ]
-      }
-    ],
-    "imdb_rating": 69,
-    "imdb_vote": 382822,
-    "translations": [
-      {
-        "country": "US",
-        "language": "en",
-        "name": "Top Gun",
-        "overview": "As students at the United States Navy&apos;s elite fighter weapons school compete to be best in the class, one daring young pilot learns a few things from a civilian instructor that are not taught in the classroom.",
-        "poster": {
-          "sm": "https://m.media-amazon.com/images/M/MV5BYTM0N2U4NzctY2ZkMi00ZDM1LWI2NGUtMDQ4ZWNlMzliNWFjXkEyXkFqcGdeQXVyMjgyNDU4MjE@._V1_UX100_.jpg",
-          "md": "https://m.media-amazon.com/images/M/MV5BYTM0N2U4NzctY2ZkMi00ZDM1LWI2NGUtMDQ4ZWNlMzliNWFjXkEyXkFqcGdeQXVyMjgyNDU4MjE@._V1_UX200_.jpg",
-          "lg": "https://m.media-amazon.com/images/M/MV5BYTM0N2U4NzctY2ZkMi00ZDM1LWI2NGUtMDQ4ZWNlMzliNWFjXkEyXkFqcGdeQXVyMjgyNDU4MjE@._V1_UX400_.jpg",
-          "og": "https://m.media-amazon.com/images/M/MV5BYTM0N2U4NzctY2ZkMi00ZDM1LWI2NGUtMDQ4ZWNlMzliNWFjXkEyXkFqcGdeQXVyMjgyNDU4MjE@.jpg"
-        }
-      }
-    ]
-  },
-
-  // movie 9
-  {
-    "imdb_id": "0167260",
-    "name": "The Lord of the Rings: The Return of the King",
-    "year": 2003,
-    "image": {
-      "sm": "https://m.media-amazon.com/images/M/MV5BNDRmNjQxOWItNTY3MS00M2ExLWJiYWYtNGQ2OTI5MWRkYWFlXkEyXkFqcGdeQWxiaWFtb250._V1_.jpg",
-      "md": "https://m.media-amazon.com/images/M/MV5BNDRmNjQxOWItNTY3MS00M2ExLWJiYWYtNGQ2OTI5MWRkYWFlXkEyXkFqcGdeQWxiaWFtb250._V1_.jpg",
-      "lg": "https://m.media-amazon.com/images/M/MV5BNDRmNjQxOWItNTY3MS00M2ExLWJiYWYtNGQ2OTI5MWRkYWFlXkEyXkFqcGdeQWxiaWFtb250._V1_.jpg",
-      "og": "https://m.media-amazon.com/images/M/MV5BNDRmNjQxOWItNTY3MS00M2ExLWJiYWYtNGQ2OTI5MWRkYWFlXkEyXkFqcGdeQWxiaWFtb250._V1_.jpg"
-    },
-    "premiere": "2003-12-17",
+    "premiere": "2001-12-19",
     "genres": [
       "1",
       "3",
@@ -735,170 +272,720 @@ const movies = [
         ]
       }
     ],
-    "imdb_rating": 90,
-    "imdb_vote": 1787753,
+    "imdb_rating": 88,
+    "imdb_vote": 1812001,
     "translations": [
       {
         "country": "US",
         "language": "en",
-        "name": "The Lord of the Rings: The Return of the King",
-        "overview": "Gandalf and Aragorn lead the World of Men against Sauron&apos;s army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+        "name": "The Lord of the Rings: The Fellowship of the Ring",
+        "overview": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
         "poster": {
-          "sm": "https://m.media-amazon.com/images/M/MV5BNGJjODMxZGMtOTFlNC00MjI4LThiZWUtZTU3ZGIxYzcxMTBiXkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_UX100_.jpg",
-          "md": "https://m.media-amazon.com/images/M/MV5BNGJjODMxZGMtOTFlNC00MjI4LThiZWUtZTU3ZGIxYzcxMTBiXkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_UX200_.jpg",
-          "lg": "https://m.media-amazon.com/images/M/MV5BNGJjODMxZGMtOTFlNC00MjI4LThiZWUtZTU3ZGIxYzcxMTBiXkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_UX400_.jpg",
-          "og": "https://m.media-amazon.com/images/M/MV5BNGJjODMxZGMtOTFlNC00MjI4LThiZWUtZTU3ZGIxYzcxMTBiXkEyXkFqcGdeQXVyODc0OTEyNDU@.jpg"
+          "sm": "https://m.media-amazon.com/images/M/MV5BMzgyNjdjOWMtMjAyYy00NzQ4LWIwYTQtZDk2ZDQzYWVlN2IwXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_UX100_.jpg",
+          "md": "https://m.media-amazon.com/images/M/MV5BMzgyNjdjOWMtMjAyYy00NzQ4LWIwYTQtZDk2ZDQzYWVlN2IwXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_UX200_.jpg",
+          "lg": "https://m.media-amazon.com/images/M/MV5BMzgyNjdjOWMtMjAyYy00NzQ4LWIwYTQtZDk2ZDQzYWVlN2IwXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_UX400_.jpg",
+          "og": "https://m.media-amazon.com/images/M/MV5BMzgyNjdjOWMtMjAyYy00NzQ4LWIwYTQtZDk2ZDQzYWVlN2IwXkEyXkFqcGdeQXVyMTYzMDM0NTU@.jpg"
+        }
+      }
+    ]
+  },
+  {
+    "imdb_id": "2119532",
+    "name": "Hacksaw Ridge",
+    "year": 2016,
+    "image": {
+      "sm": "https://m.media-amazon.com/images/M/MV5BMjAzNTI5MzQ1OF5BMl5BanBnXkFtZTgwOTc3OTY1OTE@._V1_UX100_.jpg",
+      "md": "https://m.media-amazon.com/images/M/MV5BMjAzNTI5MzQ1OF5BMl5BanBnXkFtZTgwOTc3OTY1OTE@._V1_UX200_.jpg",
+      "lg": "https://m.media-amazon.com/images/M/MV5BMjAzNTI5MzQ1OF5BMl5BanBnXkFtZTgwOTc3OTY1OTE@._V1_UX400_.jpg",
+      "og": "https://m.media-amazon.com/images/M/MV5BMjAzNTI5MzQ1OF5BMl5BanBnXkFtZTgwOTc3OTY1OTE@.jpg"
+    },
+    "premiere": "2016-12-07",
+    "genres": [
+      "6",
+      "12",
+      "17"
+    ],
+    "people": [
+      {
+        "imdb_id": "0000154",
+        "name": "Mel Gibson",
+        "department": "directing",
+        "job": "director",
+        "translations": [
+          {
+            "country": "US",
+            "language": "en",
+            "name": "Mel Gibson"
+          }
+        ]
+      },
+      {
+        "imdb_id": "0770938",
+        "name": "Robert Schenkkan",
+        "department": "writing",
+        "translations": [
+          {
+            "country": "US",
+            "language": "en",
+            "name": "Robert Schenkkan"
+          }
+        ]
+      },
+      {
+        "imdb_id": "0460795",
+        "name": "Andrew Knight",
+        "department": "writing",
+        "translations": [
+          {
+            "country": "US",
+            "language": "en",
+            "name": "Andrew Knight"
+          }
+        ]
+      }
+    ],
+    "imdb_rating": 81,
+    "imdb_vote": 508626,
+    "translations": [
+      {
+        "country": "US",
+        "language": "en",
+        "name": "Hacksaw Ridge",
+        "overview": "World War II American Army Medic Desmond T. Doss, who served during the Battle of Okinawa, refuses to kill people and becomes the first man in American history to receive the Medal of Honor without firing a shot.",
+        "poster": {
+          "sm": "https://m.media-amazon.com/images/M/MV5BMWE2NWQ5MzItMjg5Yy00MmMyLTliODgtNWYwYzA4NGQ3MDBmXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_UX100_.jpg",
+          "md": "https://m.media-amazon.com/images/M/MV5BMWE2NWQ5MzItMjg5Yy00MmMyLTliODgtNWYwYzA4NGQ3MDBmXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_UX200_.jpg",
+          "lg": "https://m.media-amazon.com/images/M/MV5BMWE2NWQ5MzItMjg5Yy00MmMyLTliODgtNWYwYzA4NGQ3MDBmXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_UX400_.jpg",
+          "og": "https://m.media-amazon.com/images/M/MV5BMWE2NWQ5MzItMjg5Yy00MmMyLTliODgtNWYwYzA4NGQ3MDBmXkEyXkFqcGdeQXVyMTYzMDM0NTU@.jpg"
         }
       }
     ]
   },
 
-  //movie 10
   {
-    "imdb_id": "0157583",
-    "name": "Enigma",
-    "year": 2003,
+    "imdb_id": "0068646",
+    "name": "The Godfather",
+    "year": 1972,
     "image": {
-      "sm": "https://m.media-amazon.com/images/M/MV5BYmRjYTdmYTYtNWY4ZC00N2FiLWEzZDUtNzk3MTc4ZDE5MGI4XkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_UX100_.jpg",
-      "md": "https://m.media-amazon.com/images/M/MV5BYmRjYTdmYTYtNWY4ZC00N2FiLWEzZDUtNzk3MTc4ZDE5MGI4XkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_UX200_.jpg",
-      "lg": "https://m.media-amazon.com/images/M/MV5BYmRjYTdmYTYtNWY4ZC00N2FiLWEzZDUtNzk3MTc4ZDE5MGI4XkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_UX400_.jpg",
-      "og": "https://m.media-amazon.com/images/M/MV5BYmRjYTdmYTYtNWY4ZC00N2FiLWEzZDUtNzk3MTc4ZDE5MGI4XkEyXkFqcGdeQXVyNzU1NzE3NTg@.jpg"
+      "sm": "https://m.media-amazon.com/images/M/MV5BYWNlN2U4YjQtMzI3NC00ZjkxLWEwMTItYWRlNDUxYTYwYjVlXkEyXkFqcGdeQWpvaG5oYXJ0._V1_.jpg",
+      "md": "https://m.media-amazon.com/images/M/MV5BYWNlN2U4YjQtMzI3NC00ZjkxLWEwMTItYWRlNDUxYTYwYjVlXkEyXkFqcGdeQWpvaG5oYXJ0._V1_.jpg",
+      "lg": "https://m.media-amazon.com/images/M/MV5BYWNlN2U4YjQtMzI3NC00ZjkxLWEwMTItYWRlNDUxYTYwYjVlXkEyXkFqcGdeQWpvaG5oYXJ0._V1_.jpg",
+      "og": "https://m.media-amazon.com/images/M/MV5BYWNlN2U4YjQtMzI3NC00ZjkxLWEwMTItYWRlNDUxYTYwYjVlXkEyXkFqcGdeQWpvaG5oYXJ0._V1_.jpg"
     },
-    "premiere": "2003-08-22",
+    "premiere": "1972-10-20",
     "genres": [
-      "12",
-      "22",
-      "26"
+      "10",
+      "12"
     ],
     "people": [
       {
-        "imdb_id": "0000776",
-        "name": "Michael Apted",
+        "imdb_id": "0000338",
+        "name": "Francis Ford Coppola",
         "department": "directing",
         "job": "director",
         "translations": [
           {
             "country": "US",
             "language": "en",
-            "name": "Michael Apted"
+            "name": "Francis Ford Coppola"
           }
         ]
       },
       {
-        "imdb_id": "0365249",
-        "name": "Robert Harris",
+        "imdb_id": "0701374",
+        "name": "Mario Puzo",
         "department": "writing",
         "translations": [
           {
             "country": "US",
             "language": "en",
-            "name": "Robert Harris"
+            "name": "Mario Puzo"
           }
         ]
       },
       {
-        "imdb_id": "0001779",
-        "name": "Tom Stoppard",
+        "imdb_id": "0000338",
+        "name": "Francis Ford Coppola",
         "department": "writing",
         "translations": [
           {
             "country": "US",
             "language": "en",
-            "name": "Tom Stoppard"
+            "name": "Francis Ford Coppola"
           }
         ]
       }
     ],
-    "imdb_rating": 64,
-    "imdb_vote": 21069,
+    "imdb_rating": 92,
+    "imdb_vote": 1804557,
     "translations": [
       {
         "country": "US",
         "language": "en",
-        "name": "Enigma",
-        "overview": "A young genius frantically races against time to crack an enemy code and solve the mystery surrounding the woman he loves.",
+        "name": "The Godfather",
+        "overview": "The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son.",
         "poster": {
-          "sm": "https://m.media-amazon.com/images/M/MV5BNTI5ODU3N2UtM2QzNS00NjM1LWExNzMtNjgzYWQ5MWNkYTJmXkEyXkFqcGdeQXVyMjA0MzYwMDY@._V1_UX100_.jpg",
-          "md": "https://m.media-amazon.com/images/M/MV5BNTI5ODU3N2UtM2QzNS00NjM1LWExNzMtNjgzYWQ5MWNkYTJmXkEyXkFqcGdeQXVyMjA0MzYwMDY@._V1_UX200_.jpg",
-          "lg": "https://m.media-amazon.com/images/M/MV5BNTI5ODU3N2UtM2QzNS00NjM1LWExNzMtNjgzYWQ5MWNkYTJmXkEyXkFqcGdeQXVyMjA0MzYwMDY@._V1_UX400_.jpg",
-          "og": "https://m.media-amazon.com/images/M/MV5BNTI5ODU3N2UtM2QzNS00NjM1LWExNzMtNjgzYWQ5MWNkYTJmXkEyXkFqcGdeQXVyMjA0MzYwMDY@.jpg"
+          "sm": "https://m.media-amazon.com/images/M/MV5BMGNkYzY2ZjUtODU4My00Mjc5LWEwNDAtMzUxZjcxZWJhZTcwXkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_UX100_.jpg",
+          "md": "https://m.media-amazon.com/images/M/MV5BMGNkYzY2ZjUtODU4My00Mjc5LWEwNDAtMzUxZjcxZWJhZTcwXkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_UX200_.jpg",
+          "lg": "https://m.media-amazon.com/images/M/MV5BMGNkYzY2ZjUtODU4My00Mjc5LWEwNDAtMzUxZjcxZWJhZTcwXkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_UX400_.jpg",
+          "og": "https://m.media-amazon.com/images/M/MV5BMGNkYzY2ZjUtODU4My00Mjc5LWEwNDAtMzUxZjcxZWJhZTcwXkEyXkFqcGdeQXVyODc0OTEyNDU@.jpg"
         }
       }
     ]
   },
-  //movie 11
+
   {
-    "imdb_id": "0816692",
-    "name": "Interstellar",
-    "year": 2014,
+    "imdb_id": "1170358",
+    "name": "The Hobbit: The Desolation of Smaug",
+    "year": 2013,
     "image": {
-      "sm": "https://m.media-amazon.com/images/M/MV5BNjM5OTQzMTg4N15BMl5BanBnXkFtZTgwOTgyMjM0NTE@._V1_UX100_.jpg",
-      "md": "https://m.media-amazon.com/images/M/MV5BNjM5OTQzMTg4N15BMl5BanBnXkFtZTgwOTgyMjM0NTE@._V1_UX200_.jpg",
-      "lg": "https://m.media-amazon.com/images/M/MV5BNjM5OTQzMTg4N15BMl5BanBnXkFtZTgwOTgyMjM0NTE@._V1_UX400_.jpg",
-      "og": "https://m.media-amazon.com/images/M/MV5BNjM5OTQzMTg4N15BMl5BanBnXkFtZTgwOTgyMjM0NTE@.jpg"
+      "sm": "https://m.media-amazon.com/images/M/MV5BMjI5MzkwNTAyMF5BMl5BanBnXkFtZTgwMzAzNjMzMzE@._V1_UX100_.jpg",
+      "md": "https://m.media-amazon.com/images/M/MV5BMjI5MzkwNTAyMF5BMl5BanBnXkFtZTgwMzAzNjMzMzE@._V1_UX200_.jpg",
+      "lg": "https://m.media-amazon.com/images/M/MV5BMjI5MzkwNTAyMF5BMl5BanBnXkFtZTgwMzAzNjMzMzE@._V1_UX400_.jpg",
+      "og": "https://m.media-amazon.com/images/M/MV5BMjI5MzkwNTAyMF5BMl5BanBnXkFtZTgwMzAzNjMzMzE@.jpg"
     },
-    "premiere": "2014-11-07",
+    "premiere": "2013-12-13",
     "genres": [
       "3",
-      "12",
-      "27"
+      "14"
     ],
     "people": [
       {
-        "imdb_id": "0634240",
-        "name": "Christopher Nolan",
+        "imdb_id": "0001392",
+        "name": "Peter Jackson",
         "department": "directing",
         "job": "director",
         "translations": [
           {
             "country": "US",
             "language": "en",
-            "name": "Christopher Nolan"
+            "name": "Peter Jackson"
           }
         ]
       },
       {
-        "imdb_id": "0634300",
-        "name": "Jonathan Nolan",
+        "imdb_id": "0909638",
+        "name": "Fran Walsh",
         "department": "writing",
         "translations": [
           {
             "country": "US",
             "language": "en",
-            "name": "Jonathan Nolan"
+            "name": "Fran Walsh"
           }
         ]
       },
       {
-        "imdb_id": "0634240",
-        "name": "Christopher Nolan",
+        "imdb_id": "0101991",
+        "name": "Philippa Boyens",
         "department": "writing",
         "translations": [
           {
             "country": "US",
             "language": "en",
-            "name": "Christopher Nolan"
+            "name": "Philippa Boyens"
+          }
+        ]
+      },
+      {
+        "imdb_id": "0001392",
+        "name": "Peter Jackson",
+        "department": "writing",
+        "translations": [
+          {
+            "country": "US",
+            "language": "en",
+            "name": "Peter Jackson"
+          }
+        ]
+      }
+    ],
+    "imdb_rating": 78,
+    "imdb_vote": 647076,
+    "translations": [
+      {
+        "country": "US",
+        "language": "en",
+        "name": "The Hobbit: The Desolation of Smaug",
+        "overview": "The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring.",
+        "poster": {
+          "sm": "https://m.media-amazon.com/images/M/MV5BODQ5ZmJkM2ItOTJmMC00NDgxLWIxNTktYWNhYjc2Y2JmMWU1XkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_UX100_.jpg",
+          "md": "https://m.media-amazon.com/images/M/MV5BODQ5ZmJkM2ItOTJmMC00NDgxLWIxNTktYWNhYjc2Y2JmMWU1XkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_UX200_.jpg",
+          "lg": "https://m.media-amazon.com/images/M/MV5BODQ5ZmJkM2ItOTJmMC00NDgxLWIxNTktYWNhYjc2Y2JmMWU1XkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_UX400_.jpg",
+          "og": "https://m.media-amazon.com/images/M/MV5BODQ5ZmJkM2ItOTJmMC00NDgxLWIxNTktYWNhYjc2Y2JmMWU1XkEyXkFqcGdeQXVyODc0OTEyNDU@.jpg"
+        }
+      }
+    ]
+  },
+
+  {
+    "imdb_id": "0903624",
+    "name": "The Hobbit: An Unexpected Journey",
+    "year": 2012,
+    "image": {
+      "sm": "https://m.media-amazon.com/images/M/MV5BNzQzNDczNTYwOV5BMl5BanBnXkFtZTcwMzA3ODk0OA@@._V1_UX100_.jpg",
+      "md": "https://m.media-amazon.com/images/M/MV5BNzQzNDczNTYwOV5BMl5BanBnXkFtZTcwMzA3ODk0OA@@._V1_UX200_.jpg",
+      "lg": "https://m.media-amazon.com/images/M/MV5BNzQzNDczNTYwOV5BMl5BanBnXkFtZTcwMzA3ODk0OA@@._V1_UX400_.jpg",
+      "og": "https://m.media-amazon.com/images/M/MV5BNzQzNDczNTYwOV5BMl5BanBnXkFtZTcwMzA3ODk0OA@@.jpg"
+    },
+    "premiere": "2012-12-14",
+    "genres": [
+      "3",
+      "14"
+    ],
+    "people": [
+      {
+        "imdb_id": "0001392",
+        "name": "Peter Jackson",
+        "department": "directing",
+        "job": "director",
+        "translations": [
+          {
+            "country": "US",
+            "language": "en",
+            "name": "Peter Jackson"
+          }
+        ]
+      },
+      {
+        "imdb_id": "0909638",
+        "name": "Fran Walsh",
+        "department": "writing",
+        "translations": [
+          {
+            "country": "US",
+            "language": "en",
+            "name": "Fran Walsh"
+          }
+        ]
+      },
+      {
+        "imdb_id": "0101991",
+        "name": "Philippa Boyens",
+        "department": "writing",
+        "translations": [
+          {
+            "country": "US",
+            "language": "en",
+            "name": "Philippa Boyens"
+          }
+        ]
+      },
+      {
+        "imdb_id": "0001392",
+        "name": "Peter Jackson",
+        "department": "writing",
+        "translations": [
+          {
+            "country": "US",
+            "language": "en",
+            "name": "Peter Jackson"
+          }
+        ]
+      }
+    ],
+    "imdb_rating": 78,
+    "imdb_vote": 808050,
+    "translations": [
+      {
+        "country": "US",
+        "language": "en",
+        "name": "The Hobbit: An Unexpected Journey",
+        "overview": "A reluctant Hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home, and the gold within it from the dragon Smaug.",
+        "poster": {
+          "sm": "https://m.media-amazon.com/images/M/MV5BMGUyOTQzNGEtZTQ0NS00Njc3LTkyMGEtZTA0ZTBmNTIzZDQ3XkEyXkFqcGdeQXVyNzI1NzMxNzM@._V1_UX100_.jpg",
+          "md": "https://m.media-amazon.com/images/M/MV5BMGUyOTQzNGEtZTQ0NS00Njc3LTkyMGEtZTA0ZTBmNTIzZDQ3XkEyXkFqcGdeQXVyNzI1NzMxNzM@._V1_UX200_.jpg",
+          "lg": "https://m.media-amazon.com/images/M/MV5BMGUyOTQzNGEtZTQ0NS00Njc3LTkyMGEtZTA0ZTBmNTIzZDQ3XkEyXkFqcGdeQXVyNzI1NzMxNzM@._V1_UX400_.jpg",
+          "og": "https://m.media-amazon.com/images/M/MV5BMGUyOTQzNGEtZTQ0NS00Njc3LTkyMGEtZTA0ZTBmNTIzZDQ3XkEyXkFqcGdeQXVyNzI1NzMxNzM@.jpg"
+        }
+      }
+    ]
+  },
+
+  {
+    "imdb_id": "0253474",
+    "name": "The Pianist",
+    "year": 2002,
+    "image": {
+      "sm": "https://m.media-amazon.com/images/M/MV5BMmQ4MWQzNDEtYmI4Zi00NmY0LWEwYTEtZTg4MmQ3MDM2YmJlXkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_UX100_.jpg",
+      "md": "https://m.media-amazon.com/images/M/MV5BMmQ4MWQzNDEtYmI4Zi00NmY0LWEwYTEtZTg4MmQ3MDM2YmJlXkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_UX200_.jpg",
+      "lg": "https://m.media-amazon.com/images/M/MV5BMmQ4MWQzNDEtYmI4Zi00NmY0LWEwYTEtZTg4MmQ3MDM2YmJlXkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_UX400_.jpg",
+      "og": "https://m.media-amazon.com/images/M/MV5BMmQ4MWQzNDEtYmI4Zi00NmY0LWEwYTEtZTg4MmQ3MDM2YmJlXkEyXkFqcGdeQXVyNzU1NzE3NTg@.jpg"
+    },
+    "premiere": "2002-12-13",
+    "genres": [
+      "6",
+      "12",
+      "20"
+    ],
+    "people": [
+      {
+        "imdb_id": "0000591",
+        "name": "Roman Polanski",
+        "department": "directing",
+        "job": "director",
+        "translations": [
+          {
+            "country": "US",
+            "language": "en",
+            "name": "Roman Polanski"
+          }
+        ]
+      },
+      {
+        "imdb_id": "0367838",
+        "name": "Ronald Harwood",
+        "department": "writing",
+        "translations": [
+          {
+            "country": "US",
+            "language": "en",
+            "name": "Ronald Harwood"
+          }
+        ]
+      },
+      {
+        "imdb_id": "0844262",
+        "name": "Wladyslaw Szpilman",
+        "department": "writing",
+        "translations": [
+          {
+            "country": "US",
+            "language": "en",
+            "name": "Wladyslaw Szpilman"
+          }
+        ]
+      }
+    ],
+    "imdb_rating": 85,
+    "imdb_vote": 811854,
+    "translations": [
+      {
+        "country": "US",
+        "language": "en",
+        "name": "The Pianist",
+        "overview": "A Polish Jewish musician struggles to survive the destruction of the Warsaw ghetto of World War II.",
+        "poster": {
+          "sm": "https://m.media-amazon.com/images/M/MV5BMzhhMzJmMjAtZmEzNC00YTJkLTljNjktZTI5NWYyNmJlZGJmXkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_UX100_.jpg",
+          "md": "https://m.media-amazon.com/images/M/MV5BMzhhMzJmMjAtZmEzNC00YTJkLTljNjktZTI5NWYyNmJlZGJmXkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_UX200_.jpg",
+          "lg": "https://m.media-amazon.com/images/M/MV5BMzhhMzJmMjAtZmEzNC00YTJkLTljNjktZTI5NWYyNmJlZGJmXkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_UX400_.jpg",
+          "og": "https://m.media-amazon.com/images/M/MV5BMzhhMzJmMjAtZmEzNC00YTJkLTljNjktZTI5NWYyNmJlZGJmXkEyXkFqcGdeQXVyODc0OTEyNDU@.jpg"
+        }
+      }
+    ]
+  },
+
+  {
+    "imdb_id": "0993846",
+    "name": "The Wolf of Wall Street",
+    "year": 2014,
+    "image": {
+      "sm": "https://m.media-amazon.com/images/M/MV5BMjE1OTQ5NTA4NV5BMl5BanBnXkFtZTgwODI5NTI1MDE@._V1_UX100_.jpg",
+      "md": "https://m.media-amazon.com/images/M/MV5BMjE1OTQ5NTA4NV5BMl5BanBnXkFtZTgwODI5NTI1MDE@._V1_UX200_.jpg",
+      "lg": "https://m.media-amazon.com/images/M/MV5BMjE1OTQ5NTA4NV5BMl5BanBnXkFtZTgwODI5NTI1MDE@._V1_UX400_.jpg",
+      "og": "https://m.media-amazon.com/images/M/MV5BMjE1OTQ5NTA4NV5BMl5BanBnXkFtZTgwODI5NTI1MDE@.jpg"
+    },
+    "premiere": "2014-01-17",
+    "genres": [
+      "6",
+      "8",
+      "10"
+    ],
+    "people": [
+      {
+        "imdb_id": "0000217",
+        "name": "Martin Scorsese",
+        "department": "directing",
+        "job": "director",
+        "translations": [
+          {
+            "country": "US",
+            "language": "en",
+            "name": "Martin Scorsese"
+          }
+        ]
+      },
+      {
+        "imdb_id": "1010540",
+        "name": "Terence Winter",
+        "department": "writing",
+        "translations": [
+          {
+            "country": "US",
+            "language": "en",
+            "name": "Terence Winter"
+          }
+        ]
+      },
+      {
+        "imdb_id": "0067789",
+        "name": "Jordan Belfort",
+        "department": "writing",
+        "translations": [
+          {
+            "country": "US",
+            "language": "en",
+            "name": "Jordan Belfort"
+          }
+        ]
+      }
+    ],
+    "imdb_rating": 82,
+    "imdb_vote": 1356839,
+    "translations": [
+      {
+        "country": "US",
+        "language": "en",
+        "name": "The Wolf of Wall Street",
+        "overview": "Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.",
+        "poster": {
+          "sm": "https://m.media-amazon.com/images/M/MV5BYTIzN2ZlMWEtYmRmMi00YWRlLThkZWYtMjZjNTliMWU4NGJkXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_UX100_.jpg",
+          "md": "https://m.media-amazon.com/images/M/MV5BYTIzN2ZlMWEtYmRmMi00YWRlLThkZWYtMjZjNTliMWU4NGJkXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_UX200_.jpg",
+          "lg": "https://m.media-amazon.com/images/M/MV5BYTIzN2ZlMWEtYmRmMi00YWRlLThkZWYtMjZjNTliMWU4NGJkXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_UX400_.jpg",
+          "og": "https://m.media-amazon.com/images/M/MV5BYTIzN2ZlMWEtYmRmMi00YWRlLThkZWYtMjZjNTliMWU4NGJkXkEyXkFqcGdeQXVyMTYzMDM0NTU@.jpg"
+        }
+      }
+    ]
+  },
+  {
+    "imdb_id": "2310332",
+    "name": "The Hobbit: The Battle of the Five Armies",
+    "year": 2014,
+    "image": {
+      "sm": "https://m.media-amazon.com/images/M/MV5BMTQ2OTk3MDk0Ml5BMl5BanBnXkFtZTgwNzc0MDgzMzE@._V1_UX100_.jpg",
+      "md": "https://m.media-amazon.com/images/M/MV5BMTQ2OTk3MDk0Ml5BMl5BanBnXkFtZTgwNzc0MDgzMzE@._V1_UX200_.jpg",
+      "lg": "https://m.media-amazon.com/images/M/MV5BMTQ2OTk3MDk0Ml5BMl5BanBnXkFtZTgwNzc0MDgzMzE@._V1_UX400_.jpg",
+      "og": "https://m.media-amazon.com/images/M/MV5BMTQ2OTk3MDk0Ml5BMl5BanBnXkFtZTgwNzc0MDgzMzE@.jpg"
+    },
+    "premiere": "2014-12-17",
+    "genres": [
+      "3",
+      "14"
+    ],
+    "people": [
+      {
+        "imdb_id": "0001392",
+        "name": "Peter Jackson",
+        "department": "directing",
+        "job": "director",
+        "translations": [
+          {
+            "country": "US",
+            "language": "en",
+            "name": "Peter Jackson"
+          }
+        ]
+      },
+      {
+        "imdb_id": "0909638",
+        "name": "Fran Walsh",
+        "department": "writing",
+        "translations": [
+          {
+            "country": "US",
+            "language": "en",
+            "name": "Fran Walsh"
+          }
+        ]
+      },
+      {
+        "imdb_id": "0101991",
+        "name": "Philippa Boyens",
+        "department": "writing",
+        "translations": [
+          {
+            "country": "US",
+            "language": "en",
+            "name": "Philippa Boyens"
+          }
+        ]
+      },
+      {
+        "imdb_id": "0001392",
+        "name": "Peter Jackson",
+        "department": "writing",
+        "translations": [
+          {
+            "country": "US",
+            "language": "en",
+            "name": "Peter Jackson"
+          }
+        ]
+      }
+    ],
+    "imdb_rating": 74,
+    "imdb_vote": 517750,
+    "translations": [
+      {
+        "country": "US",
+        "language": "en",
+        "name": "The Hobbit: The Battle of the Five Armies",
+        "overview": "Bilbo and company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness.",
+        "poster": {
+          "sm": "https://m.media-amazon.com/images/M/MV5BYWEyOTg0MzItZmY1Mi00NGVjLWFjOGYtYjllZWRlYTA0MmI2XkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_UX100_.jpg",
+          "md": "https://m.media-amazon.com/images/M/MV5BYWEyOTg0MzItZmY1Mi00NGVjLWFjOGYtYjllZWRlYTA0MmI2XkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_UX200_.jpg",
+          "lg": "https://m.media-amazon.com/images/M/MV5BYWEyOTg0MzItZmY1Mi00NGVjLWFjOGYtYjllZWRlYTA0MmI2XkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_UX400_.jpg",
+          "og": "https://m.media-amazon.com/images/M/MV5BYWEyOTg0MzItZmY1Mi00NGVjLWFjOGYtYjllZWRlYTA0MmI2XkEyXkFqcGdeQXVyODc0OTEyNDU@.jpg"
+        }
+      }
+    ]
+  },
+  {
+    "imdb_id": "1745960",
+    "name": "Top Gun: Maverick",
+    "year": 2022,
+    "image": {
+      "sm": "https://m.media-amazon.com/images/M/MV5BYWI1ZDQ4ZDItNjk0Ny00ZDcyLWI5MjctMmFkZjdkODI5ZGRlXkEyXkFqcGdeQWRvb2xpbmhk._V1_.jpg",
+      "md": "https://m.media-amazon.com/images/M/MV5BYWI1ZDQ4ZDItNjk0Ny00ZDcyLWI5MjctMmFkZjdkODI5ZGRlXkEyXkFqcGdeQWRvb2xpbmhk._V1_.jpg",
+      "lg": "https://m.media-amazon.com/images/M/MV5BYWI1ZDQ4ZDItNjk0Ny00ZDcyLWI5MjctMmFkZjdkODI5ZGRlXkEyXkFqcGdeQWRvb2xpbmhk._V1_.jpg",
+      "og": "https://m.media-amazon.com/images/M/MV5BYWI1ZDQ4ZDItNjk0Ny00ZDcyLWI5MjctMmFkZjdkODI5ZGRlXkEyXkFqcGdeQWRvb2xpbmhk._V1_.jpg"
+    },
+    "premiere": "2022-05-26",
+    "genres": [
+      "1",
+      "12"
+    ],
+    "people": [
+      {
+        "imdb_id": "2676052",
+        "name": "Joseph Kosinski",
+        "department": "directing",
+        "job": "director",
+        "translations": [
+          {
+            "country": "US",
+            "language": "en",
+            "name": "Joseph Kosinski"
+          }
+        ]
+      },
+      {
+        "imdb_id": "0143596",
+        "name": "Jim Cash",
+        "department": "writing",
+        "translations": [
+          {
+            "country": "US",
+            "language": "en",
+            "name": "Jim Cash"
+          }
+        ]
+      },
+      {
+        "imdb_id": "0258390",
+        "name": "Jack Epps Jr.",
+        "department": "writing",
+        "translations": [
+          {
+            "country": "US",
+            "language": "en",
+            "name": "Jack Epps Jr."
+          }
+        ]
+      },
+      {
+        "imdb_id": "0185976",
+        "name": "Peter Craig",
+        "department": "writing",
+        "translations": [
+          {
+            "country": "US",
+            "language": "en",
+            "name": "Peter Craig"
           }
         ]
       }
     ],
     "imdb_rating": 86,
-    "imdb_vote": 1745908,
+    "imdb_vote": 226812,
     "translations": [
       {
         "country": "US",
         "language": "en",
-        "name": "Interstellar",
-        "overview": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity&apos;s survival.",
+        "name": "Top Gun: Maverick",
+        "overview": "After more than thirty years of service as one of the Navy&apos;s top aviators, Pete Mitchell is where he belongs, pushing the envelope as a courageous test pilot and dodging the advancement in rank that would ground him.",
         "poster": {
-          "sm": "https://m.media-amazon.com/images/M/MV5BNjhlZDRlN2UtN2E0MS00N2I4LTgxOGItMWYxZDU4ODY1ZWFjXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_UX100_.jpg",
-          "md": "https://m.media-amazon.com/images/M/MV5BNjhlZDRlN2UtN2E0MS00N2I4LTgxOGItMWYxZDU4ODY1ZWFjXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_UX200_.jpg",
-          "lg": "https://m.media-amazon.com/images/M/MV5BNjhlZDRlN2UtN2E0MS00N2I4LTgxOGItMWYxZDU4ODY1ZWFjXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_UX400_.jpg",
-          "og": "https://m.media-amazon.com/images/M/MV5BNjhlZDRlN2UtN2E0MS00N2I4LTgxOGItMWYxZDU4ODY1ZWFjXkEyXkFqcGdeQXVyMTYzMDM0NTU@.jpg"
+          "sm": "https://m.media-amazon.com/images/M/MV5BOWQwOTA1ZDQtNzk3Yi00ZmVmLWFiZGYtNjdjNThiYjJhNzRjXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_UX100_.jpg",
+          "md": "https://m.media-amazon.com/images/M/MV5BOWQwOTA1ZDQtNzk3Yi00ZmVmLWFiZGYtNjdjNThiYjJhNzRjXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_UX200_.jpg",
+          "lg": "https://m.media-amazon.com/images/M/MV5BOWQwOTA1ZDQtNzk3Yi00ZmVmLWFiZGYtNjdjNThiYjJhNzRjXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_UX400_.jpg",
+          "og": "https://m.media-amazon.com/images/M/MV5BOWQwOTA1ZDQtNzk3Yi00ZmVmLWFiZGYtNjdjNThiYjJhNzRjXkEyXkFqcGdeQXVyODE5NzE3OTE@.jpg"
         }
       }
     ]
   },
+
+  {
+    "imdb_id": "11138512",
+    "name": "The Northman",
+    "year": 2022,
+    "image": {
+      "sm": "https://m.media-amazon.com/images/M/MV5BY2IxMjhkYjgtMjc0Yi00MDQ1LWEyNGEtODI0ZDE4ZjA3N2EyXkEyXkFqcGdeQXZ3ZXNsZXk@._V1_UX100_.jpg",
+      "md": "https://m.media-amazon.com/images/M/MV5BY2IxMjhkYjgtMjc0Yi00MDQ1LWEyNGEtODI0ZDE4ZjA3N2EyXkEyXkFqcGdeQXZ3ZXNsZXk@._V1_UX200_.jpg",
+      "lg": "https://m.media-amazon.com/images/M/MV5BY2IxMjhkYjgtMjc0Yi00MDQ1LWEyNGEtODI0ZDE4ZjA3N2EyXkEyXkFqcGdeQXZ3ZXNsZXk@._V1_UX400_.jpg",
+      "og": "https://m.media-amazon.com/images/M/MV5BY2IxMjhkYjgtMjc0Yi00MDQ1LWEyNGEtODI0ZDE4ZjA3N2EyXkEyXkFqcGdeQXZ3ZXNsZXk@.jpg"
+    },
+    "premiere": "2022-04-22",
+    "genres": [
+      "1",
+      "3",
+      "12"
+    ],
+    "people": [
+      {
+        "imdb_id": "3211470",
+        "name": "Robert Eggers",
+        "department": "directing",
+        "job": "director",
+        "translations": [
+          {
+            "country": "US",
+            "language": "en",
+            "name": "Robert Eggers"
+          }
+        ]
+      },
+      {
+        "imdb_id": "0797604",
+        "name": "Sjón",
+        "department": "writing",
+        "translations": [
+          {
+            "country": "US",
+            "language": "en",
+            "name": "Sjón"
+          }
+        ]
+      },
+      {
+        "imdb_id": "3211470",
+        "name": "Robert Eggers",
+        "department": "writing",
+        "translations": [
+          {
+            "country": "US",
+            "language": "en",
+            "name": "Robert Eggers"
+          }
+        ]
+      }
+    ],
+    "imdb_rating": 72,
+    "imdb_vote": 139640,
+    "translations": [
+      {
+        "country": "US",
+        "language": "en",
+        "name": "The Northman",
+        "overview": "From visionary director Robert Eggers comes The Northman, an action-filled epic that follows a young Viking prince on his quest to avenge his father&apos;s murder.",
+        "poster": {
+          "sm": "https://m.media-amazon.com/images/M/MV5BMzVlMmY2NTctODgwOC00NDMzLWEzMWYtM2RiYmIyNTNhMTI0XkEyXkFqcGdeQXVyNTAzNzgwNTg@._V1_UX100_.jpg",
+          "md": "https://m.media-amazon.com/images/M/MV5BMzVlMmY2NTctODgwOC00NDMzLWEzMWYtM2RiYmIyNTNhMTI0XkEyXkFqcGdeQXVyNTAzNzgwNTg@._V1_UX200_.jpg",
+          "lg": "https://m.media-amazon.com/images/M/MV5BMzVlMmY2NTctODgwOC00NDMzLWEzMWYtM2RiYmIyNTNhMTI0XkEyXkFqcGdeQXVyNTAzNzgwNTg@._V1_UX400_.jpg",
+          "og": "https://m.media-amazon.com/images/M/MV5BMzVlMmY2NTctODgwOC00NDMzLWEzMWYtM2RiYmIyNTNhMTI0XkEyXkFqcGdeQXVyNTAzNzgwNTg@.jpg"
+        }
+      }
+    ]
+  }
 ]
 
 mongoose.connect(process.env.MONGO_URL)
