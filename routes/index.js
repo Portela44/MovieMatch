@@ -28,16 +28,17 @@ router.get("/", async (req, res, next) => {
 
       let nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
       let nextMovie0 = nextMovie[0];
+      if(votedMovieIdArr.length>0) {
+        while (votedMovieIdArr.includes(String(nextMovie0._id))) {
 
-      while (votedMovieIdArr.includes(String(nextMovie0._id))) {
-
-        if (await Movie.count() === votes.length) {
-          res.redirect("/movies/congratulations");
-          break;
+          if (await Movie.count() === votes.length) {
+            res.redirect("/movies/congratulations");
+            break;
+          }
+          nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
+          nextMovie0 = nextMovie[0];
         }
-        nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
-        nextMovie0 = nextMovie[0];
-      }
+      }        
 
       for (let i = 0; i < nextMovie0.genres.length; i++) {
         while (!user.preferences.includes(nextMovie0.genres[i])) {
