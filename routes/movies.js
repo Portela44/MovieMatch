@@ -310,7 +310,6 @@ router.post("/filter", isLoggedIn, async (req,res,next) => {
 
     try {
         const newUser = await User.findByIdAndUpdate(user._id, {preferences: newPreferences}, {new: true});
-        console.log(newUser.preferences);
         req.session.currentUser = newUser;
         res.redirect("/");
     } catch (error) {

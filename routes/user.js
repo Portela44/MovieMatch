@@ -86,7 +86,6 @@ router.post("/preferences", async (req, res, next) => {
     try {
         const updatedUser = await User.findByIdAndUpdate(req.session.currentUser._id, { preferences }, { new: true });
         req.session.currentUser = updatedUser;
-        console.log(updatedUser);
     } catch (error) {
         next(error)
     }
