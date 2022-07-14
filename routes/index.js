@@ -15,7 +15,7 @@ const User = require('../models/User');
 // @desc    App home page
 // @route   GET /
 // @access  Public
-router.get("/", async (req, res, next) => {
+router.get("/", isLoggedIn, async (req, res, next) => {
   const user = req.session.currentUser;
   try {
     if(user){
