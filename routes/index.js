@@ -40,13 +40,16 @@ router.get("/", async (req, res, next) => {
         }
       }        
 
-      for (let i = 0; i < nextMovie0.genres.length; i++) {
-        while (!user.preferences.includes(nextMovie0.genres[i])) {
-          nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
-          nextMovie0 = nextMovie[0];
+      if(user.preferences) {
+        for (let i = 0; i < nextMovie0.genres.length; i++) {
+          while (!user.preferences.includes(nextMovie0.genres[i])) {
+            nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
+            nextMovie0 = nextMovie[0];
+          }
         }
       }
       res.render("index", { user, nextMovie });
+      
     } else {
       nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
       res.render("index",  { nextMovie } );
