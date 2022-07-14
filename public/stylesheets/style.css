@@ -499,6 +499,9 @@ body {
   background-color: rgb(85, 172, 164);
   border: none;
   letter-spacing: 2px;
+  position: absolute;
+  bottom: 120px;
+  left: 50px;
 }
 
 
