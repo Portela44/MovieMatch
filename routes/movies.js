@@ -217,7 +217,6 @@ router.get('/myList/byDate', isLoggedIn, async (req, res, next) => {
 
 router.get('/myList/byPopularity', isLoggedIn, async (req, res, next) => {
     const user = req.session.currentUser
-
     try {
         const votes = await Vote.find({ userId: user._id }).populate('movieId');
         votes.sort((a, b) => {
