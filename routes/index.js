@@ -18,33 +18,38 @@ const User = require('../models/User');
 router.get("/", async (req, res, next) => {
   const user = req.session.currentUser;
   try {
-    let votedMovieIdArr = [];
-    let votes = await Vote.find({ userId: user._id });
+    if(user){
+      let votedMovieIdArr = [];
+      let votes = await Vote.find({ userId: user._id });
 
-    votes.forEach(el => {
-      votedMovieIdArr.push(String(el.movieId));
-    });
+      votes.forEach(el => {
+        votedMovieIdArr.push(String(el.movieId));
+      });
 
-    let nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
-    let nextMovie0 = nextMovie[0];
+      let nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
+      let nextMovie0 = nextMovie[0];
 
-    while (votedMovieIdArr.includes(String(nextMovie0._id))) {
+      while (votedMovieIdArr.includes(String(nextMovie0._id))) {
 
-      if (await Movie.count() === votes.length) {
-        res.redirect("/movies/congratulations");
-        break;
-      }
-      nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
-      nextMovie0 = nextMovie[0];
-    }
-
-    for (let i = 0; i < nextMovie0.genres.length; i++) {
-      while (!user.preferences.includes(nextMovie0.genres[i])) {
+        if (await Movie.count() === votes.length) {
+          res.redirect("/movies/congratulations");
+          break;
+        }
         nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
         nextMovie0 = nextMovie[0];
       }
+
+      for (let i = 0; i < nextMovie0.genres.length; i++) {
+        while (!user.preferences.includes(nextMovie0.genres[i])) {
+          nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
+          nextMovie0 = nextMovie[0];
+        }
+      }
+      res.render("index", { user, nextMovie });
+    } else {
+      nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
+      res.render("index",  {nextMovie} );
     }
-    res.render("index", { user, nextMovie });
   } catch (error) {
     next(error);
   }
