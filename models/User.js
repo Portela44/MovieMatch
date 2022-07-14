@@ -25,6 +25,7 @@ const userSchema = new Schema(
     isAdmin: Boolean,
     preferences: {
       type: [String],
+      default: []
     }
   },
   {

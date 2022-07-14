@@ -126,15 +126,9 @@ const voteSchema = new Schema(
   }
 ); 
 
-
----
-
-## Routes
-
 | Name           | Method | Endpoint    | Protected | Req.body            | Redirects |
 |----------------|--------|-------------|-----------|---------------------|-----------|
 | Home           | GET    | /           | No        |                     |           |
-
 | Recommended    | GET    | /recom      | No        |                     |           |
 | Recommended    | POST   | /recom      | No        | { userId, movieId, vote }|      |
 | Login          | GET    | /auth/login | No        |                     |           |
@@ -147,8 +141,6 @@ const voteSchema = new Schema(
 | Edit movie     | POST   | /movies/edit| Yes       | { title, releaseDate, genre }| /movies/:movieId |
 | Delete movie   | POST   | /movies/delete| Yes     |                     | /        |
 
-
----
 
 ## Useful links
 

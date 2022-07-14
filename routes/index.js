@@ -17,20 +17,18 @@ const User = require('../models/User');
 // @access  Public
 router.get("/", async (req, res, next) => {
   const user = req.session.currentUser;
-  try {
-    if(user){
-      let votedMovieIdArr = [];
-      let votes = await Vote.find({ userId: user._id });
+  if(user){
+    try {
+    let votedMovieIdArr = [];
+    let votes = await Vote.find({ userId: user._id });
 
-      votes.forEach(el => {
-        votedMovieIdArr.push(String(el.movieId));
-      });
-
-      let nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
-      let nextMovie0 = nextMovie[0];
-
+    votes.forEach(el => {
+      votedMovieIdArr.push(String(el.movieId));
+    });
+    let nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
+    let nextMovie0 = nextMovie[0];
+    if(votedMovieIdArr.length>0) {
       while (votedMovieIdArr.includes(String(nextMovie0._id))) {
-
         if (await Movie.count() === votes.length) {
           res.redirect("/movies/congratulations");
           break;
@@ -38,20 +36,22 @@ router.get("/", async (req, res, next) => {
         nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
         nextMovie0 = nextMovie[0];
       }
-
+    }        
       for (let i = 0; i < nextMovie0.genres.length; i++) {
-        while (!user.preferences.includes(nextMovie0.genres[i])) {
-          nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
-          nextMovie0 = nextMovie[0];
-        }
+        if(user.preferences.length > 0) {
+          while (!user.preferences.includes(nextMovie0.genres[i])) {
+            nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
+            nextMovie0 = nextMovie[0];
+          }
+        }  
       }
-      res.render("index", { user, nextMovie });
-    } else {
-      nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
-      res.render("index",  { nextMovie } );
+    res.render("index", { user, nextMovie });
+    } catch (error) {
+      next(error);
     }
-  } catch (error) {
-    next(error);
+    } else {
+    let nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
+    res.render("index",  { nextMovie } );
   }
 });
 
