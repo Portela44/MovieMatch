@@ -69,6 +69,26 @@ router.post('/delete', async (req, res, next) => {
     }
 });
 
+router.get('/userList', async (req, res, next) => {
+    const user = req.session.currentUser
 
+    try {
+        const users = await User.find({});
+        res.render('user/userList', { users, user })
+    } catch (error) {
+
+    }
+})
+
+
+router.post("/preferences", async (req, res, next) => {
+    const { preferences } = req.body;
+    try {
+        const updatedUser = await User.findByIdAndUpdate(req.session.currentUser._id, { preferences }, { new: true });
+        req.session.currentUser = updatedUser;
+    } catch (error) {
+        next(error)
+    }
+});
 
 module.exports = router;

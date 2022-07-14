@@ -9,8 +9,8 @@
   <link href='/stylesheets/style.css' rel="stylesheet" />
   <title>Project module 2</title>
   <script>
-    window.addEventListener("load", function() {
-      document.getElementById("sortOptions").addEventListener("submit", function(e) {
+    window.addEventListener("load", function () {
+      document.getElementById("sortOptions").addEventListener("submit", function (e) {
         this.action = document.getElementById("sortRule").value;
       })
     })
@@ -18,7 +18,11 @@
 </head>
 
 <body>
+  <nav class="nav">
+    <button onclick="history.back()" class="back-btn"><i id="back-arrow" class="fa-solid fa-arrow-left"></i></button>
+  </nav>
   {{{ body }}}
+
   <footer class="footer">
 
     {{#if user}}
@@ -35,7 +39,7 @@
     {{/unless}}
     <a href="/movies/search-movie"><img src="/images/magnifying.webp" alt="magnifying glass" class="footer-logo"></a>
     <a href="/"><img src="/images/start.png" alt="start logo" class="footer-logo"></a>
-    <a href=""><img src="/images/filter.jpeg" alt="filer-icon" class="footer-logo"></a>
+    <a href="/movies/filter"><img src="/images/filter.jpeg" alt="filer-icon" class="footer-logo"></a>
   </footer>
 </body>
 

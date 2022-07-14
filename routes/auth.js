@@ -61,7 +61,7 @@ router.post('/signup', fileUploader.single('imageUrl'), async (req, res, next) =
   try {
     const salt = await bcrypt.genSalt(saltRounds);
     const hashedPassword = await bcrypt.hash(password, salt);
-    const user = await User.create({ username, email, hashedPassword, imageUrl });
+    await User.create({ username, email, hashedPassword, imageUrl });
     res.render('auth/login');
   } catch (error) {
     next(error)

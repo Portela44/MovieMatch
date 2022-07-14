@@ -1,0 +1,647 @@
+<h1>My <span class="strong-green">Movie</span> list
+    <span id="sortList">
+        <form id="sortOptions">
+            <select class="sortOptions" id="sortRule">
+                <option value="/movies/myList/byDate">by date</option>
+                <option value="/movies/myList/byPopularity">by popularity</option>
+                <option value="/movies/myList/byRating">by rating</option>
+                <option value="/movies/myList/byGenre">by genre</option>
+            </select>
+
+            <button type="submit" class="sort-btn"><span> SORT </span></button>
+            <a href="/movies/ignored" class="see-ignore-btn">See ignored</a>
+        </form>
+    </span>
+</h1>
+<div id="genreList">
+    <div class="genreListItem">
+        <h3>Action:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "1")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Adult:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "2")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Adventure:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "3")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Animation:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "4")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Anime:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "5")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Biography:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "6")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Ceremony:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "7")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Comedy:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "8")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Concert:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "9")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Crime:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "10")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Documentary:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "11")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Drama:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "12")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Family:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "13")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Fantasy:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "14")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Film-noir:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "15")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Game-show:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "16")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>History:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "17")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Horror:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "18")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Kids:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "19")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Music:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "20")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Musical:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "21")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Mystery:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "22")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>News:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "23")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Politics:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "24")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Reality-tv:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "25")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Romance:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "26")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Sci-Fi:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "27")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Short:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "28")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Soap:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "29")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Sport:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "30")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Talk-show:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "31")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Thriller:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "32")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Tv movie:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "33")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>War:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "34")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="genreListItem">
+        <h3>Western:</h3>
+        {{#each votes}}
+            {{#if (contains movieId.genres "35")}}
+                {{#if vote}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-like"> </a>
+                {{/if}}
+            {{#unless vote}}
+                {{#unless ignore}}
+                <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+                class="posterList-dislike">
+                </a>
+                {{/unless}}
+            {{/unless}}
+            {{/if}}
+        {{/each}}
+    </div>
+</div>

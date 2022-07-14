@@ -1,0 +1,29 @@
+<h1 id="userList-h1"> <span class="strong-green">MM</span> users</h1>
+
+<form action="" class="search-user">
+    <label for="">Search User</label>
+    <input type="search" placeholder="Search">
+</form>
+<div class="user-list-box">
+    {{#each users}}
+    <div class="user-list-border">
+        <div class="each-user-list-container">
+            <img src="{{imageUrl}}" alt="profile picture" width="80px">
+            <div class="user-name-email-id">
+                <h4>{{username}}</h4>
+                <p>{{email}}</p>
+                <p>{{_id}}</p>
+            </div>
+
+        </div>
+        <div class="userList-btns">
+            <form action="" method="POST">
+                <button type="submit" class="delete-makeAdmin-btn"> Delete</button>
+            </form>
+            <form action="" method="POST">
+                <button type="submit" class="delete-makeAdmin-btn"> Make Admin</button>
+            </form>
+        </div>
+    </div>
+    {{/each}}
+</div>

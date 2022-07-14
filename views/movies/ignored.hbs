@@ -1,0 +1,9 @@
+<h1 class="ignored-h1"> <span class="ignored-span"> Ignored</span> Movies</h1>
+<div id="movieList">
+    {{#each votes}}
+    {{#if ignore}}
+    <a href="/movies/{{movieId._id}}"><img src="{{movieId.translations.0.poster.og}}" alt="poster"
+            class="posterList-ignore"> </a>
+    {{/if}}
+    {{/each}}
+</div>

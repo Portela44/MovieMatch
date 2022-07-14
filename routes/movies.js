@@ -3,33 +3,101 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const Movie = require("../models/Movie");
 const Vote = require("../models/Vote");
-const isLoggedIn = require("../middlewares")
+const isLoggedIn = require("../middlewares");
+const Handlebars = require("hbs");
 
+// IMDB API test requirement
+const imdbId = require('imdb-id');
+const metafilm = require("metafilm");
+const colage = require('colage');
+const User = require('../models/User');
 
+//Handlebar helpers
+Handlebars.registerHelper('contains', function (arr, genre) {
+    let contained = false;
+    if (arr.includes(genre)) {
+        contained = true;
+    }
+    return contained
+});
 
+router.get('/ignored', isLoggedIn, async (req, res, next) => {
+    const user = req.session.currentUser
+
+    try {
+        const votes = await Vote.find({ userId: user._id }).populate('movieId')
+        res.render('movies/ignored', { votes, user });
+    } catch (error) {
+
+    }
+});
+
+router.get('/filter', isLoggedIn, (req, res, next) => {
+    const user = req.session.currentUser
+    res.render('movies/filter', { user })
+});
+
+// @desc    Displays a view if the user has voted all movies
+// @route   GET /mcongratulations
+// @access  User
 router.get('/congratulations', (req, res, next) => {
     const user = req.session.currentUser
     res.render('movies/congratulations', { user })
-})
+});
+
 // @desc    Displays a view where user can search for a specific movie
 // @route   GET /search-movie
 // @access  Public
-router.get('/search-movie', (req, res, next) => {
+router.get('/search-movie', isLoggedIn, (req, res, next) => {
     const user = req.session.currentUser
     res.render('movies/search-movie', { user })
-})
+});
 
 // @desc    Displays a searched movie which can be consulted or voted.
 // @route   GET /:searched-movie
 // @access  Public
 
-router.get('/searched-movie/', async (req, res, next) => {
+router.get('/searched-movie', async (req, res, next) => {
     const { movieName } = req.query;
+    const user = req.session.currentUser;
     try {
-        const movieFromDB = await Movie.find({ name: movieName });
-        res.render('movies/searchResults', movieFromDB[0])
+        const movieFromDB0 = await Movie.find({ name: movieName });
+        const movieFromDB = movieFromDB0[0];
+        res.render('movies/movies', { movieFromDB, user })
     } catch (error) {
         next(error)
+    }
+});
+
+// @desc    Shows in the console a movie's json information coming from api, so it can easily get pasted on seed (searching by name).
+// @route   GET /:api-search
+// @access  Admin
+
+router.get('/api-search-by-name', async (req, res, next) => {
+    const { movieName } = req.query;
+    try {
+        const movieImdbId = await imdbId(`${movieName}`);
+        console.log(movieImdbId);
+        const movieInfo = await metafilm.id({ imdb_id: `${movieImdbId}` });
+        console.log(movieInfo);
+        res.json(movieInfo);
+    } catch (error) {
+        next(error);
+    }
+});
+
+// @desc    Shows in the console a movie's json information coming from api, so it can easily get pasted on seed (searching by imdb_id).
+// @route   GET /:api-search
+// @access  Admin
+
+router.get('/api-search-by-imdbId', async (req, res, next) => {
+    const { movieIMDBId } = req.query;
+    try {
+        const movieInfo = await metafilm.id({ imdb_id: `${movieIMDBId}` });
+        console.log(movieInfo);
+        res.json(movieInfo);
+    } catch (error) {
+        next(error);
     }
 });
 
@@ -86,7 +154,8 @@ router.post('/:movieId/edit', async (req, res, next) => {
 // @access  Admin
 
 router.get('/create', (req, res, next) => {
-    res.render('movies/new-movie')
+    const user = req.session.currentUser;
+    res.render('movies/new-movie', { user });
 });
 
 // @desc    Updates db with an entirely new movie. Some items pending to fill in edit page.
@@ -177,6 +246,77 @@ router.get('/myList/byRating', isLoggedIn, async (req, res, next) => {
     }
 });
 
+// @desc    Displays a new window, with movies sorted by genre
+// @route   GET /myList/byGenre
+// @access  Public
+
+router.get('/myList/byGenre', isLoggedIn, async (req, res, next) => {
+    const user = req.session.currentUser
+    try {
+        const votes = await Vote.find({ userId: user._id }).populate('movieId');
+        votes.sort((a, b) => {
+            return b.movieId.imdb_rating - a.movieId.imdb_rating;
+        });
+        res.render('movies/myListByGenres', { votes, user });
+    } catch (error) {
+        next(error)
+    }
+});
+
+// @desc    Allows the user to update its own filters to get personalized recommendations.
+// @route   POST /filter
+// @access  User
+
+router.post("/filter", isLoggedIn, async (req,res,next) => {
+    const {action, drama, fantasy, comedy, mystery, adventure, war, scifi, romance, history, documentary, crime} = req.body;
+    const user = req.session.currentUser;
+    const newPreferences = [];
+    if(req.body.action === "on") {
+        newPreferences.push("1");
+    };
+    if(req.body.drama === "on") {
+        newPreferences.push("12");
+    };
+    if(req.body.fantasy === "on") {
+        newPreferences.push("14");
+    };
+    if(req.body.comedy === "on") {
+        newPreferences.push("8");
+    };
+    if(req.body.mystery === "on") {
+        newPreferences.push("22");
+    };
+    if(req.body.adventure === "on") {
+        newPreferences.push("3");
+    };
+    if(req.body.war === "on") {
+        newPreferences.push("34");
+    };
+    if(req.body.scifi === "on") {
+        newPreferences.push("27");
+    };
+    if(req.body.romance === "on") {
+        newPreferences.push("26");
+    };
+    if(req.body.history === "on") {
+        newPreferences.push("20");
+    };
+    if(req.body.documentary === "on") {
+        newPreferences.push("11");
+    };
+    if(req.body.crime === "on") {
+        newPreferences.push("10");
+    };
+
+    try {
+        const newUser = await User.findByIdAndUpdate(user._id, {preferences: newPreferences}, {new: true});
+        req.session.currentUser = newUser;
+        res.redirect("/");
+    } catch (error) {
+        next(error)
+    }
+})
+
 // @desc    Displays a random movie which can be consulted or voted.
 // @route   GET /:movieId
 // @access  Public
@@ -185,13 +325,22 @@ router.get('/:movieId', async (req, res, next) => {
     const { movieId } = req.params;
     const user = req.session.currentUser
     try {
-        console.log(movieId);
-        const movieFromDB = await Movie.findById(movieId);
-        res.render('movies/movies', { movieFromDB, user })
+        if(user) {
+            let votes = await Vote.find({ userId: user._id });
+        if (await Movie.count() === votes.length) {
+            res.redirect("/movies/congratulations");
+        } else {
+            const movieFromDB = await Movie.findById(movieId);
+            res.render('movies/movies', { movieFromDB, user })
+        }
+        } else {
+            const movieFromDB = await Movie.findById(movieId);
+            res.render('movies/movies', { movieFromDB })
+        }
+        
     } catch (error) {
         next(error)
     }
 });
-
 
 module.exports = router;

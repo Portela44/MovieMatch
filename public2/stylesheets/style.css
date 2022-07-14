@@ -247,7 +247,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
-  background-image: radial-gradient(rgba(53, 56, 58, 1), rgba(53, 56, 58, 1));
+  background-image: radial-gradient(rgba(53, 56, 58, 1),rgba(53, 56, 58, 1));
 }
 
 .movie-image-container {
@@ -421,8 +421,8 @@ body {
   background-image: url(/images/history.jpeg);
 }
 
-.documentary {
-  background-image: url(/images/documentary.jpeg);
+.biography {
+  background-image: url(/images/biography.jpeg);
 }
 
 .crime {
@@ -449,7 +449,7 @@ body {
 }
 
 .filter-icon {
-  margin-bottom: 25px;
+  margin-bottom: 5px;
 }
 
 .filter-name {
@@ -499,9 +499,6 @@ body {
   background-color: rgb(85, 172, 164);
   border: none;
   letter-spacing: 2px;
-  position: absolute;
-  bottom: 120px;
-  left: 50px;
 }
 
 
@@ -612,7 +609,7 @@ body {
 
 .btn-container {
   width: 76%;
-  height: 55px;
+  height: 45px;
   display: flex;
   flex-direction: column;
   justify-items: space-evenly;
@@ -654,23 +651,6 @@ body {
 
 .strong-green {
   color: rgb(107, 170, 164)
-}
-
-.see-users-btn {
-  color: black;
-  font-size: 0.8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 20px;
-  background-color: rgb(85, 172, 164);
-  height: 30px;
-  width: 40vh;
-  padding: 14px 0;
-  margin-top: 13px;
-  border-radius: 3px;
-  text-decoration: none;
-
 }
 
 /* New/Edit movie forms */
@@ -858,60 +838,6 @@ body {
   left: -35vw;
 }
 
-/**** user List styles //userList.hbs ****/
-.user-list-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  margin-top: 15px;
-}
-
-.user-list-border {
-  border: 1px solid rgb(85, 172, 164);
-  width: 93%;
-}
-
-.each-user-list-container {
-
-  width: 93%;
-  display: flex;
-  gap: 10px;
-
-}
-
-.user-name-email-id h4 {
-  color: rgb(85, 172, 164);
-}
-
-.each-user-list-container img {
-  clip-path: circle();
-  margin-left: 5px;
-}
-
-.search-user {
-  width: 100%;
-  text-align: center;
-}
-
-#userList-h1 {
-  text-align: center;
-}
-
-.userList-btns {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 15px;
-}
-
-.delete-makeAdmin-btn {
-  background-color: rgb(85, 172, 164);
-  border: none;
-  padding: 3px 8px;
-}
-
 /* My movie list // myList.hbs */
 
 
@@ -936,8 +862,7 @@ body {
   justify-content: center;
 }
 
-#movieList>a>img,
-.genreListItem>a>img {
+#movieList>a>img, .genreListItem>a>img {
   width: 110px;
   height: 170px;
   margin: 6px;

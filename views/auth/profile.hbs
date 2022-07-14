@@ -16,6 +16,9 @@
             <button class="profile-btn">Create a new movie</button>
         </form>
         {{/if}}
+        {{#if user.isAdmin}}
+        <a href="/user/userList" class=" see-users-btn"> See Users</a>
+        {{/if}}
         {{#unless user.isAdmin}}
         <form action="/movies/myList" method="GET">
             <button class="profile-btn">My vote list</button>
