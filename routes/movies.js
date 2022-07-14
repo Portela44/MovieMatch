@@ -322,17 +322,23 @@ router.post("/filter", isLoggedIn, async (req,res,next) => {
 // @route   GET /:movieId
 // @access  Public
 
-router.get('/:movieId', isLoggedIn, async (req, res, next) => {
+router.get('/:movieId', async (req, res, next) => {
     const { movieId } = req.params;
     const user = req.session.currentUser
     try {
-        let votes = await Vote.find({ userId: user._id });
+        if(user) {
+            let votes = await Vote.find({ userId: user._id });
         if (await Movie.count() === votes.length) {
             res.redirect("/movies/congratulations");
         } else {
             const movieFromDB = await Movie.findById(movieId);
             res.render('movies/movies', { movieFromDB, user })
         }
+        } else {
+            const movieFromDB = await Movie.findById(movieId);
+            res.render('movies/movies', { movieFromDB })
+        }
+        
     } catch (error) {
         next(error)
     }

@@ -48,7 +48,7 @@ router.get("/", async (req, res, next) => {
       res.render("index", { user, nextMovie });
     } else {
       nextMovie = await Movie.aggregate([{ $sample: { size: 1 } }]);
-      res.render("index",  {nextMovie} );
+      res.render("index",  { nextMovie } );
     }
   } catch (error) {
     next(error);
