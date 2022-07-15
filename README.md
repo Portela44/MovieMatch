@@ -6,6 +6,8 @@ This is a project developed by Pau Mesonero and Guillermo Martin as the project 
 By just asking for a few opinions about popular movies and genres, the app will just save you a lot of scrolling-down hours looking for anything to watch! Try it out!
 
 ![](./public/images/ReadMe1.png)
+![](./public/images/ReadMe-2.png)
+![](./public/images/ReadMe-3.png)
 
 ## Instructions
 
