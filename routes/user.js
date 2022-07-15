@@ -6,9 +6,8 @@ const User = require("../models/User");
 const fileUploader = require('../config/cloudinary.config');
 
 // @desc    Displays a view where user can edit its details
-// @route   GET /edit
-// @access  User
-
+// @route   GET /user/edit
+// @access  Public
 router.get('/edit', async (req, res, next) => {
     const user = req.session.currentUser
     try {
@@ -17,24 +16,20 @@ router.get('/edit', async (req, res, next) => {
     } catch (error) {
         next(error)
     }
-
-})
+});
 
 // @desc    Displays a view where user can edit its details
-// @route   POST /edit
-// @access  User
-
+// @route   POST /user/edit
+// @access  Public
 router.post('/edit', fileUploader.single('imageUrl'), async (req, res, next) => {
     const user = req.session.currentUser
     const { username, email, existingImage } = req.body
-
     let imageUrl;
     if (req.file) {
         imageUrl = req.file.path;
     } else {
         imageUrl = existingImage
     }
-
     try {
         const userFound = await User.findByIdAndUpdate(user._id, { username, email, imageUrl }, { new: true })
         req.session.currentUser = userFound
@@ -42,17 +37,20 @@ router.post('/edit', fileUploader.single('imageUrl'), async (req, res, next) => 
     } catch (error) {
         next(error)
     }
-})
+});
 
-
+// @desc    Previous step to delete user account, show confirmation screen.
+// @route   GET /user/delete
+// @access  Public
 router.get('/delete', (req, res, next) => {
     const user = req.session.currentUser
     res.render('user/deleteConfirmation', { user })
-})
-// @desc    Deletes user account
-// @route   POST /edit
-// @access  User
+});
 
+
+// @desc    Deletes user account from db.
+// @route   POST /user/delete
+// @access  Public
 router.post('/delete', async (req, res, next) => {
     const userId = req.session.currentUser._id
     try {
@@ -65,22 +63,26 @@ router.post('/delete', async (req, res, next) => {
             }
         });
     } catch (error) {
-        next(error)
+        next(error);
     }
 });
 
+// @desc    Shows userlist to Admin.
+// @route   GET /user/delete
+// @access  Private
 router.get('/userList', async (req, res, next) => {
-    const user = req.session.currentUser
-
+    const user = req.session.currentUser;
     try {
         const users = await User.find({});
-        res.render('user/userList', { users, user })
+        res.render('user/userList', { users, user });
     } catch (error) {
-
+        next(error);
     }
-})
+});
 
-
+// @desc    Shows genre list to user, so genre preferences can be stablished.
+// @route   GET /user/preferences
+// @access  Public
 router.post("/preferences", async (req, res, next) => {
     const { preferences } = req.body;
     try {

@@ -27,7 +27,6 @@ Handlebars.registerHelper('contains', function (arr, genre) {
 // @access  Public
 router.get('/ignored', isLoggedIn, async (req, res, next) => {
     const user = req.session.currentUser
-
     try {
         const votes = await Vote.find({ userId: user._id }).populate('movieId')
         res.render('movies/ignored', { votes, user });
@@ -60,17 +59,14 @@ router.get('/search-movie', isLoggedIn, (req, res, next) => {
     res.render('movies/search-movie', { user })
 });
 
-// @desc    Shows in the console a movie's json information coming from api, so it can easily get pasted on seed (searching by name).
+// @desc    Shows in the console and screen a movie's json information coming from api, so it can easily get pasted on seed (searching by name).
 // @route   GET /:api-search
 // @access  Admin
-
 router.get('/api-search-by-name', async (req, res, next) => {
     const { movieName } = req.query;
     try {
         const movieImdbId = await imdbId(`${movieName}`);
-        console.log(movieImdbId);
         const movieInfo = await metafilm.id({ imdb_id: `${movieImdbId}` });
-        console.log(movieInfo);
         res.json(movieInfo);
     } catch (error) {
         next(error);
@@ -80,12 +76,10 @@ router.get('/api-search-by-name', async (req, res, next) => {
 // @desc    Shows in the console a movie's json information coming from api, so it can easily get pasted on seed (searching by imdb_id).
 // @route   GET /:api-search
 // @access  Admin
-
 router.get('/api-search-by-imdbId', async (req, res, next) => {
     const { movieIMDBId } = req.query;
     try {
         const movieInfo = await metafilm.id({ imdb_id: `${movieIMDBId}` });
-        console.log(movieInfo);
         res.json(movieInfo);
     } catch (error) {
         next(error);
@@ -95,7 +89,6 @@ router.get('/api-search-by-imdbId', async (req, res, next) => {
 // @desc    Deletes a movie.
 // @route   POST /movies/:movieId/delete
 // @access  Admin
-
 router.post('/:movieId/delete', async (req, res, next) => {
     const { movieId } = req.params;
     try {
@@ -109,7 +102,6 @@ router.post('/:movieId/delete', async (req, res, next) => {
 // @desc    Displays admin menu to edit a movie.
 // @route   GET /movies/:movieId/edit
 // @access  Admin
-
 router.get('/:movieId/edit', async (req, res, next) => {
     const { movieId } = req.params;
     try {
@@ -123,7 +115,6 @@ router.get('/:movieId/edit', async (req, res, next) => {
 // @desc    Updates an existing movie from db. 
 // @route   POST /movies/:movieId/edit
 // @access  Admin
-
 router.post('/:movieId/edit', async (req, res, next) => {
     const { movieId } = req.params;
     const { imdb_id, name, year, image1, premiere, genre1, genre2, genre3, people1, people2, people3, imdb_rating, imdb_vote, poster1, overview } = req.body;
@@ -143,7 +134,6 @@ router.post('/:movieId/edit', async (req, res, next) => {
 // @desc    Displays admin menu to create a movie.
 // @route   GET /movies/create
 // @access  Admin
-
 router.get('/create', (req, res, next) => {
     const user = req.session.currentUser;
     res.render('movies/new-movie', { user });
@@ -152,7 +142,6 @@ router.get('/create', (req, res, next) => {
 // @desc    Updates db with an entirely new movie. Some items pending to fill in edit page.
 // @route   POST /movies/create
 // @access  Admin
-
 router.post('/create', async (req, res, next) => {
     const { imdb_id, name, year, image1, premiere, genre1, genre2, genre3, people1, people2, people3, imdb_rating, imdb_vote, poster1, overview } = req.body;
     const image = { og: image1 }
@@ -171,11 +160,8 @@ router.post('/create', async (req, res, next) => {
 // @desc    Shows user its voted list
 // @route   GET /movies/myList
 // @access  User
-
-
 router.get('/myList', isLoggedIn, async (req, res, next) => {
     const user = req.session.currentUser
-
     try {
         const votes = await Vote.find({ userId: user._id }).populate('movieId')
         res.render('movies/myList', { votes, user });
@@ -187,10 +173,8 @@ router.get('/myList', isLoggedIn, async (req, res, next) => {
 // @desc    Displays a new window, with movies sorted by release date
 // @route   GET /myList/byDate
 // @access  Public
-
 router.get('/myList/byDate', isLoggedIn, async (req, res, next) => {
     const user = req.session.currentUser
-
     try {
         const votes = await Vote.find({ userId: user._id }).populate('movieId');
         votes.sort((a, b) => {
@@ -202,10 +186,9 @@ router.get('/myList/byDate', isLoggedIn, async (req, res, next) => {
     }
 });
 
-// @desc    Displays a new window, with movies sorted by number of votes
+// @desc    Displays a new window, with movies sorted by number of votes in imdb
 // @route   GET /myList/byPopularity
 // @access  Public
-
 router.get('/myList/byPopularity', isLoggedIn, async (req, res, next) => {
     const user = req.session.currentUser
     try {
@@ -222,7 +205,6 @@ router.get('/myList/byPopularity', isLoggedIn, async (req, res, next) => {
 // @desc    Displays a new window, with movies sorted by imdb rating
 // @route   GET /myList/byRating
 // @access  Public
-
 router.get('/myList/byRating', isLoggedIn, async (req, res, next) => {
     const user = req.session.currentUser
     try {
@@ -239,7 +221,6 @@ router.get('/myList/byRating', isLoggedIn, async (req, res, next) => {
 // @desc    Displays a new window, with movies sorted by genre
 // @route   GET /myList/byGenre
 // @access  Public
-
 router.get('/myList/byGenre', isLoggedIn, async (req, res, next) => {
     const user = req.session.currentUser
     try {
@@ -256,7 +237,6 @@ router.get('/myList/byGenre', isLoggedIn, async (req, res, next) => {
 // @desc    Allows the user to update its own filters to get personalized recommendations.
 // @route   POST /filter
 // @access  User
-
 router.post("/filter", isLoggedIn, async (req,res,next) => {
     const {action, drama, fantasy, comedy, mystery, adventure, war, scifi, romance, history, documentary, crime} = req.body;
     const user = req.session.currentUser;
@@ -310,7 +290,6 @@ router.post("/filter", isLoggedIn, async (req,res,next) => {
 // @desc    Displays a random movie which can be consulted or voted.
 // @route   GET /:movieId
 // @access  Public
-
 router.get('/:movieId', async (req, res, next) => {
     const { movieId } = req.params;
     const user = req.session.currentUser
@@ -326,8 +305,7 @@ router.get('/:movieId', async (req, res, next) => {
         } else {
             const movieFromDB = await Movie.findById(movieId);
             res.render('movies/movies', { movieFromDB })
-        }
-        
+        } 
     } catch (error) {
         next(error)
     }

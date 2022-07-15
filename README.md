@@ -175,7 +175,7 @@ const movieSchema = new Schema(
 )
 
 
-Vote: 
+//Vote: 
 
 const voteSchema = new Schema(
   {
@@ -208,15 +208,37 @@ const voteSchema = new Schema(
 | Login          | POST   | /auth/login  | No        | { email, password } |/          |
 | Logout         | POST   | /auth/logout | No        |                     |/auth/login|
 
-| Ignored        | GET    | /ignored     | No        |                     |           |
-| Filter         | GET    | /filter      | No        |                     |           |
-| Congratulations| GET    | /congratulations| No     |                     |           |
-| Search Movie   | GET    | /search-movie| No        |                     |           |
-| New movie      | GET    | /movies/new  | Yes       |                     |           |
-| New movie      | POST   | /movies/new  | Yes       | { title, releaseDate, genre }| /movies/:movieId |
-| Edit movie     | GET    | /movies/edit | Yes       |                     |          |
-| Edit movie     | POST   | /movies/edit | Yes       | { title, releaseDate, genre }| /movies/:movieId |
-| Delete movie   | POST   | /movies/delete| Yes     |                     | /        |
+| Ignored        | GET    | /movies/ignored| No      |                     |           |
+| Filter         | GET    | /movies/filter| No       |                     |           |
+| Filter         | POST   | /movies/filter| No       |{action, drama, fantasy, comedy, mystery, adventure, war, scifi, romance, history, documentary, crime}| / |
+| Congratulations| GET    | /movies/congratulations| No |                  |           |
+| Search Movie   | GET    | /movies/search-movie| No |                     |           |
+| apiSearch      | GET    | /movies/api-search-by-name| Yes |              |           |
+| apiSearch      | GET    | /movies/api-search-by-imdbId| Yes |            |           |
+| New movie      | GET    | /movies/create| Yes      |                     |           |
+| New movie      | POST   | /movies/create| Yes      | { imdb_id, name, year, image1, premiere, genre1, genre2, genre3, people1, people2, people3, imdb_rating, imdb_vote, poster1, overview }| / |
+| Edit movie     | GET    | /movies/:movieId/edit| Yes |                   |          |
+| Edit movie     | POST   | /movies/:movieId/edit| Yes | { imdb_id, name, year, image1, premiere, genre1, genre2, genre3, people1, people2, people3, imdb_rating, imdb_vote, poster1, overview }| /movies/:movieId |
+| Delete movie   | POST   | /movies/:movieId/delete| Yes |                 |/          |
+| My list by date| GET    | /movies/myList/byDate| No |                    |           |
+| My list by popularity| GET | /movies/myList/byPopularity| No |           |           |
+| My list by rating| GET  | /movies/myList/byRating| No |                  |           |
+| My list by genres| GET  | /movies/myList/byGenres| No |                  |           |
+| Movie          | GET    | /:movieId    | No        |                     |/congratulations|
+
+| Edit user      | GET    | /user/edit   | No        |                     |           |
+| Edit user      | POST   | /user/edit   | No        | { username, email, existingImage }| / |
+| Delete user    | GET    | /user/delete | No        |                     |           |
+| Delete user    | POST   | /user/delete | No        |                     |/          |
+| User list      | GET    | /user/userList| Yes      |                     |           |
+| User preferences| GET   | /user/preferences| Yes   | { preferences }     |           |
+
+| Vote Like      | GET    | /votes/:movieId/VoteLike| No |                 |           |
+| Vote Like      | POST   | /votes/:movieId/VoteLike| No |                 |/:movieId OR /congratulations           |
+| Vote Dislike   | GET    | /votes/:movieId/VoteDislike| No |              |           |
+| Vote Dislike   | POST   | /votes/:movieId/VoteDislike| No |              |/:movieId OR /congratulations           |
+| Vote Ignore    | GET    | /votes/:movieId/Ignore| No |                   |           |
+| Vote Ignore    | POST   | /votes/:movieId/Ignore| No |                   |/:movieId OR /congratulations           |
 
 
 ## Useful links
