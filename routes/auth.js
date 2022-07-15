@@ -14,7 +14,8 @@ const saltRounds = 10;
 router.get('/profile', isLoggedIn, (req, res, next) => {
   const user = req.session.currentUser
   res.render('auth/profile', { user })
-})
+});
+
 // @desc    Displays form view to sign up
 // @route   GET /auth/signup
 // @access  Public
@@ -35,7 +36,6 @@ router.get('/login', async (req, res, next) => {
 // @access  Public
 router.post('/signup', fileUploader.single('imageUrl'), async (req, res, next) => {
   const { email, password, password2, username, existingImageSign } = req.body;
-  // ⚠️ Add validations!
   if (!email || !password || !password2 || !username) {
     res.render('auth/signup', { error: 'All fields are mandatory, please fill them before submiting' })
     return;
@@ -47,7 +47,6 @@ router.post('/signup', fileUploader.single('imageUrl'), async (req, res, next) =
   } else {
     imageUrl = existingImageSign;
   }
-
 
   const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
   if (!regex.test(password)) {
@@ -73,13 +72,11 @@ router.post('/signup', fileUploader.single('imageUrl'), async (req, res, next) =
 // @access  Public
 router.post('/login', async (req, res, next) => {
   const { email, password } = req.body;
-  // ⚠️ Add more validations!
   if (!email || !password) {
     res.render('auth/login', { error: 'All fields are mandatory, please fill them before submiting' })
     return;
   }
   try {
-    // Remember to assign user to session cookie:
     const user = await User.findOne({ email: email });
     if (!user) {
       res.render('auth/login', { error: "User not found" });
@@ -100,7 +97,7 @@ router.post('/login', async (req, res, next) => {
 
 // @desc    Destroy user session and log out
 // @route   POST /auth/logout
-// @access  Private
+// @access  Public
 router.post('/logout', isLoggedIn, (req, res, next) => {
   req.session.destroy((err) => {
     if (err) {

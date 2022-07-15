@@ -78,10 +78,7 @@ const movieSchema = new Schema(
         ],
         handmade: Boolean,
     }
-
-)
-
-
+);
 
 const Movie = model('Movie', movieSchema);
 

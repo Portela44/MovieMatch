@@ -1,12 +1,6 @@
 <h1 class="filter-heading">Filter</h1>
 <div class="filter-box">
-    <form action="/movies/filter" class="filter-container" method="POST">
-        {{!-- <select name="preferences" multiple>
-            <option name="preferences" value="12">Drama</option>            
-            <option name="preferences" value="1">Action</option>
-            <option name="preferences" value="4">Animation</option>
-        </select> --}}
-            
+    <form action="/movies/filter" class="filter-container" method="POST">          
         <label for="action" class="filter-option" method="POST">
 
             <input type="checkbox" class="checkbox" id="action"  name="action" {{#if (contains user.preferences "1")}} checked {{/if}}>

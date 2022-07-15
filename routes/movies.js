@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const Movie = require("../models/Movie");
 const Vote = require("../models/Vote");
+const User = require('../models/User');
 const isLoggedIn = require("../middlewares");
 const Handlebars = require("hbs");
 
@@ -10,7 +11,7 @@ const Handlebars = require("hbs");
 const imdbId = require('imdb-id');
 const metafilm = require("metafilm");
 const colage = require('colage');
-const User = require('../models/User');
+
 
 //Handlebar helpers
 Handlebars.registerHelper('contains', function (arr, genre) {
@@ -21,6 +22,9 @@ Handlebars.registerHelper('contains', function (arr, genre) {
     return contained
 });
 
+// @desc    Shows all movies ignored by the user
+// @route   GET /ignored
+// @access  Public
 router.get('/ignored', isLoggedIn, async (req, res, next) => {
     const user = req.session.currentUser
 
@@ -28,18 +32,21 @@ router.get('/ignored', isLoggedIn, async (req, res, next) => {
         const votes = await Vote.find({ userId: user._id }).populate('movieId')
         res.render('movies/ignored', { votes, user });
     } catch (error) {
-
+        next(error);
     }
 });
 
+// @desc    Displays view for the user to filter all voted movies by genre.
+// @route   GET /filter
+// @access  Public
 router.get('/filter', isLoggedIn, (req, res, next) => {
     const user = req.session.currentUser
     res.render('movies/filter', { user })
 });
 
-// @desc    Displays a view if the user has voted all movies
-// @route   GET /mcongratulations
-// @access  User
+// @desc    Displays a view if the user has voted all movies.
+// @route   GET /congratulations
+// @access  Public
 router.get('/congratulations', (req, res, next) => {
     const user = req.session.currentUser
     res.render('movies/congratulations', { user })
@@ -51,22 +58,6 @@ router.get('/congratulations', (req, res, next) => {
 router.get('/search-movie', isLoggedIn, (req, res, next) => {
     const user = req.session.currentUser
     res.render('movies/search-movie', { user })
-});
-
-// @desc    Displays a searched movie which can be consulted or voted.
-// @route   GET /:searched-movie
-// @access  Public
-
-router.get('/searched-movie', async (req, res, next) => {
-    const { movieName } = req.query;
-    const user = req.session.currentUser;
-    try {
-        const movieFromDB0 = await Movie.find({ name: movieName });
-        const movieFromDB = movieFromDB0[0];
-        res.render('movies/movies', { movieFromDB, user })
-    } catch (error) {
-        next(error)
-    }
 });
 
 // @desc    Shows in the console a movie's json information coming from api, so it can easily get pasted on seed (searching by name).
