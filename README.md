@@ -5,7 +5,7 @@
 This is a project developed by Pau Mesonero and Guillermo Martin as the project for the second module at Ironhack. The application will try to fill a need within the cinephile community, where many apps are not as user friendly as they should to reach the biggest portion of the casual public.
 By just asking for a few opinions about popular movies and genres, the app will just save you a lot of scrolling-down hours looking for anything to watch! Try it out!
 
-![](./public/images/ReadMe-1.png)
+![](./public/images/ReadMe1.png)
 ![](./public/images/ReadMe-2.png)
 ![](./public/images/ReadMe-3.png)
 
