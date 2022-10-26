@@ -197,7 +197,8 @@ const voteSchema = new Schema(
   {
     timestamps: true
   }
-); 
+);
+```
 
 | Name           | Method | Endpoint     | Protected | Req.body            | Redirects |
 |----------------|--------|--------------|-----------|---------------------|-----------|
