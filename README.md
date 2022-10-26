@@ -199,6 +199,8 @@ const voteSchema = new Schema(
   }
 );
 ```
+---
+## API endpoints and usage 
 
 | Name           | Method | Endpoint     | Protected | Req.body            | Redirects |
 |----------------|--------|--------------|-----------|---------------------|-----------|
@@ -242,7 +244,7 @@ const voteSchema = new Schema(
 | Vote Dislike   | POST   | /votes/:movieId/VoteDislike| No |              |/:movieId OR /congratulations           |
 | Vote Ignore    | GET    | /votes/:movieId/Ignore| No |                   |           |
 | Vote Ignore    | POST   | /votes/:movieId/Ignore| No |                   |/:movieId OR /congratulations           |
-
+---
 
 ## Useful links
 
