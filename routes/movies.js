@@ -151,7 +151,6 @@ router.post('/create', async (req, res, next) => {
     const translations = [{ overview, poster }]
     try {
         await Movie.create({ imdb_id, name, year, image, premiere, genres, people, imdb_rating, imdb_vote, translations });
-        res.redirect("/");
     } catch (error) {
         next(error);
     }
