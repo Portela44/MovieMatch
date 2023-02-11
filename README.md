@@ -197,19 +197,20 @@ const voteSchema = new Schema(
   {
     timestamps: true
   }
-); 
+);
+```
+---
+## API endpoints and usage 
 
 | Name           | Method | Endpoint     | Protected | Req.body            | Redirects |
 |----------------|--------|--------------|-----------|---------------------|-----------|
 | Home           | GET    | /            | No        |                     |           |
-
 | Profile        | GET    | /auth/profile| No        |                     |           |
 | Signup         | GET    | /auth/signup | No        |                     |           |
 | Signup         | POST   | /auth/signup | No        | { username, email, password, password2, existingImageSign }||
 | Login          | GET    | /auth/login  | No        |                     |           |
 | Login          | POST   | /auth/login  | No        | { email, password } |/          |
 | Logout         | POST   | /auth/logout | No        |                     |/auth/login|
-
 | Ignored        | GET    | /movies/ignored| No      |                     |           |
 | Filter         | GET    | /movies/filter| No       |                     |           |
 | Filter         | POST   | /movies/filter| No       |{action, drama, fantasy, comedy, mystery, adventure, war, scifi, romance, history, documentary, crime}| / |
@@ -227,21 +228,19 @@ const voteSchema = new Schema(
 | My list by rating| GET  | /movies/myList/byRating| No |                  |           |
 | My list by genres| GET  | /movies/myList/byGenres| No |                  |           |
 | Movie          | GET    | /:movieId    | No        |                     |/congratulations|
-
 | Edit user      | GET    | /user/edit   | No        |                     |           |
 | Edit user      | POST   | /user/edit   | No        | { username, email, existingImage }| / |
 | Delete user    | GET    | /user/delete | No        |                     |           |
 | Delete user    | POST   | /user/delete | No        |                     |/          |
 | User list      | GET    | /user/userList| Yes      |                     |           |
 | User preferences| GET   | /user/preferences| Yes   | { preferences }     |           |
-
 | Vote Like      | GET    | /votes/:movieId/VoteLike| No |                 |           |
 | Vote Like      | POST   | /votes/:movieId/VoteLike| No |                 |/:movieId OR /congratulations           |
 | Vote Dislike   | GET    | /votes/:movieId/VoteDislike| No |              |           |
 | Vote Dislike   | POST   | /votes/:movieId/VoteDislike| No |              |/:movieId OR /congratulations           |
 | Vote Ignore    | GET    | /votes/:movieId/Ignore| No |                   |           |
 | Vote Ignore    | POST   | /votes/:movieId/Ignore| No |                   |/:movieId OR /congratulations           |
-
+---
 
 ## Useful links
 
