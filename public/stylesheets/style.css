@@ -1036,3 +1036,10 @@ body {
   width: 40px;
   clip-path: circle();
 }
+
+/* errors */
+
+.error {
+  color: orange;
+  margin: 0px 35px;
+}
