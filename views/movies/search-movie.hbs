@@ -1,7 +1,10 @@
-<form action="/movies/searched-movie/" method="GET" class="search-movie-form">
+<form action="/movies/searched-movie" method="GET" class="search-movie-form">
     <i class="fa-solid fa-magnifying-glass"></i>
     <input type="text" name="movieName" class="search-movie-inp" placeholder="Search for a movie" />
     <button type="submit" class="search-movie-btn">Search</button>
+    {{#if error}}
+        {{error}}
+    {{/if}}
 </form>
 
 {{#if user.isAdmin}}

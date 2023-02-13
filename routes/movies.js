@@ -24,7 +24,7 @@ Handlebars.registerHelper('contains', function (arr, genre) {
 
 // @desc    Shows all movies ignored by the user
 // @route   GET /ignored
-// @access  Public
+// @access  User
 router.get('/ignored', isLoggedIn, async (req, res, next) => {
     const user = req.session.currentUser
     try {
@@ -37,7 +37,7 @@ router.get('/ignored', isLoggedIn, async (req, res, next) => {
 
 // @desc    Displays view for the user to filter all voted movies by genre.
 // @route   GET /filter
-// @access  Public
+// @access  User
 router.get('/filter', isLoggedIn, (req, res, next) => {
     const user = req.session.currentUser
     res.render('movies/filter', { user })
@@ -53,10 +53,27 @@ router.get('/congratulations', (req, res, next) => {
 
 // @desc    Displays a view where user can search for a specific movie
 // @route   GET /search-movie
-// @access  Public
+// @access  User
 router.get('/search-movie', isLoggedIn, (req, res, next) => {
     const user = req.session.currentUser
     res.render('movies/search-movie', { user })
+});
+
+// @desc    Displays the movie page if movie is found in search, or an error otherwise.
+// @route   GET /searched-movie
+// @access  User
+router.get('/searched-movie', isLoggedIn, async (req, res, next) => {
+    const { movieName } = req.query;
+    try {
+        const moviesFound = await Movie.find({"name":{ $regex: movieName, $options: 'i'}});
+        if(moviesFound.length === 0) {
+            res.render("movies/search-movie", {error: "Sorry! The movie you are looking for is not in our database"})
+        } else {
+            res.redirect(`/movies/${moviesFound[0]._id}`)
+        }
+    } catch (error) {
+        next(error);
+    }
 });
 
 // @desc    Shows in the console and screen a movie's json information coming from api, so it can easily get pasted on seed (searching by name).
